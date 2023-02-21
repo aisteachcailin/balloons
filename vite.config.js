@@ -1,7 +1,7 @@
 export default {
     root: 'src',
     base: './',
-    publicDir: 'public',
+    publicDir: '../public',
     build: {
         outDir: '../dist',
     }
