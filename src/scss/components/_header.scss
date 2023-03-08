@@ -1,0 +1,239 @@
+@use "../variables" as *;
+
+.header-top {
+  background-color: var(--color-secondary);
+  padding: 14px 0;
+  margin-bottom: 32px;
+}
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  &__item {
+    position: relative;
+    display: inline-block;
+    padding-right: 16px;
+    cursor: pointer;
+    &:not(:last-child) {
+      @include media(lg) {
+        margin-right: 24px;
+      }
+      @include media(xl) {
+        margin-right: 48px;
+      }
+    }
+    &--without-arrow {
+      color: $secondaryColorText;
+    }
+    .nav-link {
+      text-decoration: none;
+      color: $mainColorText;
+      padding: 0;
+    }
+    .dropdown-toggle::after {
+      display: none;
+    }
+    &:not(&--without-arrow) .nav-link {
+      &:before {
+        content: '';
+        background: url("../img/svg/chevrone.svg") no-repeat 0 0;
+        position: absolute;
+        width: 10px;
+        height: 6px;
+        right: 0;
+        top: calc(50% - 1px);
+      }
+    }
+  }
+}
+.header-phone,
+.header-callback {
+  color: $secondaryColorText;
+  font-weight: 600;
+  text-decoration: none;
+  &:hover {
+    color: $secondaryColorText;
+  }
+}
+.header-callback {
+  padding-left: 23px;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 1px;
+    width: 16px;
+    height: 16px;
+    background: url("../img/svg/phone.svg");
+  }
+}
+.header-row {
+  display: flex;
+  align-items: center;
+  //display: grid;
+  //grid-template: auto / 235px 212px;
+  //align-items: center;
+}
+.header-logo {
+  @include media(lg) {
+    max-width: 170px;
+    margin-right: 18px;
+  }
+  @include media(xl) {
+    max-width: 235px;
+    margin-right: 24px;
+  }
+  @include media(xxl) {
+    margin-right: 59px;
+  }
+  &__img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.catalog-lines {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 14px;
+  height: 12px;
+  width: 14px;
+  &__line {
+    margin-top: 5px;
+    height: 2px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 20px;
+    &:before,
+    &:after {
+      content: '';
+      left: 0;
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      background-color: #fff;
+      border-radius: 20px;
+    }
+    &:before {
+      margin-top: 4px;
+    }
+    &:after {
+      margin-top: -4px;
+    }
+  }
+}
+.header-icons {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0;
+  padding: 0;
+  &__icon {
+    margin-bottom: 4px;
+
+    &--human {
+      width: 16px;
+      height: 19px;
+      fill: $mainColorText;
+    }
+    &--heart {
+      width: 20px;
+      height: 18px;
+      fill: $mainColorText;
+    }
+    &--cart {
+      width: 22px;
+      height: 19px;
+      fill: $mainColorText;
+    }
+  }
+  &__item {
+    &:not(:last-child) {
+      @include media(lg) {
+        margin-right: 16px;
+      }
+      @include media(xxl) {
+        margin-right: 32px;
+      }
+    }
+  }
+  &__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: $mainColorText;
+
+    &:hover {
+      color: $mainColorText;
+    }
+  }
+}
+
+.header-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  height: 45px;
+  border: 1px solid var(--color-primary);
+  border-radius: var(--border-radiius);
+  width: 100%;
+
+  @include media(lg) {
+    margin-left: 18px;
+    margin-right: 18px;
+    max-width: 304px;
+  }
+
+  @include media(xl) {
+    margin-left: 24px;
+    margin-right: 24px;
+    max-width: 377px;
+  }
+
+  @include media() {
+    max-width: 400px;
+    margin-right: 62px;
+  }
+
+  &__input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin-left: 16px;
+  }
+  .form-select {
+    max-width: 108px;
+    border-radius: var(--border-radiius);
+    font-size: 14px;
+    border: none;
+    height: 30px;
+    padding: 4px 24px;
+    background-color: var(--color-secondary);
+    background-image: url("../img/svg/chevrone.svg");
+    background-size: 12px;
+    background-position: right 24px center;
+    cursor: pointer;
+    @include media(lg) {
+      padding: 4px 12px;
+    }
+    @include media(xl) {
+      padding: 4px 24px;
+    }
+    &:focus{
+      box-shadow: none;
+    }
+  }
+}
+.search-icon {
+  width: 18px;
+  height: 18px;
+  fill: #fff;
+}

@@ -1,0 +1,73 @@
+@use "../variables" as *;
+$footerColorText: #747474;
+
+.c-footer {
+  padding: 52px 0;
+  background-color: #F0F0F0;
+}
+.footer-text {
+  color: $footerColorText;
+  margin: 0;
+}
+.footer-grid {
+  display: grid;
+  @include media(lg) {
+    grid-template: 1fr auto / 320px auto;
+  }
+}
+.footer-nav {
+  list-style: none;
+  display: flex;
+  padding-left: 0;
+  justify-content: space-between;
+  &__link {
+    display: inline-block;
+    text-decoration: none;
+    color: $footerColorText;
+    font-weight: 700;
+    &:hover {
+      color: $footerColorText;
+    }
+  }
+}
+.contacts-title {
+  font-weight: 700;
+  font-size: 16px;
+}
+.contacts-item {
+  display: inline-block;
+  margin-right: 45px;
+  &__phone {
+    font-weight: 700;
+    font-size: 16px;
+    white-space: nowrap;
+    margin-bottom: 12px;
+    a {
+      text-decoration: none;
+      color: $mainColorText;
+      &:hover {
+        color: $mainColorText;
+      }
+    }
+  }
+  &__address {
+    font-size: 16px;
+  }
+}
+.footer-work-email {
+  grid-column: 2/3;
+  justify-self: end;
+  margin-right: 117px;
+  &__work-time {
+    margin-bottom: 8px;
+  }
+  &__email {
+    text-decoration: none;
+    color: $mainColorText;
+    font-size: 16px;
+    font-weight: 700;
+    &:hover {
+      color: $mainColorText;
+    }
+  }
+}

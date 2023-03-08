@@ -1,0 +1,30 @@
+@use "../variables"  as *;
+
+.c-btn {
+  border-radius: var(--border-radiius);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  border: none;
+  &--primary {
+    color: #fff;
+    background-color: var(--color-primary);
+  }
+  &--catalog {
+    height: 45px;
+    @include media(lg) {
+      padding: 0 14px;
+    }
+    @include media(xl) {
+      padding: 0 28px;
+    }
+  }
+  &--search {
+    padding: 0 20px;
+    height: 45px;
+    position: absolute;
+    right: -1px;
+    top: -1px;
+  }
+}
