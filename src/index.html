@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="wrapper">
-    <header>
+    <header class="c-header">
         <div class="header-top">
             <div class="container">
                 <div class="d-flex justify-content-between align-content-center">
@@ -59,7 +59,9 @@
                             <option value="2">Two</option>
                             <option value="3">Three</option>
                         </select>
-                        <input type="text" placeholder="Искать товары" class="header-search__input">
+                        <label>
+                            <input type="text" id="search" placeholder="Искать товары" class="header-search__input">
+                        </label>
                         <button type="submit" class="c-btn c-btn--primary c-btn--search">
                             <svg class="search-icon" role="img">
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -105,13 +107,116 @@
 
         <!-- content start -->
 
-        <div class="container">
+        <section class="main-slider">
+            <div class="container">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="slider-item" style="background: url(../img/slide-1.jpg) 0 0 no-repeat;">
+                                <h2 class="slider-item__title">Шарики на детский <br> день рождения</h2>
+                                <a href="#" class="slider-item__btn c-btn c-btn--primary">Заказать</a>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="slider-item" style="background: url(../img/slide-1.jpg) 0 0 no-repeat;">
+                                <h2 class="slider-item__title">Шарики на детский <br> день рождения</h2>
+                                <a href="#" class="slider-item__btn c-btn c-btn--primary">Заказать</a>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="slider-item" style="background: url(../img/slide-1.jpg) 0 0 no-repeat;">
+                                <h2 class="slider-item__title">Шарики на детский <br> день рождения</h2>
+                                <a href="#" class="slider-item__btn c-btn c-btn--primary">Заказать</a>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </section>
 
-        </div>
+        <section class="c-category">
+            <div class="container">
+                <div class="row">
+                    <div class="col-3">
+                        <a class="category-item" style="background-image: url(../img/cat-1.png);">
+                            <h4 class="category-item__title">Воздушные шары из латекса</h4>
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a class="category-item" style="background-image: url(../img/cat-2.png);">
+                            <h4 class="category-item__title">Воздушные шары из латекса
+                                с&nbsp;рисунком</h4>
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a class="category-item" style="background-image: url(../img/cat-3.png);">
+                            <h4 class="category-item__title">Воздушные шары из фольги</h4>
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a class="category-item" style="background-image: url(../img/cat-4.png);">
+                            <h4 class="category-item__title">Воздушные шары из фольги с рисунком</h4>
+                        </a>
+                    </div>
 
+                    <div class="col-3">
+                        <a class="category-item" style="background-image: url(../img/cat-5.png);">
+                            <h4 class="category-item__title">Гелий и оборудование</h4>
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a class="category-item" style="background-image: url(../img/cat-6.png);">
+                            <h4 class="category-item__title">Праздничная посуда</h4>
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a class="category-item" style="background-image: url(../img/cat-7.png);">
+                            <h4 class="category-item__title">Товары для праздника</h4>
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a class="category-item" style="background-image: url(../img/cat-8.png);">
+                            <h4 class="category-item__title">Карнавальная продукция</h4>
+                        </a>
+                    </div>
+
+                    <div class="col-3">
+                        <a class="category-item" style="background-image: url(../img/cat-9.png);">
+                            <h4 class="category-item__title">Флористика</h4>
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a class="category-item" style="background-image: url(../img/cat-10.png);">
+                            <h4 class="category-item__title">Подарочная упаковка</h4>
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a class="category-item" style="background-image: url(../img/cat-11.png);">
+                            <h4 class="category-item__title">Полиграфия, канцелярия, игрушки</h4>
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a class="category-item" style="background-image: url(../img/cat-12.png);">
+                            <h4 class="category-item__title">Коллекция</h4>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
         <!-- content end -->
 
     </main>
+
     <footer class="c-footer">
         <div class="container">
             <div class="footer-grid">
@@ -139,7 +244,8 @@
                 <div class="contacts-data d-flex">
                     <div class="contacts-item">
                         <div class="contacts-item__phone">
-                            <a href="tel:+78312151534">+7 831 215-15-34</a>, <a href="tel:+78314120052">+7 831 412-00-52</a>
+                            <a href="tel:+78312151534">+7 831 215-15-34</a>, <a href="tel:+78314120052">+7 831
+                            412-00-52</a>
                         </div>
                         <div class="contacts-item__address">
                             ул. Бекетова, 3а, к.9
@@ -147,7 +253,8 @@
                     </div>
                     <div class="contacts-item">
                         <div class="contacts-item__phone">
-                            <a href="tel:+78312151534">+7 831 215-15-34</a>, <a href="tel:+79308159544">+7 930 815-95-44</a>
+                            <a href="tel:+78312151534">+7 831 215-15-34</a>, <a href="tel:+79308159544">+7 930
+                            815-95-44</a>
                         </div>
                         <div class="contacts-item__address">
                             ул. Чкалова, 39, 2 этаж
@@ -158,6 +265,12 @@
                     <div class="footer-work-email__work-time">8:00-20:00</div>
                     <a href="mailto:info@nn-shar.ru" class="footer-work-email__email">info@nn-shar.ru</a>
                 </div>
+            </div>
+            <div class="footer-social d-flex align-items-end">
+                <span class="footer-social__text">Присоединяйтесь</span>
+                <div class="footer-social__icon footer-social__icon--ok"></div>
+                <div class="footer-social__icon footer-social__icon--vk"></div>
+                <div class="footer-social__icon footer-social__icon--tg"></div>
             </div>
             <p class="footer-text">
                 Данный интернет-сайт носит исключительно информационный характер и ни при каких условиях не является

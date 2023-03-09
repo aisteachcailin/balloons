@@ -1,5 +1,8 @@
 @use "../variables" as *;
 
+.c-header {
+  margin-bottom: 32px;
+}
 .header-top {
   background-color: var(--color-secondary);
   padding: 14px 0;

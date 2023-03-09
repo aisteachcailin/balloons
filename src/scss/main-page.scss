@@ -1,0 +1,71 @@
+@use 'variables' as *;
+
+.slider-item {
+  padding: 45px 80px;
+  height: 348px;
+  &__title {
+    font-size: 36px;
+    color: #FFF;
+    font-weight: 700;
+    margin-bottom: 53px;
+  }
+}
+
+.main-slider {
+  margin-bottom: 57px;
+  .carousel-indicators {
+    right: auto;
+    margin-left: 80px;
+    [data-bs-target] {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+    }
+  }
+  .carousel-control-next-icon {
+    background-image: url("../img/svg/arrow.svg");
+    width: 76px;
+    height: 33px;
+  }
+}
+.category-item {
+  display: block;
+  height: 170px;
+  border: 2px solid var(--color-primary);
+  border-radius: 30px;
+  padding: 28px 32px;
+  text-decoration: none;
+  color: $mainColorText;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  margin-bottom: 16px;
+  background-position: 100% 100%;
+
+  &:hover {
+    transition-duration: .25s;
+    color: $mainColorText;
+    background-color: var(--color-secondary);
+  }
+  &__title {
+    font-size: 20px;
+    line-height: 24px;
+    padding-right: 20px;
+  }
+}
+.c-category .row > div {
+  &:nth-child(2) .category-item {
+    background-position-x: 95%;
+  }
+  &:nth-child(3) .category-item {
+    background-position-x: 85%;
+  }
+  &:nth-child(4) .category-item,
+  &:nth-child(6) .category-item,
+  &:nth-child(11) .category-item,
+  &:nth-child(12) .category-item {
+    background-position-x: 88%;
+  }
+  &:nth-child(8) .category-item {
+    background-position: 87% 70%;
+  }
+}

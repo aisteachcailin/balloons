@@ -2,17 +2,22 @@
 
 .c-btn {
   border-radius: var(--border-radiius);
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   font-weight: 700;
   border: none;
+  height: 45px;
+  text-decoration: none;
   &--primary {
     color: #fff;
     background-color: var(--color-primary);
+    padding: 0 20px;
+    &:hover {
+      color: #fff;
+    }
   }
   &--catalog {
-    height: 45px;
     @include media(lg) {
       padding: 0 14px;
     }
@@ -22,7 +27,6 @@
   }
   &--search {
     padding: 0 20px;
-    height: 45px;
     position: absolute;
     right: -1px;
     top: -1px;
