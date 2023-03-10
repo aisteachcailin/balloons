@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: center;
   font-weight: 700;
-  border: none;
+  border: 1px solid transparent;
   height: 45px;
   text-decoration: none;
   &--primary {
@@ -15,6 +15,8 @@
     padding: 0 20px;
     &:hover {
       color: #fff;
+      transition-duration: .2s;
+      border: 1px solid $mainColorText;
     }
   }
   &--secondary {
@@ -22,7 +24,9 @@
     background-color: #fff;
     padding: 0 20px;
     &:hover {
+      transition-duration: .2s;
       color: var(--color-primary);
+      border: 1px solid var(--color-primary);
     }
   }
   &--catalog {

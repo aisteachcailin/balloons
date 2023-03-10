@@ -1,1 +1,149 @@
 @use "src/scss/variables" as *;
+
+.slider-goods {
+  &-top {
+    display: flex;
+    margin-bottom: 32px;
+
+    &__title {
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 30px;
+      margin-right: 14px;
+      margin-bottom: 0;
+    }
+    &__show-all {
+      display: block;
+      padding: 4px 14px;
+      width: 128px;
+      height: 30px;
+      border: 1px solid var(--color-primary);
+      border-radius: 30px;
+      text-decoration: none;
+      white-space: nowrap;
+      &:hover {
+        transition-duration: .2s;
+        color: $mainColorText;
+        border: 1px solid $mainColorText;
+      }
+    }
+  }
+}
+
+.goods-card {
+  padding: 16px 16px 60px;
+  position: relative;
+  cursor: pointer;
+
+  &__label {
+    position: absolute;
+    border-radius: 30px;
+    width: 64px;
+    height: 39px;
+    padding: 10px 0;
+    text-align: center;
+    font-weight: 700;
+
+    &--new {
+      background-color: var(--color-secondary);
+    }
+  }
+  &__img {
+    display: block;
+    margin: 0 auto 14px;
+  }
+  &__price {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  &__number {
+    color: #747474;
+    margin-bottom: 8px;
+  }
+  &__name {
+    margin-bottom: 8px;
+  }
+  &__count {
+    margin-bottom: 29px;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border: 1px solid #333;
+    border-radius: 30px;
+  }
+  &:hover {
+    &:before {
+      border: 2px solid var(--color-primary);
+    }
+  }
+  &__count-to-cart {
+    position: absolute;
+    margin-top: 12px;
+    left: 45px;
+  }
+}
+
+.goods-card-buy {
+  display: flex;
+  justify-content: space-between;
+  &__btn {
+    width: 93px;
+    height: 53px;
+    background-color: var(--color-primary);
+    border-radius: 30px;
+    background-image: url("../img/svg/cart.svg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border: 1px solid transparent;
+    &:hover {
+      transition-duration: .2s;
+      border: 1px solid #333333;
+    }
+  }
+  &__label {
+    position: relative;
+  }
+  &__count {
+    width: 100%;
+    max-width: 149px;
+    height: 53px;
+    text-align: center;
+    border-radius: 30px;
+    border: none;
+    background-color: #F0F0F0;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    &:focus {
+      outline: none;
+    }
+
+
+    &-btn {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      top: calc(50% - 10px);
+      font-size: 16px;
+      cursor: pointer;
+      z-index: 1;
+      &--dec {
+        left: 9px;
+      }
+      &--inc {
+        right: 9px;
+      }
+    }
+  }
+}

@@ -16,3 +16,11 @@ body {
 .content-wrap {
   flex: 1 0 auto;
 }
+.unselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
