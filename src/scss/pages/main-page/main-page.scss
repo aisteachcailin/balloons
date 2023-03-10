@@ -1,0 +1,25 @@
+@use "include/main-slider";
+@use "include/category";
+@use "include/info-block";
+@use "include/products";
+
+.slider-goods {
+  &-top {
+    display: flex;
+    &__title {
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 30px;
+      margin-right: 14px;
+      margin-bottom: 0;
+    }
+    &__show-all {
+      display: block;
+      padding: 4px 14px;
+      height: 30px;
+      border: 1px solid var(--color-primary);
+      border-radius: 30px;
+      text-decoration: none;
+    }
+  }
+}

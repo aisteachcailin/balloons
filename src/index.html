@@ -35,10 +35,10 @@
                         </ul>
                     </nav>
                     <a href="tel:+78314371305" class="header-phone">+7 831 437-13-05</a>
-                    <a href="/" class="header-callback">
-                        <span class="header-callback__icon"></span>
-                        Обратный звонок
-                    </a>
+                    <!--                    <a href="/" class="header-callback">-->
+                    <!--                        <span class="header-callback__icon"></span>-->
+                    <!--                        Обратный звонок-->
+                    <!--                    </a>-->
                 </div>
             </div>
         </div>
@@ -53,12 +53,6 @@
                         Каталог товаров
                     </button>
                     <form action="/" class="header-search">
-                        <select class="form-select" aria-label="search">
-                            <option selected>Везде</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
                         <label>
                             <input type="text" id="search" placeholder="Искать товары" class="header-search__input">
                         </label>
@@ -109,33 +103,37 @@
 
         <section class="main-slider">
             <div class="container">
-                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <div class="slider-item" style="background: url(../img/slide-1.jpg) 0 0 no-repeat;">
+                            <div class="slider-item" style="background: url(/img/slide-1.jpg) 0 0 no-repeat;">
                                 <h2 class="slider-item__title">Шарики на детский <br> день рождения</h2>
-                                <a href="#" class="slider-item__btn c-btn c-btn--primary">Заказать</a>
+                                <a href="#" class="slider-item__btn c-btn c-btn--secondary">Заказать</a>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <div class="slider-item" style="background: url(../img/slide-1.jpg) 0 0 no-repeat;">
+                            <div class="slider-item" style="background: url(/img/slide-1.jpg) 0 0 no-repeat;">
                                 <h2 class="slider-item__title">Шарики на детский <br> день рождения</h2>
-                                <a href="#" class="slider-item__btn c-btn c-btn--primary">Заказать</a>
+                                <a href="#" class="slider-item__btn c-btn c-btn--secondary">Заказать</a>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <div class="slider-item" style="background: url(../img/slide-1.jpg) 0 0 no-repeat;">
+                            <div class="slider-item" style="background: url(/img/slide-1.jpg) 0 0 no-repeat;">
                                 <h2 class="slider-item__title">Шарики на детский <br> день рождения</h2>
-                                <a href="#" class="slider-item__btn c-btn c-btn--primary">Заказать</a>
+                                <a href="#" class="slider-item__btn c-btn c-btn--secondary">Заказать</a>
                             </div>
                         </div>
                     </div>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>
@@ -147,71 +145,97 @@
             <div class="container">
                 <div class="row">
                     <div class="col-3">
-                        <a class="category-item" style="background-image: url(../img/cat-1.png);">
+                        <a class="category-item" style="background-image: url(/img/cat-1.png);">
                             <h4 class="category-item__title">Воздушные шары из латекса</h4>
                         </a>
                     </div>
                     <div class="col-3">
-                        <a class="category-item" style="background-image: url(../img/cat-2.png);">
+                        <a class="category-item" style="background-image: url(/img/cat-2.png);">
                             <h4 class="category-item__title">Воздушные шары из латекса
                                 с&nbsp;рисунком</h4>
                         </a>
                     </div>
                     <div class="col-3">
-                        <a class="category-item" style="background-image: url(../img/cat-3.png);">
+                        <a class="category-item" style="background-image: url(/img/cat-3.png);">
                             <h4 class="category-item__title">Воздушные шары из фольги</h4>
                         </a>
                     </div>
                     <div class="col-3">
-                        <a class="category-item" style="background-image: url(../img/cat-4.png);">
+                        <a class="category-item" style="background-image: url(/img/cat-4.png);">
                             <h4 class="category-item__title">Воздушные шары из фольги с рисунком</h4>
                         </a>
                     </div>
-
                     <div class="col-3">
-                        <a class="category-item" style="background-image: url(../img/cat-5.png);">
+                        <a class="category-item" style="background-image: url(/img/cat-5.png);">
                             <h4 class="category-item__title">Гелий и оборудование</h4>
                         </a>
                     </div>
                     <div class="col-3">
-                        <a class="category-item" style="background-image: url(../img/cat-6.png);">
+                        <a class="category-item" style="background-image: url(/img/cat-6.png);">
                             <h4 class="category-item__title">Праздничная посуда</h4>
                         </a>
                     </div>
                     <div class="col-3">
-                        <a class="category-item" style="background-image: url(../img/cat-7.png);">
+                        <a class="category-item" style="background-image: url(/img/cat-7.png);">
                             <h4 class="category-item__title">Товары для праздника</h4>
                         </a>
                     </div>
                     <div class="col-3">
-                        <a class="category-item" style="background-image: url(../img/cat-8.png);">
+                        <a class="category-item" style="background-image: url(/img/cat-8.png);">
                             <h4 class="category-item__title">Карнавальная продукция</h4>
                         </a>
                     </div>
-
                     <div class="col-3">
-                        <a class="category-item" style="background-image: url(../img/cat-9.png);">
+                        <a class="category-item" style="background-image: url(/img/cat-9.png);">
                             <h4 class="category-item__title">Флористика</h4>
                         </a>
                     </div>
                     <div class="col-3">
-                        <a class="category-item" style="background-image: url(../img/cat-10.png);">
+                        <a class="category-item" style="background-image: url(/img/cat-10.png);">
                             <h4 class="category-item__title">Подарочная упаковка</h4>
                         </a>
                     </div>
                     <div class="col-3">
-                        <a class="category-item" style="background-image: url(../img/cat-11.png);">
+                        <a class="category-item" style="background-image: url(/img/cat-11.png);">
                             <h4 class="category-item__title">Полиграфия, канцелярия, игрушки</h4>
                         </a>
                     </div>
                     <div class="col-3">
-                        <a class="category-item" style="background-image: url(../img/cat-12.png);">
+                        <a class="category-item" style="background-image: url(/img/cat-12.png);">
                             <h4 class="category-item__title">Коллекция</h4>
                         </a>
                     </div>
                 </div>
             </div>
+        </section>
 
+        <section class="info-block">
+            <div class="container">
+                <div class="info-block-wrap">
+                    <h4 class="info-block__title">Оптовая продажа воздушных шаров и товаров для праздника</h4>
+                    <p class="info-block__text">
+                        Компания «Премьер» основана в 2009 году - это молодая
+                        динамично-развивающаяся компания, уверенно занявшая лидирующую позицию по оптовой продаже
+                        товаров
+                        для праздника и воздушных шаров в Нижнем Новгороде.
+                    </p>
+                    <p class="info-block__text info-block__text--no-margin">
+                        Наша цель - объединить весь праздничный ассортимент в одном месте по привлекательным ценам,
+                        поэтому
+                        здесь Вы можете купить все для праздника, а также воздушные шары оптом и в розницу.
+                    </p>
+                    <img src="/img/bg-balloons.png" alt="" class="info-block__img">
+                </div>
+            </div>
+        </section>
+
+        <section class="slider-goods">
+            <div class="container">
+                <div class="slider-goods-top">
+                    <h4 class="slider-goods-top__title">Новинки</h4>
+                    <a href="#" class="slider-goods-top__show-all">Смотреть всё</a>
+                </div>
+            </div>
         </section>
         <!-- content end -->
 

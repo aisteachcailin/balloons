@@ -33,6 +33,10 @@
       text-decoration: none;
       color: $mainColorText;
       padding: 0;
+      &:hover {
+        transition-duration: .2s;
+        color: var(--color-primary);
+      }
     }
     .dropdown-toggle::after {
       display: none;
@@ -56,7 +60,8 @@
   font-weight: 600;
   text-decoration: none;
   &:hover {
-    color: $secondaryColorText;
+    transition-duration: .2s;
+    color: var(--color-primary);
   }
 }
 .header-callback {
@@ -137,6 +142,7 @@
   justify-content: space-between;
   margin-bottom: 0;
   padding: 0;
+  margin-left: auto;
   &__icon {
     margin-bottom: 4px;
 
@@ -174,7 +180,17 @@
     color: $mainColorText;
 
     &:hover {
-      color: $mainColorText;
+      transition-duration: .2s;
+      color: var(--color-primary);
+
+      .header-icons__icon {
+        &--human,
+        &--heart,
+        &--cart {
+          transition-duration: .2s;
+          fill: var(--color-primary);
+        }
+      }
     }
   }
 }
@@ -190,27 +206,21 @@
   width: 100%;
 
   @include media(lg) {
-    margin-left: 18px;
-    margin-right: 18px;
-    max-width: 304px;
-  }
-
-  @include media(xl) {
     margin-left: 24px;
     margin-right: 24px;
-    max-width: 377px;
+    max-width: 212px;
   }
 
-  @include media() {
-    max-width: 400px;
-    margin-right: 62px;
-  }
+  //@include media() {
+  //  max-width: 400px;
+  //  margin-right: 62px;
+  //}
 
   &__input {
     background-color: transparent;
     border: none;
     outline: none;
-    margin-left: 16px;
+    margin-left: 7px;
   }
   .form-select {
     max-width: 108px;

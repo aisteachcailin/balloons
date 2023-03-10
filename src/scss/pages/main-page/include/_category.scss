@@ -1,33 +1,5 @@
-@use 'variables' as *;
+@use 'src/scss/variables' as *;
 
-.slider-item {
-  padding: 45px 80px;
-  height: 348px;
-  &__title {
-    font-size: 36px;
-    color: #FFF;
-    font-weight: 700;
-    margin-bottom: 53px;
-  }
-}
-
-.main-slider {
-  margin-bottom: 57px;
-  .carousel-indicators {
-    right: auto;
-    margin-left: 80px;
-    [data-bs-target] {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-    }
-  }
-  .carousel-control-next-icon {
-    background-image: url("../img/svg/arrow.svg");
-    width: 76px;
-    height: 33px;
-  }
-}
 .category-item {
   display: block;
   height: 170px;

@@ -1,0 +1,36 @@
+@use 'src/scss/variables' as *;
+
+.info-block {
+  background-color: var(--color-secondary);
+  @include media(xl) {
+    margin: 114px 0 105px;
+    padding: 46px 0 54px;
+  }
+  &-wrap {
+    position: relative;
+  }
+  &__title {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 34px;
+    margin-bottom: 28px;
+    max-width: 593px;
+  }
+  &__text {
+    max-width: 885px;
+    margin-bottom: 10px;
+    &--no-margin {
+      margin-bottom: 0;
+    }
+  }
+  &__img {
+    position: absolute;
+    top: -104px;
+    @include media(xl) {
+      right: 0;
+    }
+    @include media() {
+      right: 70px;
+    }
+  }
+}
