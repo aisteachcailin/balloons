@@ -25,7 +25,7 @@
     }
   }
   .carousel-control-next-icon {
-    background-image: url("../img/svg/arrow.svg");
+    background-image: url($imgPath + "/svg/arrow.svg");
     width: 76px;
     height: 33px;
   }

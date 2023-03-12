@@ -2,12 +2,36 @@
 
 .c-header {
   margin-bottom: 32px;
+
+  .dropdown-menu {
+    --bs-dropdown-border-radius: 0;
+    --bs-dropdown-item-padding-y: 0.625rem;
+    --bs-dropdown-padding-y: 1.25rem;
+    --bs-dropdown-link-hover-bg: transparent;
+    --bs-dropdown-link-hover-color: var(--color-primary);
+    border-top: none;
+    width: 222px;
+  }
+
+  .dropdown-item {
+    white-space: normal;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .dropdown-menu-wrap {
+    position: absolute;
+    width: 222px;
+    height: 30px;
+    left: -18px;
+  }
 }
+
 .header-top {
   background-color: var(--color-secondary);
   padding: 14px 0;
   margin-bottom: 32px;
 }
+
 .menu {
   list-style: none;
   padding: 0;
@@ -18,6 +42,7 @@
     display: inline-block;
     padding-right: 16px;
     cursor: pointer;
+
     &:not(:last-child) {
       @include media(lg) {
         margin-right: 24px;
@@ -26,58 +51,64 @@
         margin-right: 48px;
       }
     }
-    &--without-arrow {
-      color: $secondaryColorText;
-    }
+
     .nav-link {
       text-decoration: none;
       color: $mainColorText;
       padding: 0;
+
       &:hover {
         transition-duration: .2s;
         color: var(--color-primary);
       }
+      &:focus-visible {
+        outline: none;
+      }
     }
+
     .dropdown-toggle::after {
       display: none;
     }
-    &:not(&--without-arrow) .nav-link {
-      &:before {
-        content: '';
-        background: url("../img/svg/chevrone.svg") no-repeat 0 0;
-        position: absolute;
-        width: 10px;
-        height: 6px;
-        right: 0;
-        top: calc(50% - 1px);
+
+    &--with-arrow {
+      .nav-link {
+        &:before {
+          content: '';
+          background: url($imgPath + "/svg/chevrone.svg") no-repeat 0 0;
+          position: absolute;
+          width: 10px;
+          height: 6px;
+          right: 0;
+          top: calc(50% - 1px);
+          transition-duration: .2s;
+        }
+        &:hover:before {
+          background: url($imgPath + "/svg/chevrone-hover.svg") no-repeat 0 0;
+        }
       }
     }
   }
 }
-.header-phone,
+
 .header-callback {
   color: $secondaryColorText;
   font-weight: 600;
   text-decoration: none;
+  position: relative;
+
   &:hover {
     transition-duration: .2s;
     color: var(--color-primary);
   }
-}
-.header-callback {
-  padding-left: 23px;
-  position: relative;
 
-  &:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 1px;
+  &__icon-phone {
     width: 16px;
     height: 16px;
-    background: url("../img/svg/phone.svg");
+    margin-right: 4px;
+    margin-top: -2px;
   }
 }
+
 .header-row {
   display: flex;
   align-items: center;
@@ -85,6 +116,7 @@
   //grid-template: auto / 235px 212px;
   //align-items: center;
 }
+
 .header-logo {
   @include media(lg) {
     max-width: 170px;
@@ -97,6 +129,7 @@
   @include media(xxl) {
     margin-right: 59px;
   }
+
   &__img {
     width: 100%;
     height: auto;
@@ -112,12 +145,14 @@
   margin-right: 14px;
   height: 12px;
   width: 14px;
+
   &__line {
     margin-top: 5px;
     height: 2px;
     width: 100%;
     background-color: #fff;
     border-radius: 20px;
+
     &:before,
     &:after {
       content: '';
@@ -128,14 +163,17 @@
       background-color: #fff;
       border-radius: 20px;
     }
+
     &:before {
       margin-top: 4px;
     }
+
     &:after {
       margin-top: -4px;
     }
   }
 }
+
 .header-icons {
   list-style: none;
   display: flex;
@@ -143,6 +181,7 @@
   margin-bottom: 0;
   padding: 0;
   margin-left: auto;
+
   &__icon {
     margin-bottom: 4px;
 
@@ -151,17 +190,20 @@
       height: 19px;
       fill: $mainColorText;
     }
+
     &--heart {
       width: 20px;
       height: 18px;
       fill: $mainColorText;
     }
+
     &--cart {
       width: 22px;
       height: 19px;
       fill: $mainColorText;
     }
   }
+
   &__item {
     &:not(:last-child) {
       @include media(lg) {
@@ -172,6 +214,7 @@
       }
     }
   }
+
   &__link {
     display: flex;
     flex-direction: column;
@@ -211,42 +254,17 @@
     max-width: 212px;
   }
 
-  //@include media() {
-  //  max-width: 400px;
-  //  margin-right: 62px;
-  //}
-
   &__input {
     background-color: transparent;
     border: none;
     outline: none;
     margin-left: 7px;
   }
-  .form-select {
-    max-width: 108px;
-    border-radius: var(--border-radiius);
-    font-size: 14px;
-    border: none;
-    height: 30px;
-    padding: 4px 24px;
-    background-color: var(--color-secondary);
-    background-image: url("../img/svg/chevrone.svg");
-    background-size: 12px;
-    background-position: right 24px center;
-    cursor: pointer;
-    @include media(lg) {
-      padding: 4px 12px;
-    }
-    @include media(xl) {
-      padding: 4px 24px;
-    }
-    &:focus{
-      box-shadow: none;
-    }
-  }
 }
+
 .search-icon {
   width: 18px;
   height: 18px;
   fill: #fff;
 }
+

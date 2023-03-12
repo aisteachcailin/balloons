@@ -24,3 +24,9 @@ body {
   -ms-user-select: none;
   user-select: none;
 }
+:root {
+  --color-primary: #678AEF;
+  --color-secondary: #D8E2FE;
+  --border-radiius: 30px;
+  --bs-link-hover-color: #678AEF;
+}

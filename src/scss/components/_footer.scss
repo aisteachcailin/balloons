@@ -99,13 +99,13 @@ $footerColorText: #747474;
     height: 28px;
     margin: 0 9px;
     &--ok {
-      background: url("../img/svg/ok.svg") 0 0 no-repeat;
+      background: url($imgPath + "/svg/ok.svg") 0 0 no-repeat;
     }
     &--vk {
-      background: url("../img/svg/vk.svg") 0 0 no-repeat;
+      background: url($imgPath + "/svg/vk.svg") 0 0 no-repeat;
     }
     &--tg {
-      background: url("../img/svg/tg.svg") 0 0 no-repeat;
+      background: url($imgPath + "/svg/tg.svg") 0 0 no-repeat;
     }
   }
 }
