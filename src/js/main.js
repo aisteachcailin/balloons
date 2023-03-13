@@ -32,17 +32,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     arSliders.forEach(el => initSliderGoods(el))
 
+
+    // Показать подменю при наведении мыши
+
     const dropdownElementList = document.querySelectorAll('.js-dropdown .nav-link')
     const dropdownList = [...dropdownElementList].map(el => new bootstrap.Dropdown(el))
 
     dropdownElementList.forEach((el, i) => {
-        el.addEventListener('mouseenter', e => {
-            setTimeout(() => {
-                console.log(e)
-                dropdownList[i].show()
+        const parent = el.closest('.js-dropdown')
+        let timeOut
+
+        el.addEventListener('mouseenter', () => {
+            parent.classList.add('dropdown-show')
+
+            // Задержку показа подменю, чтобы избавиться от случайного наведения на пункт меню
+            timeOut = setTimeout(() => {
+                if (parent.classList.contains('dropdown-show')) {
+                    dropdownList[i].show()
+                }
             }, 200)
         })
-        el.closest('.js-dropdown')
-            .addEventListener('mouseleave', () => dropdownList[i].hide())
+
+        parent.addEventListener('mouseleave', () => {
+            parent.classList.remove('dropdown-show')
+            clearTimeout(timeOut)
+            dropdownList[i].hide()
+        })
     })
 })

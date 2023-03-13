@@ -24,6 +24,21 @@ body {
   -ms-user-select: none;
   user-select: none;
 }
+.dropdown-menu {
+  --bs-dropdown-border-radius: 0;
+  --bs-dropdown-item-padding-y: 0.625rem;
+  --bs-dropdown-padding-y: 1.25rem;
+  --bs-dropdown-link-hover-bg: transparent;
+  --bs-dropdown-link-hover-color: var(--color-primary);
+  border-top: none;
+  width: 222px;
+}
+
+.dropdown-item {
+  white-space: normal;
+  font-size: 14px;
+  line-height: 18px;
+}
 :root {
   --color-primary: #678AEF;
   --color-secondary: #D8E2FE;

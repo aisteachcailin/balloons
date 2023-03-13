@@ -15,21 +15,19 @@
     <header class="c-header">
         <div class="header-top">
             <div class="container">
-                <div class="d-flex justify-content-between align-content-center">
+                <div class="d-flex justify-content-between align-items-center">
                     <nav>
                         <ul class="menu nav">
                             <li class="menu__item menu__item--with-arrow nav-item js-dropdown">
-                                <a class="nav-link" data-bs-offset="-18,14" data-bs-toggle="dropdown" href="#"
+                                <a class="nav-link" data-bs-offset="-18,0" data-bs-toggle="dropdown" href="#"
                                    role="button"
                                    aria-expanded="false">Покупателям</a>
-                                <div class="dropdown-menu-wrap">
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Семинары и фестивали</a></li>
-                                        <li><a class="dropdown-item" href="#">Возврат товара</a></li>
-                                        <li><a class="dropdown-item" href="#">Политика конфиденциальности</a></li>
-                                        <li><a class="dropdown-item" href="#">Пользовательское соглашение</a></li>
-                                    </ul>
-                                </div>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Семинары и фестивали</a></li>
+                                    <li><a class="dropdown-item" href="#">Возврат товара</a></li>
+                                    <li><a class="dropdown-item" href="#">Политика конфиденциальности</a></li>
+                                    <li><a class="dropdown-item" href="#">Пользовательское соглашение</a></li>
+                                </ul>
                             </li>
                             <li class="menu__item"><a href="/" class="nav-link">Доставка и оплата</a></li>
                             <li class="menu__item"><a href="/" class="nav-link">Скидки</a></li>
@@ -59,9 +57,18 @@
                         Каталог товаров
                     </button>
                     <form action="/" class="header-search">
-                        <label>
-                            <input type="text" id="search" placeholder="Искать товары" class="header-search__input">
+                        <label for="search" class="header-search__label">
+                            <input type="text" id="search" placeholder="Искать товары"
+                                   class="header-search__input">
                         </label>
+                        <ul class="header-search-hint">
+                            <li class="header-search-hint__item">
+                                <a href="#" class="header-search-hint__link">Шарики сердце</a>
+                            </li>
+                            <li class="header-search-hint__item">
+                                <a href="#" class="header-search-hint__link">Шарики 8 марта</a>
+                            </li>
+                        </ul>
                         <button type="submit" class="c-btn c-btn--primary c-btn--search">
                             <svg class="search-icon" role="img">
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink"
