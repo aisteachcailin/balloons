@@ -45,3 +45,9 @@ body {
   --border-radiius: 30px;
   --bs-link-hover-color: #678AEF;
 }
+.loaded .smooth-animation {
+  transition-duration: .2s;
+}
+a:hover {
+  transition-duration: .2s;
+}

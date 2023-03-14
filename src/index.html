@@ -52,16 +52,16 @@
                     <a class="header-logo" href="/">
                         <img src="/img/svg/logo.svg" alt="" class="header-logo__img">
                     </a>
-                    <button class="c-btn c-btn--primary c-btn--catalog">
+                    <button class="c-btn c-btn--primary c-btn--catalog js-open-catalog">
                         <span class="catalog-lines"><span class="catalog-lines__line"></span></span>
                         Каталог товаров
                     </button>
-                    <form action="/" class="header-search">
+                    <form action="/" class="header-search" data-hint="false">
                         <label for="search" class="header-search__label">
                             <input type="text" id="search" placeholder="Искать товары"
                                    class="header-search__input">
                         </label>
-                        <ul class="header-search-hint">
+                        <ul class="header-search-hint smooth-animation">
                             <li class="header-search-hint__item">
                                 <a href="#" class="header-search-hint__link">Шарики сердце</a>
                             </li>
@@ -108,13 +108,276 @@
                 </div>
             </div>
         </div>
+
+        <!--        Catalog         -->
+        <section class="catalog-menu smooth-animation">
+            <div class="container">
+                <div class="row">
+                    <div class="col-2">
+                        <ul class="catalog-menu-list js-catalog-list">
+                            <li class="catalog-menu-list__item active" data-category="1">
+                                <a href="#" class="catalog-menu-list__link">Категория 1</a>
+                            </li>
+                            <li class="catalog-menu-list__item" data-category="2">
+                                <a href="#" class="catalog-menu-list__link">Категория 2</a>
+                            </li>
+                            <li class="catalog-menu-list__item" data-category="3">
+                                <a href="#" class="catalog-menu-list__link">Категория 3</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-10">
+                        <div class="catalog-category">
+                            <div class="catalog-category-content show" data-content-category="1">
+                                <div class="catalog-category__item">
+                                    <a href="#" class="catalog-category__title">Заголовок</a>
+                                    <ul class="catalog-category-list">
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="catalog-category__item">
+                                    <a href="#" class="catalog-category__title">Заголовок</a>
+                                    <ul class="catalog-category-list">
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="catalog-category__item">
+                                    <a href="#" class="catalog-category__title">Заголовок</a>
+                                    <ul class="catalog-category-list">
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="catalog-category__item">
+                                    <a href="#" class="catalog-category__title">Заголовок</a>
+                                    <ul class="catalog-category-list">
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="catalog-category-content" data-content-category="2">
+                                <div class="catalog-category__item">
+                                    <a href="#" class="catalog-category__title">Заголовок категории 2</a>
+                                    <ul class="catalog-category-list">
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="catalog-category__item">
+                                    <a href="#" class="catalog-category__title">Заголовок</a>
+                                    <ul class="catalog-category-list">
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="catalog-category-content" data-content-category="3">
+                                <div class="catalog-category__item">
+                                    <a href="#" class="catalog-category__title">Заголовок категории 3</a>
+                                    <ul class="catalog-category-list">
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="catalog-category__item">
+                                    <a href="#" class="catalog-category__title">Заголовок</a>
+                                    <ul class="catalog-category-list">
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                        <li class="catalog-category-list__item">
+                                            <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </header>
 
     <main class="content-wrap">
 
-        <!-- content start -->
+        <!-- Content start -->
 
-        <!--   banner   -->
+        <!--   Banner   -->
         <section class="main-slider">
             <div class="container">
                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -155,7 +418,7 @@
             </div>
         </section>
 
-        <!--   category   -->
+        <!--   Category   -->
         <section class="c-category">
             <div class="container">
                 <div class="row">
@@ -224,7 +487,7 @@
             </div>
         </section>
 
-        <!--   wholesale   -->
+        <!--   Wholesale   -->
         <section class="с-wholesale">
             <div class="container">
                 <div class="с-wholesale-wrap">
@@ -245,7 +508,7 @@
             </div>
         </section>
 
-        <!--   new products   -->
+        <!--   New products   -->
         <section class="section-goods">
             <div class="container">
                 <div class="section-goods-wrap">
@@ -276,7 +539,7 @@
                                     <div class="goods-card-buy">
                                         <div class="goods-card-buy__label">
                                             <label>
-                                                <input type="number" class="goods-card-buy__count" value="1">
+                                                <input type="text" class="goods-card-buy__count" value="1">
                                             </label>
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--inc js-card-btn-inc">+</span>
@@ -308,7 +571,7 @@
                                     <div class="goods-card-buy">
                                         <div class="goods-card-buy__label">
                                             <label>
-                                                <input type="number" class="goods-card-buy__count" value="1">
+                                                <input type="text" class="goods-card-buy__count" value="1">
                                             </label>
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--inc js-card-btn-inc">+</span>
@@ -340,7 +603,7 @@
                                     <div class="goods-card-buy">
                                         <div class="goods-card-buy__label">
                                             <label>
-                                                <input type="number" class="goods-card-buy__count" value="1">
+                                                <input type="text" class="goods-card-buy__count" value="1">
                                             </label>
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--inc js-card-btn-inc">+</span>
@@ -372,7 +635,7 @@
                                     <div class="goods-card-buy">
                                         <div class="goods-card-buy__label">
                                             <label>
-                                                <input type="number" class="goods-card-buy__count" value="1">
+                                                <input type="text" class="goods-card-buy__count" value="1">
                                             </label>
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--inc js-card-btn-inc">+</span>
@@ -404,7 +667,7 @@
                                     <div class="goods-card-buy">
                                         <div class="goods-card-buy__label">
                                             <label>
-                                                <input type="number" class="goods-card-buy__count" value="1">
+                                                <input type="text" class="goods-card-buy__count" value="1">
                                             </label>
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--inc js-card-btn-inc">+</span>
@@ -423,7 +686,7 @@
             </div>
         </section>
 
-        <!--   promo   -->
+        <!--   Promo   -->
         <section class="section-goods">
             <div class="container">
                 <div class="section-goods-wrap">
@@ -454,7 +717,7 @@
                                     <div class="goods-card-buy">
                                         <div class="goods-card-buy__label">
                                             <label>
-                                                <input type="number" class="goods-card-buy__count" value="1">
+                                                <input type="text" class="goods-card-buy__count" value="1">
                                             </label>
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--inc js-card-btn-inc">+</span>
@@ -486,7 +749,7 @@
                                     <div class="goods-card-buy">
                                         <div class="goods-card-buy__label">
                                             <label>
-                                                <input type="number" class="goods-card-buy__count" value="1">
+                                                <input type="text" class="goods-card-buy__count" value="1">
                                             </label>
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--inc js-card-btn-inc">+</span>
@@ -518,7 +781,7 @@
                                     <div class="goods-card-buy">
                                         <div class="goods-card-buy__label">
                                             <label>
-                                                <input type="number" class="goods-card-buy__count" value="1">
+                                                <input type="text" class="goods-card-buy__count" value="1">
                                             </label>
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--inc js-card-btn-inc">+</span>
@@ -550,7 +813,7 @@
                                     <div class="goods-card-buy">
                                         <div class="goods-card-buy__label">
                                             <label>
-                                                <input type="number" class="goods-card-buy__count" value="1">
+                                                <input type="text" class="goods-card-buy__count" value="1">
                                             </label>
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--inc js-card-btn-inc">+</span>
@@ -582,7 +845,7 @@
                                     <div class="goods-card-buy">
                                         <div class="goods-card-buy__label">
                                             <label>
-                                                <input type="number" class="goods-card-buy__count" value="1">
+                                                <input type="text" class="goods-card-buy__count" value="1">
                                             </label>
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--inc js-card-btn-inc">+</span>
@@ -601,7 +864,7 @@
             </div>
         </section>
 
-        <!--   holidays   -->
+        <!--   Holidays   -->
         <section class="section-goods">
             <div class="container">
                 <div class="section-goods-wrap">
@@ -680,7 +943,7 @@
             </div>
         </section>
 
-        <!--   hits   -->
+        <!--   Hits   -->
         <section class="section-goods">
             <div class="container">
                 <div class="section-goods-wrap">
@@ -711,7 +974,7 @@
                                     <div class="goods-card-buy">
                                         <div class="goods-card-buy__label">
                                             <label>
-                                                <input type="number" class="goods-card-buy__count" value="1">
+                                                <input type="text" class="goods-card-buy__count" value="1">
                                             </label>
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--inc js-card-btn-inc">+</span>
@@ -743,7 +1006,7 @@
                                     <div class="goods-card-buy">
                                         <div class="goods-card-buy__label">
                                             <label>
-                                                <input type="number" class="goods-card-buy__count" value="1">
+                                                <input type="text" class="goods-card-buy__count" value="1">
                                             </label>
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--inc js-card-btn-inc">+</span>
@@ -775,7 +1038,7 @@
                                     <div class="goods-card-buy">
                                         <div class="goods-card-buy__label">
                                             <label>
-                                                <input type="number" class="goods-card-buy__count" value="1">
+                                                <input type="text" class="goods-card-buy__count" value="1">
                                             </label>
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--inc js-card-btn-inc">+</span>
@@ -807,7 +1070,7 @@
                                     <div class="goods-card-buy">
                                         <div class="goods-card-buy__label">
                                             <label>
-                                                <input type="number" class="goods-card-buy__count" value="1">
+                                                <input type="text" class="goods-card-buy__count" value="1">
                                             </label>
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--inc js-card-btn-inc">+</span>
@@ -839,7 +1102,7 @@
                                     <div class="goods-card-buy">
                                         <div class="goods-card-buy__label">
                                             <label>
-                                                <input type="number" class="goods-card-buy__count" value="1">
+                                                <input type="text" class="goods-card-buy__count" value="1">
                                             </label>
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--inc js-card-btn-inc">+</span>
@@ -858,7 +1121,7 @@
             </div>
         </section>
 
-        <!--   collection   -->
+        <!--   Collection   -->
         <section class="section-goods">
             <div class="container">
                 <div class="section-goods-wrap">
@@ -934,7 +1197,8 @@
                 </div>
             </div>
         </section>
-        <!-- content end -->
+
+        <!-- Content end -->
 
     </main>
 
