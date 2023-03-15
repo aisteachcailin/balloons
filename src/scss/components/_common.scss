@@ -1,3 +1,10 @@
+:root {
+  --color-primary: #678AEF;
+  --color-secondary: #D8E2FE;
+  --border-radiius: 30px;
+  --bs-link-hover-color: #678AEF;
+  --offset-compensator: 17px;
+}
 html, body {
   height: 100%;
 }
@@ -7,6 +14,11 @@ body {
   line-height: 18px;
   font-weight: 400;
   color: #333333;
+  padding-top: 78px;
+}
+.no-overflow {
+  overflow-y: hidden;
+  margin-right: var(--offset-compensator);
 }
 .wrapper {
   display: flex;
@@ -39,12 +51,7 @@ body {
   font-size: 14px;
   line-height: 18px;
 }
-:root {
-  --color-primary: #678AEF;
-  --color-secondary: #D8E2FE;
-  --border-radiius: 30px;
-  --bs-link-hover-color: #678AEF;
-}
+
 .loaded .smooth-animation {
   transition-duration: .2s;
 }

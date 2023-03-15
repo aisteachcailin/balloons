@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     arSliders.forEach(el => initSliderGoods(el)) // Инициализация слайдеров с товарами
     showSubmenu() // Отображение подменю
     hoverShowCategory() // Переключение отображения категорий в каталоге
-
+    stickyHeader () // Приклеиваем шапку к верху при скролле
 
     // Поиск. Пример для демонстрации подсказки.
     const search = document.getElementById('search')
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
  * Инициализация слайдера с товарами
  * @param sliderClass { String }
  */
-function initSliderGoods(sliderClass) {
+function initSliderGoods (sliderClass) {
     new Swiper(sliderClass, {
         breakpoints: {
             1270: {
@@ -53,7 +53,7 @@ function initSliderGoods(sliderClass) {
 /**
  * Показать подменю при наведении мыши
  */
-function showSubmenu() {
+function showSubmenu () {
     const dropdownElementList = document.querySelectorAll('.js-dropdown .nav-link')
     const dropdownList = [...dropdownElementList].map(el => new bootstrap.Dropdown(el))
 
@@ -80,6 +80,9 @@ function showSubmenu() {
     })
 }
 
+/**
+ * Отображение подкатегорий при наведении мыши на категорию в каталоге
+ */
 function hoverShowCategory () {
     const categories = document.querySelectorAll('.js-catalog-list > li')
 
@@ -99,6 +102,18 @@ function hoverShowCategory () {
     })
 }
 
+/**
+ * Приклеенная шапка к верху страницы
+ */
+function stickyHeader () {
+    window.addEventListener('scroll', () => {
+        if (scrollY > 72) {
+            document.body.classList.add('header-fixed')
+        } else {
+            document.body.classList.remove('header-fixed')
+        }
+    })
+}
 
 /********************************* Service scripts *****************************************/
 

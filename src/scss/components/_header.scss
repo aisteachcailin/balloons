@@ -1,14 +1,35 @@
 @use "../variables" as *;
 
 .c-header {
-  margin-bottom: 32px;
+  margin-bottom: 26px;
 }
-
+.show-catalog .header-top {
+  padding-right: var(--offset-compensator);
+}
 .header-top {
   background-color: var(--color-secondary);
-  margin-bottom: 32px;
+  margin-bottom: 26px;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
-
+.header-fixed.show-catalog .header-bottom {
+  padding-right: var(--offset-compensator);
+}
+.header-bottom {
+  padding: 6px 0;
+}
+.header-fixed .header-bottom {
+  position: fixed;
+  background-color: #FFF;
+  z-index: 12;
+  width: 100%;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, .2);
+  top: 0;
+}
+.header-fixed {
+  padding-top: 138px;
+}
 .menu {
   list-style: none;
   padding: 0;
@@ -152,6 +173,10 @@
   }
 }
 
+.show-catalog {
+  margin-right: var(--offset-compensator);
+  overflow-y: hidden;
+}
 .show-catalog .catalog-lines {
   &__line {
     background-color: transparent;
@@ -232,7 +257,7 @@
 .header-search {
   position: relative;
   width: 100%;
-  z-index: 11;
+  z-index: 12;
 
   &[data-hint=true]:focus-within .header-search-hint {
     opacity: 1;
@@ -290,22 +315,26 @@
   height: 18px;
   fill: #fff;
 }
-
+.header-fixed .catalog-menu {
+  top: 62px;
+}
 .catalog-menu {
   position: fixed;
   left: 0;
   pointer-events: none;
   opacity: 0;
+  transform: translateX(-20px);
   margin-top: 8px;
   width: 100%;
   //background-color: #FFF;
   height: 100%;
-  z-index: 10;
+  z-index: 11;
   padding: 32px 0;
   background: linear-gradient(90deg,#f6f6f6 0,#f6f6f6 51%,#fff 51%,#fff);
 }
 .show-catalog .catalog-menu {
   opacity: 1;
+  transform: translateX(0);
   pointer-events: auto;
 }
 .catalog-menu-list {
