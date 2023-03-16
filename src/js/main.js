@@ -1,3 +1,9 @@
+/**
+ * Created by AndreyBan
+ * in PhpStorm
+ * 07.03.2023
+ **/
+
 import '../scss/main.scss'
 import '../scss/style.scss'
 import '../scss/pages/main-page/main-page.scss'
@@ -11,29 +17,50 @@ document.addEventListener('DOMContentLoaded', () => {
     ]
 
     arSliders.forEach(el => initSliderGoods(el)) // Инициализация слайдеров с товарами
-    showSubmenu() // Отображение подменю
-    hoverShowCategory() // Переключение отображения категорий в каталоге
-    stickyHeader () // Приклеиваем шапку к верху при скролле
+    initScripts()
+})
 
-    // Поиск. Пример для демонстрации подсказки.
+/**
+ * Инициализация всех скриптов
+ */
+function initScripts () {
+    showSubmenu()
+    hoverShowCategory()
+    stickyHeader()
+    showHintSearch()
+    openCatalog()
+}
+
+/**
+ * Подсказка результатов поиска
+ */
+function showHintSearch () {
     const search = document.getElementById('search')
 
     search.addEventListener('input', () => {
+
+        //TODO: Пример для демонстрации подсказки. Тут нужно будет реализовать свой код.
+        // Рекомендация добавить debounce функцию от Lodash
+
         let hint = (search.value.length > 2).toString()
 
+        //** Отображем подсказку **//
         search.closest('.header-search').setAttribute('data-hint', hint)
     })
+}
 
-    // Открыть/закрыть каталог
+/**
+ * Открыть/закрыть каталог
+ */
+function openCatalog () {
     const btnCatalog = document.querySelector('.js-open-catalog')
     btnCatalog.addEventListener('click', () => document.body.classList.toggle('show-catalog'))
-})
-
+}
 /**
  * Инициализация слайдера с товарами
  * @param sliderClass { String }
  */
-function initSliderGoods (sliderClass) {
+function initSliderGoods(sliderClass) {
     new Swiper(sliderClass, {
         breakpoints: {
             1270: {
@@ -53,7 +80,7 @@ function initSliderGoods (sliderClass) {
 /**
  * Показать подменю при наведении мыши
  */
-function showSubmenu () {
+function showSubmenu() {
     const dropdownElementList = document.querySelectorAll('.js-dropdown .nav-link')
     const dropdownList = [...dropdownElementList].map(el => new bootstrap.Dropdown(el))
 
@@ -83,7 +110,7 @@ function showSubmenu () {
 /**
  * Отображение подкатегорий при наведении мыши на категорию в каталоге
  */
-function hoverShowCategory () {
+function hoverShowCategory() {
     const categories = document.querySelectorAll('.js-catalog-list > li')
 
     categories.forEach((el) => {
@@ -105,7 +132,7 @@ function hoverShowCategory () {
 /**
  * Приклеенная шапка к верху страницы
  */
-function stickyHeader () {
+function stickyHeader() {
     window.addEventListener('scroll', () => {
         if (scrollY > 72) {
             document.body.classList.add('header-fixed')
