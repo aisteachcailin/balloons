@@ -7,6 +7,7 @@
 import '../scss/main.scss'
 import '../scss/style.scss'
 import '../scss/pages/main-page/main-page.scss'
+import '../js/add-cart'
 
 window.addEventListener('load', () => document.body.classList.add('loaded'))
 document.addEventListener('DOMContentLoaded', () => {
