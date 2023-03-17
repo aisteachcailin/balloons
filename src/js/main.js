@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 /**
  * Инициализация всех скриптов
  */
-function initScripts () {
+function initScripts() {
     showSubmenu()
     hoverShowCategory()
     stickyHeader()
@@ -34,7 +34,7 @@ function initScripts () {
 /**
  * Подсказка результатов поиска
  */
-function showHintSearch () {
+function showHintSearch() {
     const search = document.getElementById('search')
 
     search.addEventListener('input', () => {
@@ -52,10 +52,11 @@ function showHintSearch () {
 /**
  * Открыть/закрыть каталог
  */
-function openCatalog () {
+function openCatalog() {
     const btnCatalog = document.querySelector('.js-open-catalog')
     btnCatalog.addEventListener('click', () => document.body.classList.toggle('show-catalog'))
 }
+
 /**
  * Инициализация слайдера с товарами
  * @param sliderClass { String }
@@ -133,13 +134,17 @@ function hoverShowCategory() {
  * Приклеенная шапка к верху страницы
  */
 function stickyHeader() {
-    window.addEventListener('scroll', () => {
-        if (scrollY > 72) {
-            document.body.classList.add('header-fixed')
-        } else {
-            document.body.classList.remove('header-fixed')
-        }
-    })
+    setStickyHeader()
+    window.addEventListener('scroll', setStickyHeader)
+}
+
+function setStickyHeader() {
+    console.log(scrollY)
+    if (scrollY > 72) {
+        document.body.classList.add('header-fixed')
+    } else {
+        document.body.classList.remove('header-fixed')
+    }
 }
 
 /********************************* Service scripts *****************************************/

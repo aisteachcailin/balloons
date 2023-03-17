@@ -222,6 +222,7 @@
   }
 
   &__item {
+    position: relative;
     &:not(:last-child) {
       @include media(lg) {
         margin-right: 16px;
@@ -229,6 +230,27 @@
       @include media(xxl) {
         margin-right: 32px;
       }
+    }
+   &--cart {
+     width: 63px;
+   }
+  }
+
+  &__count-cart {
+    position: absolute;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    right: 8px;
+    top: -6px;
+    width: 18px;
+    height: 18px;
+    background-color: var(--color-primary);
+    color: #fff;
+    font-size: 11px;
+    border-radius: 50%;
+    &.show {
+      display: flex;
     }
   }
 

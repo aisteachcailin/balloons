@@ -4,17 +4,35 @@
  * 16.03.2023
  **/
 
-document.addEventListener('DOMContentLoaded', () => {
-    addToCart()
-})
+document.addEventListener('DOMContentLoaded', addToCart)
 
 function addToCart() {
     actionBtnCount()
     validateCount()
     addItem()
     setCount()
+    refreshCart()
 }
 
+/**
+ * Обновление данных на значке корзины в шапке
+ */
+function refreshCart() {
+    const textCountCart = document.querySelector('.js-count-cart')
+    const textCart = textCountCart.parentElement.querySelector('.js-cart-text')
+    const cartData = getLocalStorage('cart')
+    let sumPrice = 0
+
+    textCountCart.innerText = cartData.length ?? '0'
+    textCountCart.classList.toggle('show', !!cartData.length)
+
+    cartData.forEach((el) => sumPrice += el['price'] * el['count'])
+    textCart.innerText = cartData.length ? `${sumPrice} ₽` : 'Корзина'
+}
+
+/**
+ * Функционал при нажатии на кнопку добавить в корзину
+ */
 function addItem() {
     const buttons = document.querySelectorAll('.js-add-cart')
 
@@ -24,46 +42,83 @@ function addItem() {
             const properties = product.getAttributeNames()
             const propertiesData = properties.filter(el => el.includes('data'))
             const propertiesNames = propertiesData.map(el => el.replace('data-', ''))
-            const countProducts = product.querySelector('.js-product-count').value
+            const addCountProducts = Number(product.querySelector('.js-product-count').value)
+            const countCartProducts = Number(product.getAttribute('data-count'))
+            const textCount = product.querySelector('.js-count-to-cart')
+            const countResult = (countCartProducts + addCountProducts).toString()
             const dataCart = {}
 
-            product.setAttribute('data-count', countProducts)
+            product.setAttribute('data-count', countResult)
+            textCount.innerText = countResult
+            textCount.parentElement.classList.add('show')
 
             propertiesNames.forEach((el, i) => {
                 dataCart[el] = product.getAttribute(propertiesData[i])
             })
 
             setLocalCart(dataCart)
+            refreshCart()
         })
     })
 }
 
+/**
+ * При обновленнии страницы расставляем количество товаров из localStorage
+ */
 function setCount() {
     if (localStorage.cart) {
         const data = JSON.parse(localStorage.cart)
 
         data.forEach((el) => {
             const item = document.querySelector(`.goods-card[data-id='${el.id}']`)
+            const textCount = item.querySelector('.js-count-to-cart')
+
             item.setAttribute('data-count', el.count)
-            item.querySelector('.js-product-count').value = el.count
+            textCount.innerText = el.count
+            textCount.parentElement.classList.add('show')
         })
     }
 }
 
+/**
+ * Сохраняем данные с добавленными товарами в localStorage
+ * @param data { Object }
+ */
 function setLocalCart(data) {
-    const localCart = localStorage.cart
-    const dataLocal = localCart ? JSON.parse(localCart) : []
+    const dataLocal = getLocalStorage('cart')
+
     if (dataLocal.length) {
         const index = dataLocal.findIndex(el => el.id === data.id)
-        if (index !== -1) {
+        if (index >= 0) {
             dataLocal[index] = data
         } else {
+            console.log('23')
             dataLocal.push(data)
         }
     } else {
         dataLocal.push(data)
     }
-    localStorage.cart = JSON.stringify(dataLocal)
+
+    setLocalStorage('cart', dataLocal)
+}
+
+/**
+ * Получение данных из localStorage по имени
+ * @param field { String } Имя поля
+ * @returns {any|*[]}
+ */
+function getLocalStorage(field) {
+    const local = localStorage[field]
+    return local ? JSON.parse(local) : []
+}
+
+/**
+ * Запись данных в localStorage
+ * @param field { String } Имя поля
+ * @param data Данные
+ */
+function setLocalStorage(field, data) {
+    localStorage[field] = JSON.stringify(data)
 }
 
 /**
