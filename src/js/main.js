@@ -65,7 +65,19 @@ function openCatalog() {
 function initSliderGoods(sliderClass) {
     new Swiper(sliderClass, {
         breakpoints: {
-            1270: {
+            320: {
+                slidesPerView: 2,
+                spaceBetween: 8
+            },
+            576: {
+                slidesPerView: 2,
+                spaceBetween: 16
+            },
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 16
+            },
+            1170: {
                 slidesPerView: 4,
                 spaceBetween: 24
             },
@@ -98,7 +110,7 @@ function showSubmenu() {
                 if (parent.classList.contains('dropdown-show')) {
                     dropdownList[i].show()
                 }
-            }, 200)
+            }, 100)
         })
 
         parent.addEventListener('mouseleave', () => {
@@ -140,7 +152,6 @@ function stickyHeader() {
 }
 
 function setStickyHeader() {
-    console.log(scrollY)
     if (scrollY > 72) {
         document.body.classList.add('header-fixed')
     } else {

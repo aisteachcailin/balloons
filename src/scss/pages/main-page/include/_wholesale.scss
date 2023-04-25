@@ -2,35 +2,93 @@
 
 .с-wholesale {
   background-color: var(--color-secondary);
+  padding: 12px 0 16px;
+  margin: 50px 0 24px;
+  @include media(sm) {
+    margin: 109px 0 65px;
+  }
+  @include media(md) {
+    padding: 42px 0 32px;
+  }
   @include media(xl) {
     margin: 114px 0 105px;
     padding: 46px 0 54px;
   }
   &-wrap {
-    position: relative;
+    @include media(lg) {
+      position: relative;
+    }
   }
   &__title {
-    font-size: 30px;
     font-weight: 700;
-    line-height: 34px;
     margin-bottom: 28px;
-    max-width: 593px;
+    font-size: 16px;
+    line-height: 20px;
+    max-width: 60vw;
+    @include media(md){
+      font-size: 24px;
+      line-height: 28px;
+      max-width: 483px;
+    }
+    @include media(lg){
+      font-size: 26px;
+      line-height: 30px;
+      max-width: 593px;
+    }
+    @include media(xxl){
+      font-size: 30px;
+      line-height: 34px;
+    }
   }
   &__text {
-    max-width: 885px;
     margin-bottom: 10px;
+    @include media(sm){
+      max-width: 65vw;
+    }
+    @include media(md){
+      max-width: 483px;
+    }
+    @include media(lg){
+      max-width: 688px;
+    }
+    @include media(xl){
+      max-width: 885px;
+    }
     &--no-margin {
       margin-bottom: 0;
+    }
+    &--mobile-padding {
+      padding-right: 25vw;
+      @include media(sm){
+        padding-right: 0;
+      }
     }
   }
   &__img {
     position: absolute;
-    top: -104px;
-    @include media(xl) {
-      right: 0;
+    right: 0;
+    overflow: hidden;
+    margin-top: -410px;
+    width: 118px;
+    @include media(sm) {
+      margin-top: -340px;
+      width: 182px;
+    }
+    @include media(lg) {
+      margin-top: 0;
+      width: auto;
+      top: -104px;
     }
     @include media() {
       right: 70px;
+    }
+    img {
+      width: 162px;
+      height: auto;
+      @include media(sm) {
+        width: 100%;
+        height: auto;
+      }
     }
   }
 }

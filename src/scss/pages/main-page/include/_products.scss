@@ -1,20 +1,43 @@
 @use "src/scss/variables" as *;
 
 .section-goods {
-  margin-bottom: 56px;
+  margin-bottom: 28px;
+  @include media(md) {
+    margin-bottom: 48px;
+  }
+  @include media(xxl) {
+    margin-bottom: 56px;
+  }
   &-wrap {
     position: relative;
   }
   &-top {
     display: flex;
     margin-bottom: 32px;
+    align-items: center;
+    justify-content: space-between;
+    @include media(sm) {
+      justify-content: flex-start;
+    }
 
     &__title {
       font-weight: 700;
-      font-size: 26px;
-      line-height: 30px;
+      font-size: 14px;
+      line-height: 18px;
       margin-right: 14px;
       margin-bottom: 0;
+      @include media(md) {
+        font-size: 20px;
+        line-height: 24px;
+      }
+      @include media(lg) {
+        font-size: 24px;
+        line-height: 28px;
+      }
+      @include media(lg) {
+        font-size: 26px;
+        line-height: 30px;
+      }
     }
     &__show-all {
       display: block;
@@ -35,9 +58,20 @@
 }
 
 .goods-card {
-  padding: 16px 18px 60px;
+  --v-rl-padding: 8px;
+  padding: 16px var(--v-rl-padding);
   position: relative;
   cursor: pointer;
+  @include media(sm) {
+    --v-rl-padding: 16px;
+    padding: var(--v-rl-padding) 18px 60px;
+  }
+  @include media(md) {
+    padding: var(--v-rl-padding) 18px 52px;
+  }
+  @include media(lg) {
+    padding: var(--v-rl-padding) 18px 60px;
+  }
 
   &__label {
     position: absolute;
@@ -61,12 +95,30 @@
   }
   &__img {
     display: block;
+    object-fit: cover;
     margin: 0 auto 14px;
+    width: 88px;
+    height: 88px;
+    @include media(md) {
+      width: 126px;
+      height: 126px;
+      margin: 0 auto 2px;
+    }
+    @include media(lg) {
+      width: 178px;
+      height: 178px;
+      margin: 0 auto 14px;
+    }
   }
   &__price {
-    font-size: 20px;
+    font-size: 14px;
+    line-height: 18px;
     font-weight: 700;
     margin-bottom: 10px;
+    @include media(lg) {
+      font-size: 20px;
+      line-height: 24px;
+    }
   }
   &__number {
     color: #747474;
@@ -74,11 +126,20 @@
   }
   &__name {
     margin-bottom: 10px;
-    height: 36px;
+    height: 54px;
+    @include media(sm) {
+      height: 36px;
+    }
   }
   &__count {
-    margin-bottom: 32px;
+    @include media(xs) {
+      margin-bottom: 14px;
+    }
+    @include media(lg) {
+      margin-bottom: 32px;
+    }
   }
+
   &:before {
     content: '';
     position: absolute;
@@ -95,29 +156,83 @@
       border: 2px solid var(--color-primary);
     }
   }
+
   &__count-to-cart {
     position: absolute;
     margin-top: 12px;
-    left: 45px;
     display: none;
+    left: 32px;
+
+    @include media(lg) {
+      left: 45px;
+    }
     &.show {
-      display: block;
+      @include media(sm) {
+        display: block;
+      }
     }
   }
 }
-
+.goods-promo {
+  .goods-card {
+    padding-bottom: 2px;
+    &:before {
+      border: 1px solid #D9D9D9;
+    }
+    &:hover {
+      &:before {
+        border: 2px solid var(--color-primary);
+      }
+    }
+    &__price {
+      display: flex;
+      justify-content: space-between;
+      &--now {
+        color: #9773F0CC;
+      }
+    }
+    &-buy__count {
+      background-color: #FFF;
+    }
+  }
+}
+.gray-wrap {
+  background-color: #F5F5F5;
+  padding: 12px var(--v-rl-padding) 16px;
+  border-bottom-left-radius: 29px;
+  border-bottom-right-radius: 29px;
+  width: calc(100% + var(--v-rl-padding) * 2);
+  margin-left: calc(0px - var(--v-rl-padding));
+  @include media(sm) {
+    padding: 12px var(--v-rl-padding) 60px;
+  }
+}
 .goods-card-buy {
   display: flex;
   justify-content: space-between;
+  @include media(md) {
+    align-items: center;
+  }
+  @include media(lg) {
+    align-items: flex-start;
+  }
   &__btn {
-    width: 93px;
-    height: 53px;
     background-color: var(--color-primary);
     border-radius: 30px;
     background-image: url($imgPath + "/svg/cart.svg");
     background-repeat: no-repeat;
     background-position: 50% 50%;
     border: 1px solid transparent;
+    width: 100%;
+    height: 39px;
+    @include media(md) {
+      width: 74px;
+      height: 39px;
+    }
+    @include media(lg) {
+      width: 93px;
+      height: 53px;
+    }
     &:hover {
       transition-duration: .2s;
       border: 1px solid #333333;
@@ -125,17 +240,30 @@
   }
   &__label {
     position: relative;
+    display: none;
+    @include media(sm) {
+      display: block;
+    }
   }
   &__count {
     width: 100%;
-    max-width: 149px;
-    height: 53px;
+
     text-align: center;
     border-radius: 30px;
     border: none;
     background-color: #F0F0F0;
     font-size: 16px;
     -moz-appearance:textfield;
+    max-width: 105px;
+    height: 43px;
+    @include media(md) {
+      max-width: 105px;
+      height: 43px;
+    }
+    @include media(lg) {
+      max-width: 149px;
+      height: 53px;
+    }
     &::-webkit-outer-spin-button,
     &::-webkit-inner-spin-button {
       -webkit-appearance: none;
@@ -179,6 +307,10 @@
     border-radius: 50%;
     background-color: #F5F5F5;
     text-align: center;
+    display: none;
+    @include media(sm) {
+      display: flex;
+    }
     &:after {
       font-size: 14px;
       font-weight: 900;
@@ -194,20 +326,58 @@
 
 .goods-category-item-big {
   position: relative;
-  padding: 28px;
-  height: 366px;
+  padding: 18px;
+  margin-bottom: 16px;
+  border-radius: 30px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 147px;
+  background-position: 20% 40%;
+  box-sizing: border-box;
+
+  &--holidays {
+    background-position: 0 75%;
+    @include media(md) {
+      background-position: 0 0;
+    }
+  }
+  @include media(md) {
+    margin-bottom: 0;
+    height: 229px;
+    background-position: 0 0;
+  }
+  @include media(lg) {
+    height: 366px;
+    padding: 28px;
+  }
   &__title {
-    font-size: 26px;
-    line-height: 30px;
     max-width: 270px;
+    font-size: 14px;
+    line-height: 18px;
+
+    @include media(md) {
+      font-size: 16px;
+      line-height: 20px;
+    }
+    @include media(xl) {
+      font-size: 24px;
+      line-height: 28px;
+    }
+    @include media(xxl) {
+      font-size: 26px;
+      line-height: 30px;
+    }
   }
 
   &__show-all {
     color: $mainColorText;
     text-decoration: none;
-    padding-right: 20px;
+    padding-right: 12px;
     position: absolute;
     bottom: 28px;
+    @include media(md) {
+      padding-right: 20px;
+    }
     &:after {
       content: '';
       position: absolute;
@@ -215,13 +385,26 @@
       top: 3px;
       width: 8px;
       height: 14px;
-      background: url($imgPath + "/svg/chevrone-right.svg") 0 0 no-repeat;
+      background-image: url($imgPath + "/svg/chevrone-right.svg");
       transition-duration: .2s;
+      background-size: 6px;
+      background-position: 0 50%;
+      background-repeat: no-repeat;
+      @include media(md) {
+        background-position: 0 0;
+        background-size: 8px;
+      }
     }
     &:hover {
       transition-duration: .2s;
       &:after {
-        background: url($imgPath + "/svg/chevrone-right-hover.svg") 0 0 no-repeat;
+        background-image: url($imgPath + "/svg/chevrone-right-hover.svg");
+        background-size: 6px;
+        background-position: 0 50%;
+        @include media(md) {
+          background-position: 0 0;
+          background-size: 8px;
+        }
       }
     }
   }
@@ -230,23 +413,45 @@
 .goods-category-item {
   display: flex;
   align-items: flex-end;
-  height: 175px;
   border: 1px solid var(--color-primary);
   border-radius: 30px;
-  padding: 26px 20px;
   text-decoration: none;
   color: $mainColorText;
   cursor: pointer;
   background-repeat: no-repeat;
   margin-bottom: 16px;
+  box-sizing: border-box;
+  height: 104px;
+  background-size: 84px;
+  padding: 8px 20px 10px;
+
+  @include media(md) {
+    height: 101px;
+    padding: 8px 9px 10px;
+  }
+  @include media(lg) {
+    height: 175px;
+    padding: 26px 19px;
+    background-size: auto;
+  }
   &:hover {
     transition-duration: .25s;
     color: $mainColorText;
     background-color: var(--color-secondary);
   }
   &__title {
-    font-size: 20px;
-    line-height: 24px;
+    width: 100%;
+    text-align: center;
     margin-bottom: 0;
+    font-size: 14px;
+    line-height: 18px;
+    @include media(xl) {
+      font-size: 18px;
+      line-height: 22px;
+    }
+    @include media(xxl) {
+      font-size: 20px;
+      line-height: 24px;
+    }
   }
 }
