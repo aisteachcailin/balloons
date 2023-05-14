@@ -2,14 +2,14 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8"/>
-    <!--    <link rel="icon" type="image/svg+xml" href="/img/vite.svg" />-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
     <title>Balloons</title>
-  <link rel="stylesheet" href="./assets/style-40d1d89b.css">
+  <script type="module" crossorigin src="./assets/index-b9bf6e8d.js"></script>
+  <link rel="stylesheet" href="./assets/index-039500a6.css">
 </head>
 <body>
 <div class="wrapper">
@@ -55,11 +55,18 @@
                     </a>
                     <button class="c-btn c-btn--primary c-btn--catalog js-open-catalog">
                         <span class="catalog-lines"><span class="catalog-lines__line"></span></span>
-                        Каталог товаров
+                        <span class="c-btn--catalog-text">Каталог товаров</span>
                     </button>
+                    <a href="tel:+78314371305" class="header-callback header-callback--mobile">
+                        <svg class="header-callback__icon-phone" role="img">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 xlink:href="#svg-phone"></use>
+                        </svg>
+                        +7 831 437-13-05
+                    </a>
                     <form action="/" class="header-search" data-hint="false">
                         <label for="search" class="header-search__label">
-                            <input type="text" id="search" placeholder="Искать товары"
+                            <input type="text" id="search" data-search placeholder="Искать товары"
                                    class="header-search__input">
                         </label>
                         <ul class="header-search-hint smooth-animation">
@@ -115,7 +122,7 @@
         <section class="catalog-menu smooth-animation">
             <div class="container">
                 <div class="row">
-                    <div class="col-3">
+                    <div class="col-xl-3 col-4">
                         <ul class="catalog-menu-list js-catalog-list">
                             <li class="catalog-menu-list__item active" data-category="1">
                                 <a href="#" class="catalog-menu-list__link">Воздушные шары из латекса</a>
@@ -128,7 +135,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-9">
+                    <div class="col-xl-9 col-8">
                         <div class="catalog-category">
                             <div class="catalog-category-content show" data-content-category="1">
                                 <div class="catalog-category__item">
@@ -373,6 +380,126 @@
                 </div>
             </div>
         </section>
+
+        <!--        Catalog mobile        -->
+        <section class="catalog-menu catalog-menu--mobile smooth-animation">
+            <div class="catalog-menu-head">
+                <div class="container">
+                    <div class="catalog-menu-head__title">Меню</div>
+                    <div class="catalog-menu-head__close"></div>
+                    <form action="/" class="header-search header-search--mobile" data-hint="false">
+                        <label for="search-2" class="header-search__label">
+                            <input type="text" id="search-2" data-search placeholder="Искать товары"
+                                   class="header-search__input">
+                        </label>
+                        <ul class="header-search-hint smooth-animation">
+
+                            <!--***  Пример подсказок поиска ***-->
+
+                            <li class="header-search-hint__item">
+                                <a href="#" class="header-search-hint__link">Шарики сердце</a>
+                            </li>
+                            <li class="header-search-hint__item">
+                                <a href="#" class="header-search-hint__link">Шарики 8 марта</a>
+                            </li>
+                        </ul>
+                        <button type="submit" class="c-btn c-btn--primary c-btn--search">
+                            <svg class="search-icon" role="img">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="#svg-search"></use>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="catalog-menu-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <ul class="catalog-mobile-list js-catalog-list-mobile">
+                                <li class="catalog-menu-list__item catalog-mobile-list-parent">
+                                    <a href="#" class="catalog-menu-list__link">Покупателям</a>
+                                    <div class="catalog-mobile-child">
+                                        <ul class="catalog-mobile-list">
+                                            <li class="catalog-menu-list__item">
+                                                <a class="catalog-menu-list__link" href="#">Семинары и фестивали</a>
+                                            </li>
+                                            <li class="catalog-menu-list__item">
+                                                <a class="catalog-menu-list__link" href="#">Возврат товара</a>
+                                            </li>
+                                            <li class="catalog-menu-list__item">
+                                                <a class="catalog-menu-list__link" href="#">Политика
+                                                    конфиденциальности</a>
+                                            </li>
+                                            <li class="catalog-menu-list__item">
+                                                <a class="catalog-menu-list__link" href="#">Пользовательское
+                                                    соглашение</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="catalog-menu-list__item">
+                                    <a href="#" class="catalog-menu-list__link">Доставка и оплата</a>
+                                </li>
+                                <li class="catalog-menu-list__item">
+                                    <a href="#" class="catalog-menu-list__link">Скидки</a>
+                                </li>
+                                <li class="catalog-menu-list__item">
+                                    <a href="#" class="catalog-menu-list__link">О компании</a>
+                                </li>
+                                <li class="catalog-menu-list__item">
+                                    <a href="#" class="catalog-menu-list__link">Контакты</a>
+                                </li>
+                            </ul>
+                            <ul class="catalog-mobile-list js-catalog-list-mobile">
+                                <li class="catalog-menu-list__item catalog-mobile-list-parent">
+                                    <a href="#" class="catalog-menu-list__link">Воздушные шары из латекса</a>
+                                    <div class="catalog-mobile-child">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <ul class="catalog-mobile-list">
+                                                    <li class="catalog-menu-list__item catalog-mobile-list-parent">
+                                                        <a href="#" class="catalog-menu-list__link">Заголовок 1</a>
+                                                        <div class="catalog-mobile-child">
+                                                            <ul class="catalog-mobile-list">
+                                                                <li class="catalog-menu-list__item">
+                                                                    <a href="#" class="catalog-menu-list__link">Элемент
+                                                                        1</a>
+                                                                </li>
+                                                                <li class="catalog-menu-list__item">
+                                                                    <a href="#" class="catalog-menu-list__link">Элемент
+                                                                        2</a>
+                                                                </li>
+                                                                <li class="catalog-menu-list__item">
+                                                                    <a href="#" class="catalog-menu-list__link">Элемент
+                                                                        3</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                    <li class="catalog-menu-list__item catalog-mobile-list-parent">
+                                                        <a href="#" class="catalog-menu-list__link">Заголовок 2</a>
+                                                    </li>
+                                                    <li class="catalog-menu-list__item catalog-mobile-list-parent">
+                                                        <a href="#" class="catalog-menu-list__link">Заголовок 3</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="catalog-menu-list__item catalog-mobile-list-parent">
+                                    <a href="#" class="catalog-menu-list__link">Воздушные шары из латекса с рисунком</a>
+                                </li>
+                                <li class="catalog-menu-list__item catalog-mobile-list-parent">
+                                    <a href="#" class="catalog-menu-list__link">Воздушные шары из фольги</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </header>
 
     <main class="content-wrap">
@@ -393,19 +520,43 @@
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <div class="slider-item" style="background: url(img/slide-1.jpg) 0 0 no-repeat;">
+                            <div class="slider-item">
+                                <div class="main-slider__img">
+                                    <picture>
+                                        <source media="(max-width: 576px)" srcset="./img/slide-mobile.jpg">
+                                        <source media="(max-width: 1024px)" srcset="./img/slide-1-tablet.jpg">
+                                        <source media="(max-width: 1270px)" srcset="./img/slide-1-small-desktop.jpg">
+                                        <img src="./img/slide-1.jpg" alt="">
+                                    </picture>
+                                </div>
                                 <h2 class="slider-item__title">Шарики на детский <br> день рождения</h2>
                                 <a href="#" class="slider-item__btn c-btn c-btn--secondary">Заказать</a>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <div class="slider-item" style="background: url(img/slide-1.jpg) 0 0 no-repeat;">
+                            <div class="slider-item">
+                                <div class="main-slider__img">
+                                    <picture>
+                                        <source media="(max-width: 576px)" srcset="./img/slide-mobile.jpg">
+                                        <source media="(max-width: 1024px)" srcset="./img/slide-1-tablet.jpg">
+                                        <source media="(max-width: 1270px)" srcset="./img/slide-1-small-desktop.jpg">
+                                        <img src="./img/slide-1.jpg" alt="">
+                                    </picture>
+                                </div>
                                 <h2 class="slider-item__title">Шарики на детский <br> день рождения</h2>
                                 <a href="#" class="slider-item__btn c-btn c-btn--secondary">Заказать</a>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <div class="slider-item" style="background: url(img/slide-1.jpg) 0 0 no-repeat;">
+                            <div class="slider-item">
+                                <div class="main-slider__img">
+                                    <picture>
+                                        <source media="(max-width: 576px)" srcset="./img/slide-mobile.jpg">
+                                        <source media="(max-width: 1024px)" srcset="./img/slide-1-tablet.jpg">
+                                        <source media="(max-width: 1270px)" srcset="./img/slide-1-small-desktop.jpg">
+                                        <img src="./img/slide-1.jpg" alt="">
+                                    </picture>
+                                </div>
                                 <h2 class="slider-item__title">Шарики на детский <br> день рождения</h2>
                                 <a href="#" class="slider-item__btn c-btn c-btn--secondary">Заказать</a>
                             </div>
@@ -424,63 +575,63 @@
         <section class="c-category">
             <div class="container">
                 <div class="row">
-                    <div class="col-3">
+                    <div class="col-md-3 col-sm-4 col-6">
                         <a class="category-item" style="background-image: url(img/cat-1.png);">
                             <h4 class="category-item__title">Воздушные шары из латекса</h4>
                         </a>
                     </div>
-                    <div class="col-3">
+                    <div class="col-md-3 col-sm-4 col-6">
                         <a class="category-item" style="background-image: url(img/cat-2.png);">
                             <h4 class="category-item__title">Воздушные шары из латекса
                                 с&nbsp;рисунком</h4>
                         </a>
                     </div>
-                    <div class="col-3">
+                    <div class="col-md-3 col-sm-4 col-6">
                         <a class="category-item" style="background-image: url(img/cat-3.png);">
                             <h4 class="category-item__title">Воздушные шары из фольги</h4>
                         </a>
                     </div>
-                    <div class="col-3">
+                    <div class="col-md-3 col-sm-4 col-6">
                         <a class="category-item" style="background-image: url(img/cat-4.png);">
                             <h4 class="category-item__title">Воздушные шары из фольги с рисунком</h4>
                         </a>
                     </div>
-                    <div class="col-3">
+                    <div class="col-md-3 col-sm-4 col-6">
                         <a class="category-item" style="background-image: url(img/cat-5.png);">
                             <h4 class="category-item__title">Гелий и оборудование</h4>
                         </a>
                     </div>
-                    <div class="col-3">
+                    <div class="col-md-3 col-sm-4 col-6">
                         <a class="category-item" style="background-image: url(img/cat-6.png);">
                             <h4 class="category-item__title">Праздничная посуда</h4>
                         </a>
                     </div>
-                    <div class="col-3">
+                    <div class="col-md-3 col-sm-4 col-6">
                         <a class="category-item" style="background-image: url(img/cat-7.png);">
                             <h4 class="category-item__title">Товары для праздника</h4>
                         </a>
                     </div>
-                    <div class="col-3">
+                    <div class="col-md-3 col-sm-4 col-6">
                         <a class="category-item" style="background-image: url(img/cat-8.png);">
                             <h4 class="category-item__title">Карнавальная продукция</h4>
                         </a>
                     </div>
-                    <div class="col-3">
+                    <div class="col-md-3 col-sm-4 col-6">
                         <a class="category-item" style="background-image: url(img/cat-9.png);">
                             <h4 class="category-item__title">Флористика</h4>
                         </a>
                     </div>
-                    <div class="col-3">
+                    <div class="col-md-3 col-sm-4 col-6">
                         <a class="category-item" style="background-image: url(img/cat-10.png);">
                             <h4 class="category-item__title">Подарочная упаковка</h4>
                         </a>
                     </div>
-                    <div class="col-3">
+                    <div class="col-md-3 col-sm-4 col-6">
                         <a class="category-item" style="background-image: url(img/cat-11.png);">
                             <h4 class="category-item__title">Полиграфия, канцелярия, игрушки</h4>
                         </a>
                     </div>
-                    <div class="col-3">
+                    <div class="col-md-3 col-sm-4 col-6">
                         <a class="category-item" style="background-image: url(img/cat-12.png);">
                             <h4 class="category-item__title">Коллекция</h4>
                         </a>
@@ -493,8 +644,8 @@
         <section class="с-wholesale">
             <div class="container">
                 <div class="с-wholesale-wrap">
-                    <h4 class="с-wholesale__title">Оптовая продажа воздушных шаров и товаров для праздника</h4>
-                    <p class="с-wholesale__text">
+                    <h4 class="с-wholesale__title">Оптовая продажа воздушных шаров и&nbsp;товаров для праздника</h4>
+                    <p class="с-wholesale__text с-wholesale__text--mobile-padding">
                         Компания «Премьер» основана в 2009 году - это молодая
                         динамично-развивающаяся компания, уверенно занявшая лидирующую позицию по оптовой продаже
                         товаров
@@ -505,7 +656,9 @@
                         поэтому
                         здесь Вы можете купить все для праздника, а также воздушные шары оптом и в розницу.
                     </p>
-                    <img src="./img/bg-balloons.png" alt="" class="с-wholesale__img">
+                    <div class="с-wholesale__img">
+                        <img src="./img/bg-balloons.png" alt="">
+                    </div>
                 </div>
             </div>
         </section>
@@ -555,11 +708,12 @@
 
                                         <div class="goods-card-buy__btn js-add-cart"></div>
                                     </div>
-                                    <div class="goods-card__count-to-cart">В корзине <span class="js-count-to-cart">0</span></div>
+                                    <div class="goods-card__count-to-cart">В корзине <span
+                                            class="js-count-to-cart">0</span></div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                 <div
+                                <div
                                         class="goods-card"
                                         data-name='Шар возд. Gemar Пастель 18" Красный / Red/05'
                                         data-price="435"
@@ -593,11 +747,12 @@
 
                                         <div class="goods-card-buy__btn js-add-cart"></div>
                                     </div>
-                                    <div class="goods-card__count-to-cart">В корзине <span class="js-count-to-cart">0</span></div>
+                                    <div class="goods-card__count-to-cart">В корзине <span
+                                            class="js-count-to-cart">0</span></div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                 <div
+                                <div
                                         class="goods-card"
                                         data-name='Шар возд. Gemar Пастель 18" Красный / Red/05'
                                         data-price="435"
@@ -631,11 +786,12 @@
 
                                         <div class="goods-card-buy__btn js-add-cart"></div>
                                     </div>
-                                    <div class="goods-card__count-to-cart">В корзине <span class="js-count-to-cart">0</span></div>
+                                    <div class="goods-card__count-to-cart">В корзине <span
+                                            class="js-count-to-cart">0</span></div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                 <div
+                                <div
                                         class="goods-card"
                                         data-name='Шар возд. Gemar Пастель 18" Красный / Red/05'
                                         data-price="435"
@@ -669,11 +825,12 @@
 
                                         <div class="goods-card-buy__btn js-add-cart"></div>
                                     </div>
-                                    <div class="goods-card__count-to-cart">В корзине <span class="js-count-to-cart">0</span></div>
+                                    <div class="goods-card__count-to-cart">В корзине <span
+                                            class="js-count-to-cart">0</span></div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                 <div
+                                <div
                                         class="goods-card"
                                         data-name='Шар возд. Gemar Пастель 18" Красный / Red/05'
                                         data-price="435"
@@ -707,7 +864,8 @@
 
                                         <div class="goods-card-buy__btn js-add-cart"></div>
                                     </div>
-                                    <div class="goods-card__count-to-cart">В корзине <span class="js-count-to-cart">0</span></div>
+                                    <div class="goods-card__count-to-cart">В корзине <span
+                                            class="js-count-to-cart">0</span></div>
                                 </div>
                             </div>
                         </div>
@@ -726,10 +884,10 @@
                         <h4 class="section-goods-top__title">Акции</h4>
                         <a href="#" class="section-goods-top__show-all">Смотреть всё</a>
                     </div>
-                    <div class="swiper-goods js-swiper-goods-promo">
+                    <div class="swiper-goods goods-promo js-swiper-goods-promo">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                 <div
+                                <div
                                         class="goods-card"
                                         data-name='Шар возд. Gemar Пастель 18" Красный / Red/05'
                                         data-price="435"
@@ -742,32 +900,36 @@
                                     </div>
                                     <img src="./img/goods.png" class="goods-card__img" alt="text-image">
                                     <div class="goods-card__price">
-                                        435 ₽
+                                        <span class="goods-card__price--old">435 ₽</span>
+                                        <span class="goods-card__price--now">235 ₽</span>
                                     </div>
-                                    <div class="goods-card__number">
-                                        1102-0385
-                                    </div>
-                                    <div class="goods-card__name">
-                                        Шар возд. Gemar Пастель 18" Красный / Red/05
-                                    </div>
-                                    <div class="goods-card__count">
-                                        <span>25</span> шт/ уп
-                                    </div>
-                                    <div class="goods-card-buy">
-                                        <div class="goods-card-buy__label">
-                                            <input type="number" class="goods-card-buy__count js-product-count"
-                                                   value="1">
-                                            <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
-                                            <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--inc js-card-btn-inc">+</span>
+                                    <div class="gray-wrap">
+                                        <div class="goods-card__number">
+                                            1102-0385
                                         </div>
+                                        <div class="goods-card__name">
+                                            Шар возд. Gemar Пастель 18" Красный / Red/05
+                                        </div>
+                                        <div class="goods-card__count">
+                                            <span>25</span> шт/ уп
+                                        </div>
+                                        <div class="goods-card-buy">
+                                            <div class="goods-card-buy__label">
+                                                <input type="number" class="goods-card-buy__count js-product-count"
+                                                       value="1">
+                                                <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
+                                                <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--inc js-card-btn-inc">+</span>
+                                            </div>
 
-                                        <div class="goods-card-buy__btn js-add-cart"></div>
+                                            <div class="goods-card-buy__btn js-add-cart"></div>
+                                        </div>
+                                        <div class="goods-card__count-to-cart">В корзине <span class="js-count-to-cart">0</span>
+                                        </div>
                                     </div>
-                                    <div class="goods-card__count-to-cart">В корзине <span class="js-count-to-cart">0</span></div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                 <div
+                                <div
                                         class="goods-card"
                                         data-name='Шар возд. Gemar Пастель 18" Красный / Red/05'
                                         data-price="435"
@@ -780,32 +942,36 @@
                                     </div>
                                     <img src="./img/goods.png" class="goods-card__img" alt="text-image">
                                     <div class="goods-card__price">
-                                        435 ₽
+                                        <span class="goods-card__price--old">435 ₽</span>
+                                        <span class="goods-card__price--now">235 ₽</span>
                                     </div>
-                                    <div class="goods-card__number">
-                                        1102-0385
-                                    </div>
-                                    <div class="goods-card__name">
-                                        Шар возд. Gemar Пастель 18" Красный / Red/05
-                                    </div>
-                                    <div class="goods-card__count">
-                                        <span>25</span> шт/ уп
-                                    </div>
-                                    <div class="goods-card-buy">
-                                        <div class="goods-card-buy__label">
-                                            <input type="number" class="goods-card-buy__count js-product-count"
-                                                   value="1">
-                                            <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
-                                            <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--inc js-card-btn-inc">+</span>
+                                    <div class="gray-wrap">
+                                        <div class="goods-card__number">
+                                            1102-0385
                                         </div>
+                                        <div class="goods-card__name">
+                                            Шар возд. Gemar Пастель 18" Красный / Red/05
+                                        </div>
+                                        <div class="goods-card__count">
+                                            <span>25</span> шт/ уп
+                                        </div>
+                                        <div class="goods-card-buy">
+                                            <div class="goods-card-buy__label">
+                                                <input type="number" class="goods-card-buy__count js-product-count"
+                                                       value="1">
+                                                <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
+                                                <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--inc js-card-btn-inc">+</span>
+                                            </div>
 
-                                        <div class="goods-card-buy__btn js-add-cart"></div>
+                                            <div class="goods-card-buy__btn js-add-cart"></div>
+                                        </div>
+                                        <div class="goods-card__count-to-cart">В корзине <span class="js-count-to-cart">0</span>
+                                        </div>
                                     </div>
-                                    <div class="goods-card__count-to-cart">В корзине <span class="js-count-to-cart">0</span></div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                 <div
+                                <div
                                         class="goods-card"
                                         data-name='Шар возд. Gemar Пастель 18" Красный / Red/05'
                                         data-price="435"
@@ -818,32 +984,36 @@
                                     </div>
                                     <img src="./img/goods.png" class="goods-card__img" alt="text-image">
                                     <div class="goods-card__price">
-                                        435 ₽
+                                        <span class="goods-card__price--old">435 ₽</span>
+                                        <span class="goods-card__price--now">235 ₽</span>
                                     </div>
-                                    <div class="goods-card__number">
-                                        1102-0385
-                                    </div>
-                                    <div class="goods-card__name">
-                                        Шар возд. Gemar Пастель 18" Красный / Red/05
-                                    </div>
-                                    <div class="goods-card__count">
-                                        <span>25</span> шт/ уп
-                                    </div>
-                                    <div class="goods-card-buy">
-                                        <div class="goods-card-buy__label">
-                                            <input type="number" class="goods-card-buy__count js-product-count"
-                                                   value="1">
-                                            <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
-                                            <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--inc js-card-btn-inc">+</span>
+                                    <div class="gray-wrap">
+                                        <div class="goods-card__number">
+                                            1102-0385
                                         </div>
+                                        <div class="goods-card__name">
+                                            Шар возд. Gemar Пастель 18" Красный / Red/05
+                                        </div>
+                                        <div class="goods-card__count">
+                                            <span>25</span> шт/ уп
+                                        </div>
+                                        <div class="goods-card-buy">
+                                            <div class="goods-card-buy__label">
+                                                <input type="number" class="goods-card-buy__count js-product-count"
+                                                       value="1">
+                                                <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
+                                                <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--inc js-card-btn-inc">+</span>
+                                            </div>
 
-                                        <div class="goods-card-buy__btn js-add-cart"></div>
+                                            <div class="goods-card-buy__btn js-add-cart"></div>
+                                        </div>
+                                        <div class="goods-card__count-to-cart">В корзине <span class="js-count-to-cart">0</span>
+                                        </div>
                                     </div>
-                                    <div class="goods-card__count-to-cart">В корзине <span class="js-count-to-cart">0</span></div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                 <div
+                                <div
                                         class="goods-card"
                                         data-name='Шар возд. Gemar Пастель 18" Красный / Red/05'
                                         data-price="435"
@@ -856,32 +1026,36 @@
                                     </div>
                                     <img src="./img/goods.png" class="goods-card__img" alt="text-image">
                                     <div class="goods-card__price">
-                                        435 ₽
+                                        <span class="goods-card__price--old">435 ₽</span>
+                                        <span class="goods-card__price--now">235 ₽</span>
                                     </div>
-                                    <div class="goods-card__number">
-                                        1102-0385
-                                    </div>
-                                    <div class="goods-card__name">
-                                        Шар возд. Gemar Пастель 18" Красный / Red/05
-                                    </div>
-                                    <div class="goods-card__count">
-                                        <span>25</span> шт/ уп
-                                    </div>
-                                    <div class="goods-card-buy">
-                                        <div class="goods-card-buy__label">
-                                            <input type="number" class="goods-card-buy__count js-product-count"
-                                                   value="1">
-                                            <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
-                                            <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--inc js-card-btn-inc">+</span>
+                                    <div class="gray-wrap">
+                                        <div class="goods-card__number">
+                                            1102-0385
                                         </div>
+                                        <div class="goods-card__name">
+                                            Шар возд. Gemar Пастель 18" Красный / Red/05
+                                        </div>
+                                        <div class="goods-card__count">
+                                            <span>25</span> шт/ уп
+                                        </div>
+                                        <div class="goods-card-buy">
+                                            <div class="goods-card-buy__label">
+                                                <input type="number" class="goods-card-buy__count js-product-count"
+                                                       value="1">
+                                                <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
+                                                <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--inc js-card-btn-inc">+</span>
+                                            </div>
 
-                                        <div class="goods-card-buy__btn js-add-cart"></div>
+                                            <div class="goods-card-buy__btn js-add-cart"></div>
+                                        </div>
+                                        <div class="goods-card__count-to-cart">В корзине <span class="js-count-to-cart">0</span>
+                                        </div>
                                     </div>
-                                    <div class="goods-card__count-to-cart">В корзине <span class="js-count-to-cart">0</span></div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                 <div
+                                <div
                                         class="goods-card"
                                         data-name='Шар возд. Gemar Пастель 18" Красный / Red/05'
                                         data-price="435"
@@ -894,28 +1068,32 @@
                                     </div>
                                     <img src="./img/goods.png" class="goods-card__img" alt="text-image">
                                     <div class="goods-card__price">
-                                        435 ₽
+                                        <span class="goods-card__price--old">435 ₽</span>
+                                        <span class="goods-card__price--now">235 ₽</span>
                                     </div>
-                                    <div class="goods-card__number">
-                                        1102-0385
-                                    </div>
-                                    <div class="goods-card__name">
-                                        Шар возд. Gemar Пастель 18" Красный / Red/05
-                                    </div>
-                                    <div class="goods-card__count">
-                                        <span>25</span> шт/ уп
-                                    </div>
-                                    <div class="goods-card-buy">
-                                        <div class="goods-card-buy__label">
-                                            <input type="number" class="goods-card-buy__count js-product-count"
-                                                   value="1">
-                                            <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
-                                            <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--inc js-card-btn-inc">+</span>
+                                    <div class="gray-wrap">
+                                        <div class="goods-card__number">
+                                            1102-0385
                                         </div>
+                                        <div class="goods-card__name">
+                                            Шар возд. Gemar Пастель 18" Красный / Red/05
+                                        </div>
+                                        <div class="goods-card__count">
+                                            <span>25</span> шт/ уп
+                                        </div>
+                                        <div class="goods-card-buy">
+                                            <div class="goods-card-buy__label">
+                                                <input type="number" class="goods-card-buy__count js-product-count"
+                                                       value="1">
+                                                <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
+                                                <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--inc js-card-btn-inc">+</span>
+                                            </div>
 
-                                        <div class="goods-card-buy__btn js-add-cart"></div>
+                                            <div class="goods-card-buy__btn js-add-cart"></div>
+                                        </div>
+                                        <div class="goods-card__count-to-cart">В корзине <span class="js-count-to-cart">0</span>
+                                        </div>
                                     </div>
-                                    <div class="goods-card__count-to-cart">В корзине <span class="js-count-to-cart">0</span></div>
                                 </div>
                             </div>
                         </div>
@@ -934,38 +1112,38 @@
                         <h4 class="section-goods-top__title">Товары к праздникам</h4>
                         <a href="#" class="section-goods-top__show-all">Смотреть всё</a>
                     </div>
-                    <div class="goods-category">
+                    <div class="goods-category goods-category-holidays">
                         <div class="row">
-                            <div class="col-4">
-                                <div class="goods-category-item-big"
-                                     style="background: url('img/bg-holidays.jpg') no-repeat;">
+                            <div class="col-md-4 col-12">
+                                <div class="goods-category-item-big goods-category-item-big--holidays"
+                                     style="background-image: url('img/bg-holidays.jpg');">
                                     <h5 class="goods-category-item-big__title">Шары и&nbsp;праздничные товары делают
                                         каждый
                                         праздник особенным</h5>
                                     <a href="#" class="goods-category-item-big__show-all">Все праздники</a>
                                 </div>
                             </div>
-                            <div class="col-8">
+                            <div class="col-md-8 col-12">
                                 <div class="row">
-                                    <div class="col-3">
+                                    <div class="col-md-3 col-6">
                                         <a href="#" class="goods-category-item"
                                            style="background-image: url('img/holiday-1.png'); background-position: 50% 10%">
-                                            <p class="goods-category-item__title">День Святого Валентина</p>
+                                            <p class="goods-category-item__title">День Св. Валентина</p>
                                         </a>
                                     </div>
-                                    <div class="col-3">
+                                    <div class="col-md-3 col-6">
                                         <a href="#" class="goods-category-item"
                                            style="background-image: url('img/holiday-2.png'); background-position: 50% 18%">
                                             <p class="goods-category-item__title">Свадьба</p>
                                         </a>
                                     </div>
-                                    <div class="col-3">
+                                    <div class="col-md-3 col-6">
                                         <a href="#" class="goods-category-item"
                                            style="background-image: url('img/holiday-3.png'); background-position: 50% 12%">
                                             <p class="goods-category-item__title">Рождение ребенка</p>
                                         </a>
                                     </div>
-                                    <div class="col-3">
+                                    <div class="col-md-3 col-6">
                                         <a href="#" class="goods-category-item"
                                            style="background-image: url('img/holiday-4.png'); background-position: 43% 15%">
                                             <p class="goods-category-item__title">День рождения</p>
@@ -973,25 +1151,25 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-3">
+                                    <div class="col-md-3 col-6">
                                         <a href="#" class="goods-category-item"
-                                           style="background-image: url('img/holiday-5.png'); background-position: 39% 27%">
+                                           style="background-image: url('img/holiday-5.png'); background-position: 50% 27%">
                                             <p class="goods-category-item__title">23 февраля</p>
                                         </a>
                                     </div>
-                                    <div class="col-3">
+                                    <div class="col-md-3 col-6">
                                         <a href="#" class="goods-category-item"
                                            style="background-image: url('img/holiday-6.png'); background-position: 53% 18%">
                                             <p class="goods-category-item__title">8 марта</p>
                                         </a>
                                     </div>
-                                    <div class="col-3">
+                                    <div class="col-md-3 col-6">
                                         <a href="#" class="goods-category-item"
                                            style="background-image: url('img/holiday-7.png'); background-position: 50% 25%">
                                             <p class="goods-category-item__title">9 мая</p>
                                         </a>
                                     </div>
-                                    <div class="col-3">
+                                    <div class="col-md-3 col-6">
                                         <a href="#" class="goods-category-item"
                                            style="background-image: url('img/holiday-8.png'); background-position: 50% 22%">
                                             <p class="goods-category-item__title">Выпускной</p>
@@ -1016,7 +1194,7 @@
                     <div class="swiper-goods js-swiper-goods-hit">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                 <div
+                                <div
                                         class="goods-card"
                                         data-name='Шар возд. Gemar Пастель 18" Красный / Red/05'
                                         data-price="435"
@@ -1050,11 +1228,12 @@
 
                                         <div class="goods-card-buy__btn js-add-cart"></div>
                                     </div>
-                                    <div class="goods-card__count-to-cart">В корзине <span class="js-count-to-cart">0</span></div>
+                                    <div class="goods-card__count-to-cart">В корзине <span
+                                            class="js-count-to-cart">0</span></div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                 <div
+                                <div
                                         class="goods-card"
                                         data-name='Шар возд. Gemar Пастель 18" Красный / Red/05'
                                         data-price="435"
@@ -1088,11 +1267,12 @@
 
                                         <div class="goods-card-buy__btn js-add-cart"></div>
                                     </div>
-                                    <div class="goods-card__count-to-cart">В корзине <span class="js-count-to-cart">0</span></div>
+                                    <div class="goods-card__count-to-cart">В корзине <span
+                                            class="js-count-to-cart">0</span></div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                 <div
+                                <div
                                         class="goods-card"
                                         data-name='Шар возд. Gemar Пастель 18" Красный / Red/05'
                                         data-price="435"
@@ -1126,11 +1306,12 @@
 
                                         <div class="goods-card-buy__btn js-add-cart"></div>
                                     </div>
-                                    <div class="goods-card__count-to-cart">В корзине <span class="js-count-to-cart">0</span></div>
+                                    <div class="goods-card__count-to-cart">В корзине <span
+                                            class="js-count-to-cart">0</span></div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                 <div
+                                <div
                                         class="goods-card"
                                         data-name='Шар возд. Gemar Пастель 18" Красный / Red/05'
                                         data-price="435"
@@ -1164,11 +1345,12 @@
 
                                         <div class="goods-card-buy__btn js-add-cart"></div>
                                     </div>
-                                    <div class="goods-card__count-to-cart">В корзине <span class="js-count-to-cart">0</span></div>
+                                    <div class="goods-card__count-to-cart">В корзине <span
+                                            class="js-count-to-cart">0</span></div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                 <div
+                                <div
                                         class="goods-card"
                                         data-name='Шар возд. Gemar Пастель 18" Красный / Red/05'
                                         data-price="435"
@@ -1202,7 +1384,8 @@
 
                                         <div class="goods-card-buy__btn js-add-cart"></div>
                                     </div>
-                                    <div class="goods-card__count-to-cart">В корзине <span class="js-count-to-cart">0</span></div>
+                                    <div class="goods-card__count-to-cart">В корзине <span
+                                            class="js-count-to-cart">0</span></div>
                                 </div>
                             </div>
                         </div>
@@ -1223,62 +1406,62 @@
                     </div>
                     <div class="goods-category">
                         <div class="row">
-                            <div class="col-4">
+                            <div class="col-md-4 col-12">
                                 <div class="goods-category-item-big"
-                                     style="background: url('img/bg-collection.jpg') no-repeat;">
-                                    <h5 class="goods-category-item-big__title">Тематические подборки</h5>
+                                     style="background-image: url('img/bg-collection.jpg')">
+                                    <h5 class="goods-category-item-big__title">Тематические<br>подборки</h5>
                                     <a href="#" class="goods-category-item-big__show-all">Все коллекции</a>
                                 </div>
                             </div>
-                            <div class="col-8">
+                            <div class="col-md-8 col-12">
                                 <div class="row">
-                                    <div class="col-3">
+                                    <div class="col-md-3 col-6">
                                         <a href="#" class="goods-category-item"
                                            style="background-image: url('img/collection-1.png'); background-position: 46% 10%">
-                                            <p class="goods-category-item__title">Первый день рождения</p>
+                                            <p class="goods-category-item__title">День рождения</p>
                                         </a>
                                     </div>
-                                    <div class="col-3">
+                                    <div class="col-md-3 col-6">
                                         <a href="#" class="goods-category-item"
                                            style="background-image: url('img/collection-2.png'); background-position: 50% 10%">
                                             <p class="goods-category-item__title">Котики собачки</p>
                                         </a>
                                     </div>
-                                    <div class="col-3">
+                                    <div class="col-md-3 col-6">
                                         <a href="#" class="goods-category-item"
-                                           style="background-image: url('img/collection-3.png'); background-position: 50% 10%">
+                                           style="background-image: url('img/collection-3.png'); background-position: 50% 20%">
                                             <p class="goods-category-item__title">Динозавры</p>
                                         </a>
                                     </div>
-                                    <div class="col-3">
+                                    <div class="col-md-3 col-6">
                                         <a href="#" class="goods-category-item"
-                                           style="background-image: url('img/collection-4.png'); background-position: 52% 16%">
+                                           style="background-image: url('img/collection-4.png'); background-position: 52% 20%">
                                             <p class="goods-category-item__title">Единороги</p>
                                         </a>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-3">
+                                    <div class="col-md-3 col-6">
                                         <a href="#" class="goods-category-item"
-                                           style="background-image: url('img/collection-5.png'); background-position: 44% 0">
+                                           style="background-image: url('img/collection-5.png'); background-position: 44% 30%">
                                             <p class="goods-category-item__title">Животные</p>
                                         </a>
                                     </div>
-                                    <div class="col-3">
+                                    <div class="col-md-3 col-6">
                                         <a href="#" class="goods-category-item"
-                                           style="background-image: url('img/collection-6.png'); background-position: 50% 16%">
+                                           style="background-image: url('img/collection-6.png'); background-position: 50% 20%">
                                             <p class="goods-category-item__title">Игра</p>
                                         </a>
                                     </div>
-                                    <div class="col-3">
+                                    <div class="col-md-3 col-6">
                                         <a href="#" class="goods-category-item"
-                                           style="background-image: url('img/collection-7.png'); background-position: 50% 15%">
+                                           style="background-image: url('img/collection-7.png'); background-position: 50% 30%">
                                             <p class="goods-category-item__title">Космос</p>
                                         </a>
                                     </div>
-                                    <div class="col-3">
+                                    <div class="col-md-3 col-6">
                                         <a href="#" class="goods-category-item"
-                                           style="background-image: url('img/collection-8.png'); background-position: 50% 8%">
+                                           style="background-image: url('img/collection-8.png'); background-position: 50% 15%">
                                             <p class="goods-category-item__title">Лесные звери</p>
                                         </a>
                                     </div>
@@ -1293,7 +1476,6 @@
         <!-- Content end -->
 
     </main>
-
 
     <footer class="c-footer">
         <svg style="display:none" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1321,6 +1503,43 @@
                       fill="#5D5D5D"/>
             </symbol>
         </svg>
+
+        <!--**** Меню внизу для мобильных устройств ****-->
+
+        <section class="menu-bottom-mobile">
+            <div class="container">
+                <ul class="header-icons">
+                    <li class="header-icons__item header-icons__item--cart">
+                        <div class="header-icons__count-cart js-count-cart">2</div>
+                        <a href="/" class="header-icons__link">
+                            <svg class="header-icons__icon header-icons__icon--cart" role="img">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="#svg-cart"></use>
+                            </svg>
+                            <span class="js-cart-text">Корзина</span>
+                        </a>
+                    </li>
+                    <li class="header-icons__item">
+                        <a href="/" class="header-icons__link">
+                            <svg class="header-icons__icon header-icons__icon--human" role="img">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="#svg-human"></use>
+                            </svg>
+                            <span>Войти</span>
+                        </a>
+                    </li>
+                    <li class="header-icons__item">
+                        <a href="/" class="header-icons__link">
+                            <svg class="header-icons__icon header-icons__icon--heart" role="img">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="#svg-heart"></use>
+                            </svg>
+                            <span>Избранное</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
         <div class="container">
             <div class="footer-grid">
                 <div class="contacts-title">Всегда на связи</div>
@@ -1344,7 +1563,7 @@
                         <a href="#" class="footer-nav__link">Контакты</a>
                     </li>
                 </ul>
-                <div class="contacts-data d-flex">
+                <div class="contacts-data d-block d-md-flex">
                     <div class="contacts-item">
                         <div class="contacts-item__phone">
                             <a href="tel:+78312151534">+7 831 215-15-34</a>, <a href="tel:+78314120052">+7 831
@@ -1368,12 +1587,12 @@
                     <div class="footer-work-email__work-time">8:00-20:00</div>
                     <a href="mailto:info@nn-shar.ru" class="footer-work-email__email">info@nn-shar.ru</a>
                 </div>
-            </div>
-            <div class="footer-social d-flex align-items-end">
-                <span class="footer-social__text">Присоединяйтесь</span>
-                <a href="#" class="footer-social__icon footer-social__icon--ok"></a>
-                <a href="#" class="footer-social__icon footer-social__icon--vk"></a>
-                <a href="#" class="footer-social__icon footer-social__icon--tg"></a>
+                <div class="footer-social d-flex align-items-end">
+                    <span class="footer-social__text">Присоединяйтесь</span>
+                    <a href="#" class="footer-social__icon footer-social__icon--ok"></a>
+                    <a href="#" class="footer-social__icon footer-social__icon--vk"></a>
+                    <a href="#" class="footer-social__icon footer-social__icon--tg"></a>
+                </div>
             </div>
             <p class="footer-text">
                 Данный интернет-сайт носит исключительно информационный характер и ни при каких условиях не является
@@ -1393,8 +1612,6 @@
         integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
         crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-<script src="./assets/index-c8ea25d2.js"></script>
 
-<!--<script src="/js/add-cart.js"></script>-->
 </body>
 </html>

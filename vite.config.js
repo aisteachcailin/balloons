@@ -3,8 +3,9 @@ export default {
     base: './',
     publicDir: '../public',
     build: {
-        outDir: '../dist',
-        cssCodeSplit: false,
-        sourcemap: 'inline'
+        outDir: '../dist'
+    },
+    css: {
+        devSourcemap: true
     }
 }

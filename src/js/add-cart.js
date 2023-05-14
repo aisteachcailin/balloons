@@ -17,17 +17,34 @@ function addToCart() {
 /**
  * Обновление данных на значке корзины в шапке
  */
+// function refreshCart() {
+//     const textCountCart = document.querySelector('.js-count-cart')
+//     const textCart = textCountCart.parentElement.querySelector('.js-cart-text')
+//     const cartData = getLocalStorage('cart')
+//     let sumPrice = 0
+//
+//     textCountCart.innerText = cartData.length ?? '0'
+//     textCountCart.classList.toggle('show', !!cartData.length)
+//
+//     cartData.forEach((el) => sumPrice += el['price'] * el['count'])
+//     textCart.innerText = cartData.length ? `${sumPrice} ₽` : 'Корзина'
+// }
 function refreshCart() {
-    const textCountCart = document.querySelector('.js-count-cart')
-    const textCart = textCountCart.parentElement.querySelector('.js-cart-text')
+    const textCountCart = document.querySelectorAll('.js-count-cart')
     const cartData = getLocalStorage('cart')
     let sumPrice = 0
 
-    textCountCart.innerText = cartData.length ?? '0'
-    textCountCart.classList.toggle('show', !!cartData.length)
-
     cartData.forEach((el) => sumPrice += el['price'] * el['count'])
-    textCart.innerText = cartData.length ? `${sumPrice} ₽` : 'Корзина'
+
+    textCountCart.forEach(el => {
+        const textCart = el.parentElement.querySelector('.js-cart-text')
+
+        el.innerText = cartData.length ?? '0'
+        el.classList.toggle('show', !!cartData.length)
+        textCart.innerText = cartData.length ? `${sumPrice} ₽` : 'Корзина'
+    })
+
+
 }
 
 /**

@@ -30,11 +30,20 @@
     }
   }
   &--catalog {
+    order: -1;
+
     @include media(lg) {
       padding: 0 14px;
+      order: 0;
     }
     @include media(xl) {
       padding: 0 28px;
+    }
+    &-text {
+      display: none;
+      @include media(lg) {
+        display: inline;
+      }
     }
   }
   &--search {

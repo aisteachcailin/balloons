@@ -2,7 +2,6 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8"/>
-    <!--    <link rel="icon" type="image/svg+xml" href="/img/vite.svg" />-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,11 +53,18 @@
                     </a>
                     <button class="c-btn c-btn--primary c-btn--catalog js-open-catalog">
                         <span class="catalog-lines"><span class="catalog-lines__line"></span></span>
-                        Каталог товаров
+                        <span class="c-btn--catalog-text">Каталог товаров</span>
                     </button>
+                    <a href="tel:+78314371305" class="header-callback header-callback--mobile">
+                        <svg class="header-callback__icon-phone" role="img">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 xlink:href="#svg-phone"></use>
+                        </svg>
+                        +7 831 437-13-05
+                    </a>
                     <form action="/" class="header-search" data-hint="false">
                         <label for="search" class="header-search__label">
-                            <input type="text" id="search" placeholder="Искать товары"
+                            <input type="text" id="search" data-search placeholder="Искать товары"
                                    class="header-search__input">
                         </label>
                         <ul class="header-search-hint smooth-animation">
@@ -114,7 +120,7 @@
         <section class="catalog-menu smooth-animation">
             <div class="container">
                 <div class="row">
-                    <div class="col-3">
+                    <div class="col-xl-3 col-4">
                         <ul class="catalog-menu-list js-catalog-list">
                             <li class="catalog-menu-list__item active" data-category="1">
                                 <a href="#" class="catalog-menu-list__link">Воздушные шары из латекса</a>
@@ -127,7 +133,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-9">
+                    <div class="col-xl-9 col-8">
                         <div class="catalog-category">
                             <div class="catalog-category-content show" data-content-category="1">
                                 <div class="catalog-category__item">
@@ -372,6 +378,126 @@
                 </div>
             </div>
         </section>
+
+        <!--        Catalog mobile        -->
+        <section class="catalog-menu catalog-menu--mobile smooth-animation">
+            <div class="catalog-menu-head">
+                <div class="container">
+                    <div class="catalog-menu-head__title">Меню</div>
+                    <div class="catalog-menu-head__close"></div>
+                    <form action="/" class="header-search header-search--mobile" data-hint="false">
+                        <label for="search-2" class="header-search__label">
+                            <input type="text" id="search-2" data-search placeholder="Искать товары"
+                                   class="header-search__input">
+                        </label>
+                        <ul class="header-search-hint smooth-animation">
+
+                            <!--***  Пример подсказок поиска ***-->
+
+                            <li class="header-search-hint__item">
+                                <a href="#" class="header-search-hint__link">Шарики сердце</a>
+                            </li>
+                            <li class="header-search-hint__item">
+                                <a href="#" class="header-search-hint__link">Шарики 8 марта</a>
+                            </li>
+                        </ul>
+                        <button type="submit" class="c-btn c-btn--primary c-btn--search">
+                            <svg class="search-icon" role="img">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="#svg-search"></use>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="catalog-menu-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <ul class="catalog-mobile-list js-catalog-list-mobile">
+                                <li class="catalog-menu-list__item catalog-mobile-list-parent">
+                                    <a href="#" class="catalog-menu-list__link">Покупателям</a>
+                                    <div class="catalog-mobile-child">
+                                        <ul class="catalog-mobile-list">
+                                            <li class="catalog-menu-list__item">
+                                                <a class="catalog-menu-list__link" href="#">Семинары и фестивали</a>
+                                            </li>
+                                            <li class="catalog-menu-list__item">
+                                                <a class="catalog-menu-list__link" href="#">Возврат товара</a>
+                                            </li>
+                                            <li class="catalog-menu-list__item">
+                                                <a class="catalog-menu-list__link" href="#">Политика
+                                                    конфиденциальности</a>
+                                            </li>
+                                            <li class="catalog-menu-list__item">
+                                                <a class="catalog-menu-list__link" href="#">Пользовательское
+                                                    соглашение</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="catalog-menu-list__item">
+                                    <a href="#" class="catalog-menu-list__link">Доставка и оплата</a>
+                                </li>
+                                <li class="catalog-menu-list__item">
+                                    <a href="#" class="catalog-menu-list__link">Скидки</a>
+                                </li>
+                                <li class="catalog-menu-list__item">
+                                    <a href="#" class="catalog-menu-list__link">О компании</a>
+                                </li>
+                                <li class="catalog-menu-list__item">
+                                    <a href="#" class="catalog-menu-list__link">Контакты</a>
+                                </li>
+                            </ul>
+                            <ul class="catalog-mobile-list js-catalog-list-mobile">
+                                <li class="catalog-menu-list__item catalog-mobile-list-parent">
+                                    <a href="#" class="catalog-menu-list__link">Воздушные шары из латекса</a>
+                                    <div class="catalog-mobile-child">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <ul class="catalog-mobile-list">
+                                                    <li class="catalog-menu-list__item catalog-mobile-list-parent">
+                                                        <a href="#" class="catalog-menu-list__link">Заголовок 1</a>
+                                                        <div class="catalog-mobile-child">
+                                                            <ul class="catalog-mobile-list">
+                                                                <li class="catalog-menu-list__item">
+                                                                    <a href="#" class="catalog-menu-list__link">Элемент
+                                                                        1</a>
+                                                                </li>
+                                                                <li class="catalog-menu-list__item">
+                                                                    <a href="#" class="catalog-menu-list__link">Элемент
+                                                                        2</a>
+                                                                </li>
+                                                                <li class="catalog-menu-list__item">
+                                                                    <a href="#" class="catalog-menu-list__link">Элемент
+                                                                        3</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                    <li class="catalog-menu-list__item catalog-mobile-list-parent">
+                                                        <a href="#" class="catalog-menu-list__link">Заголовок 2</a>
+                                                    </li>
+                                                    <li class="catalog-menu-list__item catalog-mobile-list-parent">
+                                                        <a href="#" class="catalog-menu-list__link">Заголовок 3</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="catalog-menu-list__item catalog-mobile-list-parent">
+                                    <a href="#" class="catalog-menu-list__link">Воздушные шары из латекса с рисунком</a>
+                                </li>
+                                <li class="catalog-menu-list__item catalog-mobile-list-parent">
+                                    <a href="#" class="catalog-menu-list__link">Воздушные шары из фольги</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </header>
 
     <main class="content-wrap">
@@ -398,7 +524,7 @@
                                         <source media="(max-width: 576px)" srcset="/img/slide-mobile.jpg">
                                         <source media="(max-width: 1024px)" srcset="/img/slide-1-tablet.jpg">
                                         <source media="(max-width: 1270px)" srcset="/img/slide-1-small-desktop.jpg">
-                                        <img src="/img/slide-1.jpg" alt="" >
+                                        <img src="/img/slide-1.jpg" alt="">
                                     </picture>
                                 </div>
                                 <h2 class="slider-item__title">Шарики на детский <br> день рождения</h2>
@@ -412,7 +538,7 @@
                                         <source media="(max-width: 576px)" srcset="/img/slide-mobile.jpg">
                                         <source media="(max-width: 1024px)" srcset="/img/slide-1-tablet.jpg">
                                         <source media="(max-width: 1270px)" srcset="/img/slide-1-small-desktop.jpg">
-                                        <img src="/img/slide-1.jpg" alt="" >
+                                        <img src="/img/slide-1.jpg" alt="">
                                     </picture>
                                 </div>
                                 <h2 class="slider-item__title">Шарики на детский <br> день рождения</h2>
@@ -426,7 +552,7 @@
                                         <source media="(max-width: 576px)" srcset="/img/slide-mobile.jpg">
                                         <source media="(max-width: 1024px)" srcset="/img/slide-1-tablet.jpg">
                                         <source media="(max-width: 1270px)" srcset="/img/slide-1-small-desktop.jpg">
-                                        <img src="/img/slide-1.jpg" alt="" >
+                                        <img src="/img/slide-1.jpg" alt="">
                                     </picture>
                                 </div>
                                 <h2 class="slider-item__title">Шарики на детский <br> день рождения</h2>
@@ -529,7 +655,7 @@
                         здесь Вы можете купить все для праздника, а также воздушные шары оптом и в розницу.
                     </p>
                     <div class="с-wholesale__img">
-                        <img src="/img/bg-balloons.png" alt="" >
+                        <img src="/img/bg-balloons.png" alt="">
                     </div>
                 </div>
             </div>
@@ -1349,7 +1475,6 @@
 
     </main>
 
-
     <footer class="c-footer">
         <svg style="display:none" fill="none" xmlns="http://www.w3.org/2000/svg">
             <symbol id="svg-human" viewBox="0 0 16 19">
@@ -1376,6 +1501,43 @@
                       fill="#5D5D5D"/>
             </symbol>
         </svg>
+
+        <!--**** Меню внизу для мобильных устройств ****-->
+
+        <section class="menu-bottom-mobile">
+            <div class="container">
+                <ul class="header-icons">
+                    <li class="header-icons__item header-icons__item--cart">
+                        <div class="header-icons__count-cart js-count-cart">2</div>
+                        <a href="/" class="header-icons__link">
+                            <svg class="header-icons__icon header-icons__icon--cart" role="img">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="#svg-cart"></use>
+                            </svg>
+                            <span class="js-cart-text">Корзина</span>
+                        </a>
+                    </li>
+                    <li class="header-icons__item">
+                        <a href="/" class="header-icons__link">
+                            <svg class="header-icons__icon header-icons__icon--human" role="img">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="#svg-human"></use>
+                            </svg>
+                            <span>Войти</span>
+                        </a>
+                    </li>
+                    <li class="header-icons__item">
+                        <a href="/" class="header-icons__link">
+                            <svg class="header-icons__icon header-icons__icon--heart" role="img">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="#svg-heart"></use>
+                            </svg>
+                            <span>Избранное</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
         <div class="container">
             <div class="footer-grid">
                 <div class="contacts-title">Всегда на связи</div>

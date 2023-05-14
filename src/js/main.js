@@ -30,23 +30,26 @@ function initScripts() {
     stickyHeader()
     showHintSearch()
     openCatalog()
+    mobileShowCategory()
 }
 
 /**
  * Подсказка результатов поиска
  */
 function showHintSearch() {
-    const search = document.getElementById('search')
+    const search = document.querySelectorAll('[data-search]')
 
-    search.addEventListener('input', () => {
+    search.forEach(el => {
+        el.addEventListener('input', () => {
 
-        //TODO: Пример для демонстрации подсказки. Тут нужно будет реализовать свой код.
-        // Рекомендация добавить debounce функцию от Lodash
+            //TODO: Пример для демонстрации подсказки. Тут нужно будет реализовать свой код.
+            // Рекомендация добавить debounce функцию от Lodash
 
-        let hint = (search.value.length > 2).toString()
+            let hint = (el.value.length > 2).toString()
 
-        //** Отображем подсказку **//
-        search.closest('.header-search').setAttribute('data-hint', hint)
+            //** Отображем подсказку **//
+            el.closest('.header-search').setAttribute('data-hint', hint)
+        })
     })
 }
 
@@ -55,7 +58,11 @@ function showHintSearch() {
  */
 function openCatalog() {
     const btnCatalog = document.querySelector('.js-open-catalog')
-    btnCatalog.addEventListener('click', () => document.body.classList.toggle('show-catalog'))
+    const closeMobile = document.querySelector('.catalog-menu-head__close')
+    const bodyClass = document.body.classList
+    const catalogShow = 'show-catalog'
+    btnCatalog.addEventListener('click', () => bodyClass.toggle(catalogShow))
+    closeMobile.addEventListener('click', () => bodyClass.remove(catalogShow))
 }
 
 /**
@@ -88,7 +95,6 @@ function initSliderGoods(sliderClass) {
             prevEl: `.swiper-goods-nav.swiper-button-prev`,
         }
     });
-
 }
 
 /**
@@ -144,6 +150,25 @@ function hoverShowCategory() {
 }
 
 /**
+ * Отображение подкатегорий на мобильных устройствах
+ */
+function mobileShowCategory() {
+    const categories = document.querySelectorAll('.js-catalog-list-mobile li > a')
+
+    categories.forEach(el => {
+        el.addEventListener('click', () => {
+            const menuItem = el.parentElement
+
+            menuItem.getSiblings().forEach(li => li.classList.remove('is-open'))
+            menuItem.querySelectorAll('.is-open').forEach(element => {
+                element.classList.remove('is-open')
+            })
+            menuItem.classList.toggle('is-open')
+        })
+    })
+}
+
+/**
  * Приклеенная шапка к верху страницы
  */
 function stickyHeader() {
@@ -152,10 +177,12 @@ function stickyHeader() {
 }
 
 function setStickyHeader() {
-    if (scrollY > 72) {
-        document.body.classList.add('header-fixed')
-    } else {
-        document.body.classList.remove('header-fixed')
+    if (matchMedia('(min-width: 992px)').matches) {
+        if (scrollY > 72) {
+            document.body.classList.add('header-fixed')
+        } else {
+            document.body.classList.remove('header-fixed')
+        }
     }
 }
 
