@@ -86,15 +86,13 @@ $footerColorText: #747474;
 }
 .contacts-item {
   display: inline-block;
-  margin-right: 30px;
   position: relative;
   padding-left: 16px;
   border-left: 1px solid var(--color-primary);
+  margin-bottom: 28px;
 
-  @include media(xs) {
-    margin-bottom: 28px;
-  }
   @include media(md) {
+    margin-right: 30px;
     margin-bottom: 0;
   }
 

@@ -2,7 +2,10 @@
 @use "./in/catalog";
 
 .c-header {
-  margin-bottom: 26px;
+  margin-bottom: 8px;
+  @include media(md) {
+    margin-bottom: 26px;
+  }
 }
 .show-catalog .header-top {
   padding-right: var(--offset-compensator);
@@ -22,7 +25,7 @@
   padding-right: var(--offset-compensator);
 }
 .header-bottom {
-  padding: 16px 0;
+  padding: 8px 0;
   @include media(lg) {
     padding: 6px 0;
   }
@@ -34,9 +37,11 @@
   width: 100%;
   box-shadow: 0 1px 5px rgba(0, 0, 0, .2);
   top: 0;
+  @include media(lg) {}
 }
 .header-fixed {
   padding-top: 0;
+
   @include media(lg) {
     padding-top: 138px;
   }

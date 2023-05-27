@@ -3,10 +3,9 @@
 .с-wholesale {
   background-color: var(--color-secondary);
   padding: 12px 0 16px;
-  margin: 50px 0 24px;
-  @include media(sm) {
-    margin: 109px 0 65px;
-  }
+  margin: 65px 0;
+  position: relative;
+
   @include media(md) {
     padding: 42px 0 32px;
   }
@@ -68,10 +67,10 @@
     position: absolute;
     right: 0;
     overflow: hidden;
-    margin-top: -410px;
+    top: -60px;
     width: 118px;
     @include media(sm) {
-      margin-top: -340px;
+      top: -90px;
       width: 182px;
     }
     @include media(lg) {
