@@ -35,7 +35,7 @@
     }
   }
   &-content {
-    margin-top: 45px;
+    margin-top: 60px;
     overflow: auto;
     height: calc(100% - 180px);
     @include media(sm) {
@@ -46,7 +46,7 @@
 }
 .catalog-menu-head {
   position: fixed;
-  top: -77px;
+  top: -62px;
   z-index: 13;
   width: 100%;
   background-color: var(--color-secondary);

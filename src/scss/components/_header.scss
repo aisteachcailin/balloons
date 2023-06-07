@@ -178,9 +178,12 @@
     margin-top: 5px;
     height: 2px;
     width: 100%;
-    background-color: #fff;
+    background-color: var(--color-primary);
     border-radius: 20px;
     transition-duration: .2s;
+    @include media(lg) {
+      background-color: #fff;
+    }
 
     &:before,
     &:after {
@@ -189,9 +192,13 @@
       position: absolute;
       height: 2px;
       width: 100%;
-      background-color: #fff;
+      background-color: var(--color-primary);
       border-radius: 20px;
       transition-duration: .2s;
+
+      @include media(lg) {
+        background-color: #fff;
+      }
     }
 
     &:before {
@@ -239,6 +246,18 @@
       margin-bottom: 4px;
     }
 
+    &--home {
+      width: 23px;
+      height: 23px;
+      margin-bottom: 2px !important;
+      margin-top: -3px;
+      fill: $mainColorText;
+    }
+    &--catalog {
+      width: 22px;
+      height: 17px;
+      margin-top: 1px;
+    }
     &--human {
       width: 16px;
       height: 19px;
@@ -317,6 +336,11 @@
     }
     span {
       display: inline;
+      font-size: 10px;
+
+      @include media(381) {
+        font-size: 14px;
+      }
       @include media(md) {
         display: none;
       }
