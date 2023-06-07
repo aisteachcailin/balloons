@@ -38,6 +38,7 @@ function initScripts() {
  */
 function showHintSearch() {
     const search = document.querySelectorAll('[data-search]')
+    const hintContent = document.querySelector('.js-hint-result')
 
     search.forEach(el => {
         el.addEventListener('input', () => {
@@ -45,10 +46,40 @@ function showHintSearch() {
             //TODO: Пример для демонстрации подсказки. Тут нужно будет реализовать свой код.
             // Рекомендация добавить debounce функцию от Lodash
 
-            let hint = (el.value.length > 2).toString()
+            let hint = el.value.length > 2
+
+
+            if (hint) {
+                // Имитация результата запроса
+                let result = [
+                    {
+                        name: 'Шарики сердце',
+                        link: 'link-1'
+                    },
+                    {
+                        name: 'Шарики 8 марта',
+                        link: 'link-2'
+                    },
+                    {
+                        name: 'Шарики с днем рожденья',
+                        link: 'link-3'
+                    }
+                ]
+
+                hintContent.innerHTML = '' // очищаем все что есть в подсказках
+
+                // Добавляем новые подсказки из полученного результата запроса
+                result.forEach((item) => {
+                    const html = `<li class="header-search-hint__item">
+                                <a href="#${ item.link }" class="header-search-hint__link">${ item.name }</a>
+                            </li>`
+                    hintContent.insertAdjacentHTML('afterbegin', html)
+                })
+            }
 
             //** Отображем подсказку **//
             el.closest('.header-search').setAttribute('data-hint', hint)
+
         })
     })
 }
@@ -57,11 +88,11 @@ function showHintSearch() {
  * Открыть/закрыть каталог
  */
 function openCatalog() {
-    const btnCatalog = document.querySelector('.js-open-catalog')
+    const btnCatalog = document.querySelectorAll('.js-open-catalog')
     const closeMobile = document.querySelector('.catalog-menu-head__close')
     const bodyClass = document.body.classList
     const catalogShow = 'show-catalog'
-    btnCatalog.addEventListener('click', () => bodyClass.toggle(catalogShow))
+    btnCatalog.forEach(el => el.addEventListener('click', () => bodyClass.toggle(catalogShow)))
     closeMobile.addEventListener('click', () => bodyClass.remove(catalogShow))
 }
 

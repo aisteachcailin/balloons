@@ -228,6 +228,11 @@
   }
 }
 
+@include media(md) {
+  .mobile-search {
+    display: none;
+  }
+}
 .header-icons {
   list-style: none;
   justify-content: space-between;
@@ -245,7 +250,11 @@
     @include media(lg) {
       margin-bottom: 4px;
     }
-
+    &--search-mobile {
+      width: 18px;
+      height: 18px;
+      fill: var(--color-primary);
+    }
     &--home {
       width: 23px;
       height: 23px;
