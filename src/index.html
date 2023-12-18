@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <title>Balloons</title>
 </head>
-<body>
-<div class="wrapper">
+<body class="wrapper">
+
     <header class="c-header">
         <div class="header-top">
             <div class="container">
@@ -506,20 +507,20 @@
         </section>
     </header>
 
-    <main class="content-wrap">
+    <main>
 
         <!-- Content start -->
 
         <!--   Banner   -->
         <section class="main-slider">
             <div class="container">
-                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div id="carouselHeader" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        <button type="button" data-bs-target="#carouselHeader" data-bs-slide-to="0"
                                 class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        <button type="button" data-bs-target="#carouselHeader" data-bs-slide-to="1"
                                 aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        <button type="button" data-bs-target="#carouselHeader" data-bs-slide-to="2"
                                 aria-label="Slide 3"></button>
                     </div>
                     <div class="carousel-inner">
@@ -566,7 +567,7 @@
                             </div>
                         </a>
                     </div>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselHeader"
                             data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
@@ -675,6 +676,8 @@
                         <h4 class="section-goods-top__title">Новинки</h4>
                         <a href="#" class="section-goods-top__show-all">Смотреть всё</a>
                     </div>
+
+
                     <div class="swiper-goods js-swiper-goods-new">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
@@ -691,7 +694,7 @@
                                     </div>
                                     <img src="/img/goods.png" class="goods-card__img" alt="text-image">
                                     <div class="goods-card__price">
-                                        435 ₽
+                                        от 435 ₽
                                     </div>
                                     <div class="goods-card__number">
                                         1102-0385
@@ -702,18 +705,18 @@
                                     <div class="goods-card__count">
                                         <span>25</span> шт/ уп
                                     </div>
+                                    <div class="goods-card__in-stock">
+                                        Наличие: <a href="#">в 2 магазинах</a>
+                                    </div>
                                     <div class="goods-card-buy">
-                                        <div class="goods-card-buy__label">
+                                        <div class="goods-card-buy__label js-product-label js-product-label">
                                             <input type="number" class="goods-card-buy__count js-product-count"
                                                    value="1">
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--inc js-card-btn-inc">+</span>
                                         </div>
-
-                                        <div class="goods-card-buy__btn js-add-cart"></div>
+                                        <button class="goods-card-buy__btn js-add-cart">В корзину</button>
                                     </div>
-                                    <div class="goods-card__count-to-cart">В корзине <span
-                                            class="js-count-to-cart">0</span></div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
@@ -730,7 +733,7 @@
                                     </div>
                                     <img src="/img/goods.png" class="goods-card__img" alt="text-image">
                                     <div class="goods-card__price">
-                                        435 ₽
+                                        от 435 ₽
                                     </div>
                                     <div class="goods-card__number">
                                         1102-0385
@@ -742,7 +745,7 @@
                                         <span>25</span> шт/ уп
                                     </div>
                                     <div class="goods-card-buy">
-                                        <div class="goods-card-buy__label">
+                                        <div class="goods-card-buy__label js-product-label">
                                             <input type="number" class="goods-card-buy__count js-product-count"
                                                    value="1">
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
@@ -769,7 +772,7 @@
                                     </div>
                                     <img src="/img/goods.png" class="goods-card__img" alt="text-image">
                                     <div class="goods-card__price">
-                                        435 ₽
+                                        от 435 ₽
                                     </div>
                                     <div class="goods-card__number">
                                         1102-0385
@@ -781,7 +784,7 @@
                                         <span>25</span> шт/ уп
                                     </div>
                                     <div class="goods-card-buy">
-                                        <div class="goods-card-buy__label">
+                                        <div class="goods-card-buy__label js-product-label">
                                             <input type="number" class="goods-card-buy__count js-product-count"
                                                    value="1">
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
@@ -808,7 +811,7 @@
                                     </div>
                                     <img src="/img/goods.png" class="goods-card__img" alt="text-image">
                                     <div class="goods-card__price">
-                                        435 ₽
+                                        от 435 ₽
                                     </div>
                                     <div class="goods-card__number">
                                         1102-0385
@@ -820,7 +823,7 @@
                                         <span>25</span> шт/ уп
                                     </div>
                                     <div class="goods-card-buy">
-                                        <div class="goods-card-buy__label">
+                                        <div class="goods-card-buy__label js-product-label">
                                             <input type="number" class="goods-card-buy__count js-product-count"
                                                    value="1">
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
@@ -847,7 +850,7 @@
                                     </div>
                                     <img src="/img/goods.png" class="goods-card__img" alt="text-image">
                                     <div class="goods-card__price">
-                                        435 ₽
+                                        от 435 ₽
                                     </div>
                                     <div class="goods-card__number">
                                         1102-0385
@@ -859,7 +862,7 @@
                                         <span>25</span> шт/ уп
                                     </div>
                                     <div class="goods-card-buy">
-                                        <div class="goods-card-buy__label">
+                                        <div class="goods-card-buy__label js-product-label">
                                             <input type="number" class="goods-card-buy__count js-product-count"
                                                    value="1">
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
@@ -904,7 +907,7 @@
                                     </div>
                                     <img src="/img/goods.png" class="goods-card__img" alt="text-image">
                                     <div class="goods-card__price">
-                                        <span class="goods-card__price--old">435 ₽</span>
+                                        <span class="goods-card__price--old">от 435 ₽</span>
                                         <span class="goods-card__price--now">235 ₽</span>
                                     </div>
                                     <div class="gray-wrap">
@@ -918,7 +921,7 @@
                                             <span>25</span> шт/ уп
                                         </div>
                                         <div class="goods-card-buy">
-                                            <div class="goods-card-buy__label">
+                                            <div class="goods-card-buy__label js-product-label">
                                                 <input type="number" class="goods-card-buy__count js-product-count"
                                                        value="1">
                                                 <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
@@ -946,7 +949,7 @@
                                     </div>
                                     <img src="/img/goods.png" class="goods-card__img" alt="text-image">
                                     <div class="goods-card__price">
-                                        <span class="goods-card__price--old">435 ₽</span>
+                                        <span class="goods-card__price--old">от 435 ₽</span>
                                         <span class="goods-card__price--now">235 ₽</span>
                                     </div>
                                     <div class="gray-wrap">
@@ -960,7 +963,7 @@
                                             <span>25</span> шт/ уп
                                         </div>
                                         <div class="goods-card-buy">
-                                            <div class="goods-card-buy__label">
+                                            <div class="goods-card-buy__label js-product-label">
                                                 <input type="number" class="goods-card-buy__count js-product-count"
                                                        value="1">
                                                 <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
@@ -988,7 +991,7 @@
                                     </div>
                                     <img src="/img/goods.png" class="goods-card__img" alt="text-image">
                                     <div class="goods-card__price">
-                                        <span class="goods-card__price--old">435 ₽</span>
+                                        <span class="goods-card__price--old">от 435 ₽</span>
                                         <span class="goods-card__price--now">235 ₽</span>
                                     </div>
                                     <div class="gray-wrap">
@@ -1002,7 +1005,7 @@
                                             <span>25</span> шт/ уп
                                         </div>
                                         <div class="goods-card-buy">
-                                            <div class="goods-card-buy__label">
+                                            <div class="goods-card-buy__label js-product-label">
                                                 <input type="number" class="goods-card-buy__count js-product-count"
                                                        value="1">
                                                 <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
@@ -1030,7 +1033,7 @@
                                     </div>
                                     <img src="/img/goods.png" class="goods-card__img" alt="text-image">
                                     <div class="goods-card__price">
-                                        <span class="goods-card__price--old">435 ₽</span>
+                                        <span class="goods-card__price--old">от 435 ₽</span>
                                         <span class="goods-card__price--now">235 ₽</span>
                                     </div>
                                     <div class="gray-wrap">
@@ -1044,7 +1047,7 @@
                                             <span>25</span> шт/ уп
                                         </div>
                                         <div class="goods-card-buy">
-                                            <div class="goods-card-buy__label">
+                                            <div class="goods-card-buy__label js-product-label">
                                                 <input type="number" class="goods-card-buy__count js-product-count"
                                                        value="1">
                                                 <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
@@ -1072,7 +1075,7 @@
                                     </div>
                                     <img src="/img/goods.png" class="goods-card__img" alt="text-image">
                                     <div class="goods-card__price">
-                                        <span class="goods-card__price--old">435 ₽</span>
+                                        <span class="goods-card__price--old">от 435 ₽</span>
                                         <span class="goods-card__price--now">235 ₽</span>
                                     </div>
                                     <div class="gray-wrap">
@@ -1086,7 +1089,7 @@
                                             <span>25</span> шт/ уп
                                         </div>
                                         <div class="goods-card-buy">
-                                            <div class="goods-card-buy__label">
+                                            <div class="goods-card-buy__label js-product-label">
                                                 <input type="number" class="goods-card-buy__count js-product-count"
                                                        value="1">
                                                 <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
@@ -1211,7 +1214,7 @@
                                     </div>
                                     <img src="/img/goods-2.png" class="goods-card__img" alt="text-image">
                                     <div class="goods-card__price">
-                                        435 ₽
+                                        от 435 ₽
                                     </div>
                                     <div class="goods-card__number">
                                         1102-0385
@@ -1223,7 +1226,7 @@
                                         <span>25</span> шт/ уп
                                     </div>
                                     <div class="goods-card-buy">
-                                        <div class="goods-card-buy__label">
+                                        <div class="goods-card-buy__label js-product-label">
                                             <input type="number" class="goods-card-buy__count js-product-count"
                                                    value="1">
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
@@ -1250,7 +1253,7 @@
                                     </div>
                                     <img src="/img/goods-2.png" class="goods-card__img" alt="text-image">
                                     <div class="goods-card__price">
-                                        435 ₽
+                                        от 435 ₽
                                     </div>
                                     <div class="goods-card__number">
                                         1102-0385
@@ -1262,7 +1265,7 @@
                                         <span>25</span> шт/ уп
                                     </div>
                                     <div class="goods-card-buy">
-                                        <div class="goods-card-buy__label">
+                                        <div class="goods-card-buy__label js-product-label">
                                             <input type="number" class="goods-card-buy__count js-product-count"
                                                    value="1">
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
@@ -1289,7 +1292,7 @@
                                     </div>
                                     <img src="/img/goods-2.png" class="goods-card__img" alt="text-image">
                                     <div class="goods-card__price">
-                                        435 ₽
+                                        от 435 ₽
                                     </div>
                                     <div class="goods-card__number">
                                         1102-0385
@@ -1301,7 +1304,7 @@
                                         <span>25</span> шт/ уп
                                     </div>
                                     <div class="goods-card-buy">
-                                        <div class="goods-card-buy__label">
+                                        <div class="goods-card-buy__label js-product-label">
                                             <input type="number" class="goods-card-buy__count js-product-count"
                                                    value="1">
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
@@ -1328,7 +1331,7 @@
                                     </div>
                                     <img src="/img/goods-2.png" class="goods-card__img" alt="text-image">
                                     <div class="goods-card__price">
-                                        435 ₽
+                                        от 435 ₽
                                     </div>
                                     <div class="goods-card__number">
                                         1102-0385
@@ -1340,7 +1343,7 @@
                                         <span>25</span> шт/ уп
                                     </div>
                                     <div class="goods-card-buy">
-                                        <div class="goods-card-buy__label">
+                                        <div class="goods-card-buy__label js-product-label">
                                             <input type="number" class="goods-card-buy__count js-product-count"
                                                    value="1">
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
@@ -1367,7 +1370,7 @@
                                     </div>
                                     <img src="/img/goods-2.png" class="goods-card__img" alt="text-image">
                                     <div class="goods-card__price">
-                                        435 ₽
+                                        от 435 ₽
                                     </div>
                                     <div class="goods-card__number">
                                         1102-0385
@@ -1379,7 +1382,7 @@
                                         <span>25</span> шт/ уп
                                     </div>
                                     <div class="goods-card-buy">
-                                        <div class="goods-card-buy__label">
+                                        <div class="goods-card-buy__label js-product-label">
                                             <input type="number" class="goods-card-buy__count js-product-count"
                                                    value="1">
                                             <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
@@ -1615,7 +1618,6 @@
             </p>
         </div>
     </footer>
-</div>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
@@ -1624,6 +1626,6 @@
         integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
         crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-<script type="module" defer src="/js/main.js"></script>
+<script type="module" defer src="./js/main.js"></script>
 </body>
 </html>

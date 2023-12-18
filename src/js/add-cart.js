@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', addToCart)
 function addToCart() {
     actionBtnCount()
     validateCount()
-    addItem()
+    btnAddCart()
     setCount()
     refreshCart()
 }
@@ -41,42 +41,49 @@ function refreshCart() {
 
         el.innerText = cartData.length ?? '0'
         el.classList.toggle('show', !!cartData.length)
-        textCart.innerText = cartData.length ? `${sumPrice} ₽` : 'Корзина'
+        textCart.innerText = cartData.length ? `${ sumPrice } ₽` : 'Корзина'
     })
-
-
 }
 
 /**
  * Функционал при нажатии на кнопку добавить в корзину
  */
-function addItem() {
+function btnAddCart() {
     const buttons = document.querySelectorAll('.js-add-cart')
 
     buttons.forEach((el) => {
         el.addEventListener('click', () => {
             const product = el.closest('.goods-card')
-            const properties = product.getAttributeNames()
-            const propertiesData = properties.filter(el => el.includes('data'))
-            const propertiesNames = propertiesData.map(el => el.replace('data-', ''))
-            const addCountProducts = Number(product.querySelector('.js-product-count').value)
-            const countCartProducts = Number(product.getAttribute('data-count'))
-            const textCount = product.querySelector('.js-count-to-cart')
-            const countResult = (countCartProducts + addCountProducts).toString()
-            const dataCart = {}
 
-            product.setAttribute('data-count', countResult)
-            textCount.innerText = countResult
-            textCount.parentElement.classList.add('show')
+            addItem(product)
+            product.querySelector('.js-product-label')
+                .classList
+                .add('show')
 
-            propertiesNames.forEach((el, i) => {
-                dataCart[el] = product.getAttribute(propertiesData[i])
-            })
-
-            setLocalCart(dataCart)
-            refreshCart()
+            el.setAttribute('hidden', 'hidden')
         })
     })
+}
+
+/**
+ * Добавление элементов в корзину
+ * @param product
+ */
+function addItem(product) {
+    const properties = product.getAttributeNames()
+    const propertiesData = properties.filter(el => el.includes('data'))
+    const propertiesNames = propertiesData.map(el => el.replace('data-', ''))
+    const addCountProducts = product.querySelector('.js-product-count').value
+    const dataCart = {}
+
+    product.setAttribute('data-count', addCountProducts)
+
+    propertiesNames.forEach((el, i) => {
+        dataCart[el] = product.getAttribute(propertiesData[i])
+    })
+
+    setLocalCart(dataCart)
+    refreshCart()
 }
 
 /**
@@ -87,12 +94,14 @@ function setCount() {
         const data = JSON.parse(localStorage.cart)
 
         data.forEach((el) => {
-            const item = document.querySelector(`.goods-card[data-id='${el.id}']`)
-            const textCount = item.querySelector('.js-count-to-cart')
+            const item = document.querySelector(`.goods-card[data-id='${ el.id }']`)
+            const countElements = item.querySelector('.js-product-count')
+            const parentCount = countElements.parentElement
 
             item.setAttribute('data-count', el.count)
-            textCount.innerText = el.count
-            textCount.parentElement.classList.add('show')
+            countElements.value = el.count
+            parentCount.classList.add('show')
+            parentCount.nextElementSibling.setAttribute('hidden', 'hidden')
         })
     }
 }
@@ -106,10 +115,10 @@ function setLocalCart(data) {
 
     if (dataLocal.length) {
         const index = dataLocal.findIndex(el => el.id === data.id)
-        if (index >= 0) {
+
+        if (index >= 0 && +data.count > 0) {
             dataLocal[index] = data
         } else {
-            console.log('23')
             dataLocal.push(data)
         }
     } else {
@@ -173,10 +182,25 @@ function actionBtnCount() {
  * @returns {boolean}
  */
 function changeCount(el, increment = true) {
-    const countElement = el.closest('.goods-card-buy__label').querySelector('input')
+    const product = el.closest('.goods-card')
+    const countLabel = el.closest('.goods-card-buy__label')
+    const countElement = countLabel.querySelector('input')
     let value = Number(countElement.value)
 
-    if (!increment && value - 1 < 1) return false
+    if (!increment && value - 1 < 1) {
+        const dataLocal = getLocalStorage('cart')
+        const elID = product.getAttribute('data-id')
+        const removeIndex = dataLocal.findIndex(el => el.id === elID)
 
-    countElement.value = increment ? (++value).toString() : (--value).toString()
+        countLabel.classList.remove('show')
+        countLabel.nextElementSibling.removeAttribute('hidden')
+        product.setAttribute('data-count', '0')
+        dataLocal.splice(removeIndex, 1)
+        setLocalStorage('cart', dataLocal)
+        refreshCart()
+
+        return false
+    }
+        countElement.value = increment ? (++value).toString() : (--value).toString()
+        addItem(product)
 }

@@ -4,7 +4,7 @@
  * 07.03.2023
  **/
 
-import '../scss/main.scss'
+import '../scss/bootstrap.scss'
 import '../scss/style.scss'
 import '../scss/pages/main-page/main-page.scss'
 import '../js/add-cart'
