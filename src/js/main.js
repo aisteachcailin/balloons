@@ -4,8 +4,6 @@
  * 07.03.2023
  **/
 
-import '../scss/bootstrap.scss'
-import '../scss/style.scss'
 import '../scss/pages/main-page/main-page.scss'
 import '../js/add-cart'
 
@@ -104,12 +102,10 @@ function initSliderGoods(sliderClass) {
     new Swiper(sliderClass, {
         breakpoints: {
             320: {
-                slidesPerView: 2,
-                spaceBetween: 8
+                slidesPerView: 1,
             },
             576: {
-                slidesPerView: 2,
-                spaceBetween: 16
+                slidesPerView: 1,
             },
             768: {
                 slidesPerView: 3,
