@@ -3,7 +3,13 @@ export default {
     base: './',
     publicDir: '../public',
     build: {
-        outDir: '../dist'
+        outDir: '../dist',
+        rollupOptions: {
+            input: {
+                main: './index.html',
+                detail: './detail.html',
+            },
+        },
     },
     css: {
         devSourcemap: true

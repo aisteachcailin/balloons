@@ -1,0 +1,31 @@
+/**
+* Created by AndreyBan
+* in PhpStorm
+* 05.01.2024
+**/
+
+.card-label {
+  border-radius: 30px;
+  width: 64px;
+  height: 39px;
+  padding: 10px 0;
+  text-align: center;
+  font-weight: 700;
+
+  &--new {
+    background-color: var(--color-secondary);
+  }
+  &--promo {
+    background-color: var(--color-primary);
+    color: #fff;
+  }
+  &--hit {
+    background-color: #D2F2E2;
+  }
+  &--absolute {
+    position: absolute;
+    z-index: 10;
+    left: 16px;
+    top: 16px;
+  }
+}
