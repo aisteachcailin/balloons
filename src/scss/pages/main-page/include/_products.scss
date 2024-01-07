@@ -1,6 +1,32 @@
 @use "src/scss/variables" as *;
 @import "src/scss/components/in/labels";
 
+.section-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  margin-right: 14px;
+  margin-bottom: 0;
+  @include media(md) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  @include media(lg) {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  @include media(lg) {
+    font-size: 26px;
+    line-height: 30px;
+  }
+  &--margin {
+    margin-bottom: 16px;
+
+    @include media(sm) {
+      margin-bottom: 32px;
+    }
+  }
+}
 .section-goods {
   margin-bottom: 28px;
   @include media(md) {
@@ -9,9 +35,11 @@
   @include media(xxl) {
     margin-bottom: 56px;
   }
+
   &-wrap {
     position: relative;
   }
+
   &-top {
     display: flex;
     margin-bottom: 16px;
@@ -24,25 +52,6 @@
       margin-bottom: 32px;
     }
 
-    &__title {
-      font-weight: 700;
-      font-size: 16px;
-      line-height: 20px;
-      margin-right: 14px;
-      margin-bottom: 0;
-      @include media(md) {
-        font-size: 20px;
-        line-height: 24px;
-      }
-      @include media(lg) {
-        font-size: 24px;
-        line-height: 28px;
-      }
-      @include media(lg) {
-        font-size: 26px;
-        line-height: 30px;
-      }
-    }
     &__show-all {
       display: block;
       padding: 4px 14px;
@@ -52,6 +61,7 @@
       border-radius: 30px;
       text-decoration: none;
       white-space: nowrap;
+
       &:hover {
         transition-duration: .2s;
         color: $mainColorText;
@@ -66,6 +76,7 @@
   padding: 16px var(--v-rl-padding) 47px;
   position: relative;
   cursor: pointer;
+  text-align: left;
   @include media(sm) {
     --v-rl-padding: 16px;
     padding: var(--v-rl-padding) 18px 60px;
@@ -113,6 +124,7 @@
       margin: 0 auto 14px;
     }
   }
+
   &__price {
     font-size: 18px;
     line-height: 22px;
@@ -123,19 +135,26 @@
       line-height: 24px;
     }
   }
+
   &__number {
     color: #747474;
     margin-bottom: 8px;
   }
+
   &__name {
     color: #333;
     margin-bottom: 10px;
     height: 36px;
+    font-size: 14px;
   }
+
   &__in-stock {
-      margin-bottom: 16px;
+    margin-bottom: 16px;
+    font-size: 14px;
   }
+
   &__count {
+    font-size: 14px;
     @include media(xs) {
       margin-bottom: 24px;
     }
@@ -155,30 +174,36 @@
     border: 2px solid var(--color-primary);
     border-radius: 30px;
   }
+
   //&:hover {
   //  &:before {
   //    border: 2px solid var(--color-primary);
   //  }
   //}
 }
+
 .goods-card-labels {
   display: flex;
   column-gap: 8px;
 }
+
 .goods-promo {
   .goods-card {
     &__price {
       display: flex;
       justify-content: space-between;
+
       &--now {
         color: #9773F0CC;
       }
     }
+
     &-buy__count {
       background-color: #FFF;
     }
   }
 }
+
 .gray-wrap {
   background-color: #F5F5F5;
   padding: 12px var(--v-rl-padding) 16px;
@@ -190,12 +215,14 @@
     padding: 12px var(--v-rl-padding) 60px;
   }
 }
+
 .goods-card-top {
   display: flex;
   justify-content: space-between;
   position: absolute;
   width: calc(100% - var(--v-rl-padding) * 2);
 }
+
 .goods-card-favorite {
   width: 32px;
   height: 32px;
@@ -203,14 +230,17 @@
   &:before, &:after {
     content: '';
     position: absolute;
+    right: 0;
     width: 32px;
     height: 32px;
     transition-duration: .2s;
   }
+
   &:before {
     background: url($imgPath + "/svg/heart.svg") 0 0 no-repeat;
     z-index: 1;
   }
+
   &:after {
     background: url($imgPath + "/svg/heart-blue.svg") 0 0 no-repeat;
     z-index: 2;
@@ -224,6 +254,18 @@
     }
   }
 }
+
+.icon-cart {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url($imgPath + "/svg/cart.svg");
+  background-repeat: no-repeat;
+  background-position: 32% 50%;
+  background-size: 24px;
+  margin-right: 8px;
+}
+
 .goods-card-buy {
   display: flex;
   justify-content: space-between;
@@ -233,39 +275,50 @@
   @include media(lg) {
     align-items: flex-start;
   }
+
   &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--color-primary);
     border-radius: 30px;
-    background-image: url($imgPath + "/svg/cart.svg");
-    background-repeat: no-repeat;
-    background-position: 32% 50%;
-    background-size: 19px;
     border: 1px solid transparent;
     color: #fff;
     font-weight: 600;
     width: 100%;
     height: 41px;
+    font-size: 14px;
+
     &:hover {
       transition-duration: .2s;
       border: 1px solid #333333;
     }
+
     @include media(lg) {
       background-position: 4vw 50%;
       background-size: 22px;
+      height: 53px;
     }
     @include media(lg) {
       background-position: 3.25vw 50%;
       background-size: 22px;
     }
+
+    &--big {
+      height: 53px;
+    }
   }
+
   &__label {
     position: relative;
     display: none;
     width: 100%;
+
     &.show {
       display: block;
     }
   }
+
   &__count {
     position: relative;
     width: 100%;
@@ -274,7 +327,7 @@
     border: none;
     background-color: #F0F0F0;
     font-size: 16px;
-    -moz-appearance:textfield;
+    -moz-appearance: textfield;
     height: 41px;
     @include media(md) {
       height: 41px;
@@ -282,14 +335,17 @@
     @include media(lg) {
       height: 53px;
     }
+
     &::-webkit-outer-spin-button,
     &::-webkit-inner-spin-button {
       -webkit-appearance: none;
       margin: 0;
     }
+
     &:focus {
       outline: none;
     }
+
     &-btn {
       position: absolute;
       display: flex;
@@ -303,9 +359,18 @@
       background-color: var(--color-secondary);
       border-radius: 30px;
       z-index: 1;
+
+      @include media(sm) {
+        width: 70px;
+      }
+      @include media(lg) {
+        width: 90px;
+      }
+
       &--dec {
         left: 0;
       }
+
       &--inc {
         right: 0;
       }
@@ -316,6 +381,20 @@
 .swiper-goods {
   width: 100%;
   overflow: hidden;
+
+  &.swiper-vertical {
+    touch-action: auto;
+  }
+
+  .swiper-slide:nth-child(n+4) {
+    display: none;
+  }
+
+  @include media(sm) {
+    .swiper-slide:nth-child(n+4) {
+      display: block;
+    }
+  }
 
   &-nav {
     position: absolute;
@@ -331,13 +410,16 @@
     @include media(sm) {
       display: flex;
     }
+
     &:after {
       font-size: 14px;
       font-weight: 900;
     }
+
     &.swiper-button-prev {
       right: 52px;
     }
+
     &.swiper-button-next {
       right: 0;
     }
@@ -361,6 +443,7 @@
       background-position: 0 0;
     }
   }
+
   @include media(md) {
     margin-bottom: 0;
     height: 229px;
@@ -370,6 +453,7 @@
     height: 366px;
     padding: 28px;
   }
+
   &__title {
     max-width: 270px;
     font-size: 14px;
@@ -398,6 +482,7 @@
     @include media(md) {
       padding-right: 20px;
     }
+
     &:after {
       content: '';
       position: absolute;
@@ -415,8 +500,10 @@
         background-size: 8px;
       }
     }
+
     &:hover {
       transition-duration: .2s;
+
       &:after {
         background-image: url($imgPath + "/svg/chevrone-right-hover.svg");
         background-size: 6px;
@@ -454,11 +541,13 @@
     padding: 26px 19px;
     background-size: auto;
   }
+
   &:hover {
     transition-duration: .25s;
     color: $mainColorText;
     background-color: var(--color-secondary);
   }
+
   &__title {
     width: 100%;
     text-align: center;

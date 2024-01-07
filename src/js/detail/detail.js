@@ -6,6 +6,9 @@
 
 import('../../scss/pages/detail/detail.scss')
 document.addEventListener('DOMContentLoaded', () => {
+    initDetailSlider()
+})
+function initDetailSlider() {
     let thumbs = new Swiper(".detail-thumbs-slider", {
         spaceBetween: 24,
         slidesPerView: 3,
@@ -34,4 +37,4 @@ document.addEventListener('DOMContentLoaded', () => {
             swiper: thumbs,
         }
     });
-})
+}
