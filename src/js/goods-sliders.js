@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
         '.js-swiper-goods-new',
         '.js-swiper-goods-promo',
         '.js-swiper-goods-hit',
-        '.js-swiper-goods-viewed'
+        '.js-swiper-goods-viewed',
+        '.js-swiper-goods-collection'
     ]
 
     arSliders.forEach(el => initSliderGoods(el)) // Инициализация слайдеров с товарами

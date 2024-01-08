@@ -27,6 +27,24 @@
     }
   }
 }
+.to-cart {
+  display: none;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  margin-bottom: -26px;
+
+  @include media(md) {
+    margin-bottom: -30px;
+  }
+}
+.goods-card-buy__btn[hidden] + .to-cart {
+  display: block;
+}
 .section-goods {
   margin-bottom: 28px;
   @include media(md) {
@@ -142,6 +160,8 @@
   }
 
   &__name {
+    display: block;
+    text-decoration: none;
     color: #333;
     margin-bottom: 10px;
     height: 36px;
@@ -269,6 +289,7 @@
 .goods-card-buy {
   display: flex;
   justify-content: space-between;
+  position: relative;
   @include media(md) {
     align-items: center;
   }

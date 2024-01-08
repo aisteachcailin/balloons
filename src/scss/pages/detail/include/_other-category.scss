@@ -6,6 +6,9 @@
 
 @use "src/scss/variables" as *;
 
+.loaded .other-category-wrap {
+  opacity: 1;
+}
 .other-category {
   margin-bottom: 36px;
 
@@ -21,11 +24,13 @@
     flex-wrap: wrap;
     column-gap: 16px;
     row-gap: 16px;
+    opacity: 0;
   }
 
-  &-item {
+  &-item, .js-btn-show-more {
     display: inline-block;
     background-color: var(--color-secondary);
+    height: 42px;
     padding: 11px 14px;
     border-radius: 30px;
     color: #333;
@@ -34,6 +39,9 @@
     &:hover {
       color: #333;
       border: 2px solid var(--color-primary);
+    }
+    &.hide {
+      display: none;
     }
   }
 }
