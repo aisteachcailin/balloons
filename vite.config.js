@@ -6,8 +6,8 @@ export default {
         outDir: '../dist',
         rollupOptions: {
             input: {
-                main: './index.html',
-                detail: './detail.html',
+                main: './src/index.html',
+                detail: './src/detail.html',
             },
         },
     },
