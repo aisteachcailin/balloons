@@ -1,0 +1,23 @@
+/**
+* Created by AndreyBan
+* in PhpStorm
+* 08.02.2024
+**/
+@use "../variables" as *;
+
+.breadcrumb {
+  list-style: none;
+  display: flex;
+  margin-bottom: 16px;
+  padding-left: 0;
+
+  &__link {
+    color: $secondaryColorText;
+    text-decoration: none;
+
+    &:hover {
+      color: $secondaryColorText;
+      text-decoration: underline;
+    }
+  }
+}

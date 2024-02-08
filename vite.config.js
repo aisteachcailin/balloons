@@ -8,6 +8,7 @@ export default {
             input: {
                 main: './src/index.html',
                 detail: './src/detail.html',
+                catalog: './src/catalog.html',
             },
         },
     },

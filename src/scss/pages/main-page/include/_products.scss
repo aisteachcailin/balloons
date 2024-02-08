@@ -7,6 +7,7 @@
   line-height: 20px;
   margin-right: 14px;
   margin-bottom: 0;
+
   @include media(md) {
     font-size: 20px;
     line-height: 24px;

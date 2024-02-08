@@ -1,0 +1,26 @@
+/**
+* Created by AndreyBan
+* in PhpStorm
+* 08.02.2024
+**/
+@use '../../variables' as *;
+@use "src/scss/pages/main-page/include/products";
+
+.catalog-section {
+  margin-bottom: 36px;
+
+  @include media(md) {
+    margin-bottom: 42px;
+  }
+
+  @include media(lg) {
+    margin-bottom: 56px;
+  }
+  .section-title {
+    margin-bottom: 16px;
+
+    @include media(lg) {
+      margin-bottom: 30px;
+    }
+  }
+}

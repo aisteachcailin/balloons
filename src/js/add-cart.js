@@ -63,9 +63,9 @@ function btnAddCart() {
 
     buttons.forEach((el) => {
         el.addEventListener('click', () => {
-            const product = el.closest('.goods-card')
+            const product = el.closest('.js-goods-card')
             const cardId = product.getAttribute('data-id')
-            const cardsById = document.querySelectorAll(`.goods-card[data-id='${ cardId }']`)
+            const cardsById = document.querySelectorAll(`.js-goods-card[data-id='${ cardId }']`)
 
             addItem(product)
 
@@ -110,7 +110,7 @@ function setCount() {
         const data = JSON.parse(localStorage.cart)
 
         data.forEach((el) => {
-            const item = document.querySelectorAll(`.goods-card[data-id='${ el.id }']`)
+            const item = document.querySelectorAll(`.js-goods-card[data-id='${ el.id }']`)
 
             item.forEach((item) => {
                 const countElements = item.querySelector('.js-product-count')
@@ -201,9 +201,9 @@ function actionBtnCount() {
  * @returns {boolean}
  */
 function changeCount(el, increment = true) {
-    const product = el.closest('.goods-card')
+    const product = el.closest('.js-goods-card')
     const elID = product.getAttribute('data-id')
-    const productsById = document.querySelectorAll(`.goods-card[data-id='${ elID }']`)
+    const productsById = document.querySelectorAll(`.js-goods-card[data-id='${ elID }']`)
 
     productsById.forEach((item) => {
         const countLabel = item.querySelector('.goods-card-buy__label')
