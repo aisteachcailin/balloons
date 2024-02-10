@@ -3,10 +3,72 @@
 * in PhpStorm
 * 10.02.2024
 **/
+@use "src/scss/variables" as *;
+
 .pagination {
   --bs-pagination-font-size: 1em;
   --bs-pagination-border-color: #747474;
+  --bs-pagination-border-radius: 50%;
+  --bs-pagination-padding-y: 0;
+  --bs-pagination-padding-x: 0;
+  --bs-pagination-hover-border-color: var(--color-primary);
+  --bs-pagination-hover-bg: var(--color-primary);
+  --bs-pagination-hover-color: #fff;
+  column-gap: 18px;
+  justify-content: flex-end;
 }
-.page-link {
-  border-radius: 50%;
+
+.page-item {
+  &:first-child {
+    .page-link {
+      border-top-right-radius: 50%;
+      border-bottom-right-radius: 50%;
+    }
+  }
+  &:not(:first-child) .page-link {
+    margin-left: 0;
+  }
+  &.active {
+    .page-link {
+      font-weight: 700;
+    }
+  }
+
+  &.disabled {
+    .page-link {
+      opacity: .5;
+    }
+  }
+
+  .page-link {
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      font-weight: 700;
+    }
+    &[aria-label=Previous],
+    &[aria-label=Next]{
+      background-color: #F5F5F5;
+      border: none;
+    }
+  }
+}
+.pagination__chevron {
+  display: block;
+  background: url($imgPath + '/svg/chevrone.svg') no-repeat 0 0;
+  background-size: 16px;
+  width: 16px;
+  height: 10px;
+
+  &--previous {
+    transform: rotate(90deg);
+  }
+  &--next {
+    transform: rotate(-90deg);
+  }
 }

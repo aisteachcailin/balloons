@@ -6,6 +6,7 @@
 @use '../../variables' as *;
 @use "src/scss/pages/main-page/include/products";
 @use "src/scss/pages/catalog/include/sort";
+@use "src/scss/pages/catalog/include/filter";
 
 .catalog-section {
   margin-bottom: 36px;
@@ -17,6 +18,7 @@
   @include media(lg) {
     margin-bottom: 56px;
   }
+
   .section-title {
     margin-bottom: 16px;
 
@@ -25,6 +27,13 @@
     }
   }
 }
+
 .catalog-bottom {
   margin-top: 32px;
+}
+
+.catalog-filter {
+  .collapse:not(.show) {
+    display: none;
+  }
 }

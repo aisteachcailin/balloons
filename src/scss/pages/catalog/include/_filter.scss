@@ -1,0 +1,55 @@
+/**
+* Created by AndreyBan
+* in PhpStorm
+* 10.02.2024
+**/
+@use "src/scss/variables" as *;
+
+.filter-category {
+  margin-bottom: 0;
+  list-style: none;
+  padding-left: 0;
+  &-item {
+    position: relative;
+    padding-left: 26px;
+
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      background: url($imgPath + "/svg/chevrone-right-hover.svg") no-repeat 0 0;
+      background-size: 11px;
+      width: 11px;
+      height: 19px;
+      left: 0;
+      transform: rotate(180deg);
+    }
+
+    &.active > a {
+      font-weight: 500;
+    }
+  }
+
+  a {
+    color: $mainColorText;
+    text-decoration: none;
+
+    &:hover {
+      color: var(--color-primary)
+    }
+  }
+}
+.filter-subcategory {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 28px;
+
+  &-item {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+}
