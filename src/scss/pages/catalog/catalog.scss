@@ -5,6 +5,7 @@
 **/
 @use '../../variables' as *;
 @use "src/scss/pages/main-page/include/products";
+@use "src/scss/pages/catalog/include/sort";
 
 .catalog-section {
   margin-bottom: 36px;
@@ -23,4 +24,7 @@
       margin-bottom: 30px;
     }
   }
+}
+.catalog-bottom {
+  margin-top: 32px;
 }

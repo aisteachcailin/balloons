@@ -10,6 +10,9 @@ export default {
                 detail: './src/detail.html',
                 catalog: './src/catalog.html',
             },
+            output: {
+                assetFileNames: "assets/[name][extname]"
+            }
         },
     },
     css: {

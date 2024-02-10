@@ -23,11 +23,12 @@
     color: var(--color-primary);
     background-color: #fff;
     padding: 0 20px;
-    border: 2px solid var(--color-primary);
+    transition-duration: .2s;
+    box-shadow: 0 0 0 1px var(--color-primary);
     &:hover {
       transition-duration: .2s;
       color: var(--color-primary);
-      border: 2px solid var(--color-primary);
+      box-shadow: 0 0 0 2px var(--color-primary);
     }
   }
   &--catalog {
