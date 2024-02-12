@@ -1,0 +1,23 @@
+/**
+* Created by AndreyBan
+* in PhpStorm
+* 12.02.2024
+**/
+.form-check-input[type=checkbox] {
+  cursor: pointer;
+
+  & + label {
+    cursor: pointer;
+    user-select: none;
+    line-height: 16px;
+  }
+
+  background-size: 18px;
+  margin-top: 0;
+  margin-right: 16px;
+}
+.form-check {
+  display: flex;
+  align-items: center;
+  min-height: auto;
+}

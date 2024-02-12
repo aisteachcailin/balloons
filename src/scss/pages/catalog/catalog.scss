@@ -36,4 +36,9 @@
   .collapse:not(.show) {
     display: none;
   }
+  .form-check {
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
 }
