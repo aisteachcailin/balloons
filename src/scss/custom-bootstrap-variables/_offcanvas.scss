@@ -1,0 +1,18 @@
+/**
+* Created by AndreyBan
+* in PhpStorm
+* 25.02.2024
+**/
+@use "../variables" as *;
+
+.offcanvas-lg {
+  --bs-offcanvas-padding-x: 26px
+}
+.offcanvas-title {
+  font-size: 24px;
+  font-weight: 700;
+}
+.btn-close {
+  background: url($imgPath + "/svg/close.svg") center/1em auto no-repeat;
+  opacity: 1;
+}

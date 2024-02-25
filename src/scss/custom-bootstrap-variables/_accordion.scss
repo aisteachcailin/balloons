@@ -15,6 +15,11 @@
   --bs-accordion-btn-icon-width: 12px;
   --bs-accordion-btn-padding-x: 0;
   --bs-accordion-body-padding-x: 0;
+  --bs-accordion-btn-padding-y: 0;
+  --bs-accordion-body-padding-y: 0
+}
+.accordion-header {
+  margin: 32px 0 14px;
 }
 .accordion-body {
   max-height: 234px;

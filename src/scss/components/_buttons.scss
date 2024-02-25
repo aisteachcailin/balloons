@@ -34,10 +34,9 @@
   &--catalog {
     order: -1;
     border: 1px solid transparent;
-    background-color: transparent;
-    @include media(lg) {
-      background-color: var(--color-primary);
-    }
+    //background-color: transparent;
+    background-color: var(--color-primary);
+
     @include media(lg) {
       padding: 0 14px;
       order: 0;
@@ -51,6 +50,9 @@
         display: inline;
       }
     }
+  }
+  &--full-width {
+    width: 100%;
   }
   &--search {
     padding: 0 20px;

@@ -28,10 +28,6 @@
   }
 }
 
-.catalog-bottom {
-  margin-top: 32px;
-}
-
 .catalog-filter {
   .collapse:not(.show) {
     display: none;
@@ -39,6 +35,27 @@
   .form-check {
     &:not(:last-child) {
       margin-bottom: 12px;
+    }
+  }
+  .accordion {
+    margin-bottom: 30px;
+  }
+}
+.catalog-section {
+  .goods-card {
+    margin-bottom: 16px;
+
+    @include media(md) {
+      margin-bottom: 32px;
+    }
+  }
+}
+.catalog-bottom {
+  .c-btn {
+    width: 100%;
+
+    @include media(md) {
+      width: auto;
     }
   }
 }

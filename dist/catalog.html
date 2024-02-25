@@ -532,170 +532,603 @@
         <div class="container">
             <h1 class="section-title">Латексные шары</h1>
             <div class="row">
-                <div class="col-3">
-                    <ul class="filter-category">
-                        <li class="filter-category-item">
-                            <a href="#">Каталог</a>
-                        </li>
-                        <li class="filter-category-item active">
-                            <a href="#">Воздушные шары из латекса</a>
-                            <ul class="filter-subcategory">
-                                <li class="filter-subcategory-item">
-                                    <a href="#">Круглые без рисунка</a>
+                <div class="col-lg-3">
+                    <div
+                            class="offcanvas-lg offcanvas-start filter-canvas"
+                            tabindex="-1"
+                            id="filterCanvas"
+                            aria-labelledby="filterCanvasLabel"
+                    >
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="filterCanvasLabel">Фильтр</h5>
+                            <button
+                                    type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="offcanvas"
+                                    data-bs-target="#filterCanvas"
+                                    aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul class="filter-category">
+                                <li class="filter-category-item">
+                                    <a href="#">Каталог</a>
                                 </li>
-                                <li class="filter-subcategory-item">
-                                    <a href="#">Круглые с рисунком</a>
-                                </li>
-                                <li class="filter-subcategory-item">
-                                    <a href="#">Шары для моделирования</a>
-                                </li>
-                                <li class="filter-subcategory-item">
-                                    <a href="#">Сердца</a>
-                                </li>
-                                <li class="filter-subcategory-item">
-                                    <a href="#">Шары для упаковки</a>
-                                </li>
-                                <li class="filter-subcategory-item">
-                                    <a href="#">Линколуны</a>
+                                <li class="filter-category-item active">
+                                    <a href="#">Воздушные шары из латекса</a>
+                                    <ul class="filter-subcategory">
+                                        <li class="filter-subcategory-item">
+                                            <a href="#">Круглые без рисунка</a>
+                                        </li>
+                                        <li class="filter-subcategory-item">
+                                            <a href="#">Круглые с рисунком</a>
+                                        </li>
+                                        <li class="filter-subcategory-item">
+                                            <a href="#">Шары для моделирования</a>
+                                        </li>
+                                        <li class="filter-subcategory-item">
+                                            <a href="#">Сердца</a>
+                                        </li>
+                                        <li class="filter-subcategory-item">
+                                            <a href="#">Шары для упаковки</a>
+                                        </li>
+                                        <li class="filter-subcategory-item">
+                                            <a href="#">Линколуны</a>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
-                        </li>
-                    </ul>
-                    <div class="catalog-filter">
-                        <div class="accordion" id="accordion-size">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="accordion-size-1">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                                        Размер
-                                    </button>
-                                </h2>
-                                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="accordion-size-1">
-                                    <div class="accordion-body">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="size-1">
-                                            <label class="form-check-label" for="size-1">
-                                                2"/ 5 см
-                                            </label>
+                            <div class="catalog-filter">
+                                <div class="accordion">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button
+                                                    class="accordion-button"
+                                                    type="button"
+                                                    data-bs-toggle="collapse"
+                                                    data-bs-target="#accordion-size"
+                                                    aria-expanded="true"
+                                                    aria-controls="accordion-size"
+                                            >
+                                                Размер
+                                            </button>
+                                        </h2>
+                                        <div id="accordion-size" class="accordion-collapse collapse show"
+                                             aria-labelledby="accordion-size-1">
+                                            <div class="accordion-body">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="size-1">
+                                                    <label class="form-check-label" for="size-1">
+                                                        2"/ 5 см
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="size-2">
+                                                    <label class="form-check-label" for="size-2">
+                                                        5"/ 13 см
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="size-3">
+                                                    <label class="form-check-label" for="size-3">
+                                                        10"/ 25 см
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="size-4">
+                                                    <label class="form-check-label" for="size-4">
+                                                        12"/ 30 см
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="size-5">
+                                                    <label class="form-check-label" for="size-5">
+                                                        14"/ 36 см
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="size-6">
+                                                    <label class="form-check-label" for="size-6">
+                                                        18"/ 45 см
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="size-7">
+                                                    <label class="form-check-label" for="size-7">
+                                                        24"/ 60 см
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="size-8">
+                                                    <label class="form-check-label" for="size-8">
+                                                        36"/ 91 см
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="size-9">
+                                                    <label class="form-check-label" for="size-9">
+                                                        18"/ 45 см
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="size-10">
+                                                    <label class="form-check-label" for="size-10">
+                                                        24"/ 60 см
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="size-11">
+                                                    <label class="form-check-label" for="size-11">
+                                                        36"/ 91 см
+                                                    </label>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="size-2">
-                                            <label class="form-check-label" for="size-2">
-                                                5"/ 13 см
-                                            </label>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button
+                                                    class="accordion-button"
+                                                    type="button"
+                                                    data-bs-toggle="collapse"
+                                                    data-bs-target="#accordion-color"
+                                                    aria-expanded="true"
+                                                    aria-controls="accordion-color"
+                                            >
+                                                Цвет
+                                            </button>
+                                        </h2>
+                                        <div id="accordion-color" class="accordion-collapse collapse show"
+                                             aria-labelledby="accordion-color">
+                                            <div class="accordion-body">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="color-1">
+                                                    <label class="form-check-label" for="color-1">
+                                                        <span class="color-circle"
+                                                              style="background-color: #FFFFFF"></span>
+                                                        Белый
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="color-2">
+                                                    <label class="form-check-label" for="color-2">
+                                                        <span class="color-circle"
+                                                              style="background-color: #FFD057"></span>
+                                                        Желтый
+                                                    </label>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="size-3">
-                                            <label class="form-check-label" for="size-3">
-                                                10"/ 25 см
-                                            </label>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button
+                                                    class="accordion-button"
+                                                    type="button"
+                                                    data-bs-toggle="collapse"
+                                                    data-bs-target="#accordion-trademark"
+                                                    aria-expanded="true"
+                                                    aria-controls="accordion-trademark"
+                                            >
+                                                Торговая марка
+                                            </button>
+                                        </h2>
+                                        <div id="accordion-trademark" class="accordion-collapse collapse show"
+                                             aria-labelledby="accordion-trademark">
+                                            <div class="accordion-body">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="trademark-1">
+                                                    <label class="form-check-label" for="color-1">
+                                                        Дон Баллон
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="trademark-2">
+                                                    <label class="form-check-label" for="trademark-2">
+                                                        Agura
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="trademark-3">
+                                                    <label class="form-check-label" for="trademark-3">
+                                                        Flexmetal
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="trademark-4">
+                                                    <label class="form-check-label" for="trademark-4">
+                                                        Grabo S.r.l
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="trademark-5">
+                                                    <label class="form-check-label" for="trademark-5">
+                                                        Anagram
+                                                    </label>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="size-4">
-                                            <label class="form-check-label" for="size-4">
-                                                12"/ 30 см
-                                            </label>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button
+                                                    class="accordion-button"
+                                                    type="button"
+                                                    data-bs-toggle="collapse"
+                                                    data-bs-target="#accordion-material"
+                                                    aria-expanded="true"
+                                                    aria-controls="accordion-material"
+                                            >
+                                                Материал
+                                            </button>
+                                        </h2>
+                                        <div id="accordion-material" class="accordion-collapse collapse show"
+                                             aria-labelledby="accordion-material">
+                                            <div class="accordion-body">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="material-1">
+                                                    <label class="form-check-label" for="material-1">
+                                                        Фольга
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="material-2">
+                                                    <label class="form-check-label" for="material-2">
+                                                        ПФХ
+                                                    </label>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="size-5">
-                                            <label class="form-check-label" for="size-5">
-                                                14"/ 36 см
-                                            </label>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button
+                                                    class="accordion-button"
+                                                    type="button"
+                                                    data-bs-toggle="collapse"
+                                                    data-bs-target="#accordion-collection"
+                                                    aria-expanded="true"
+                                                    aria-controls="accordion-collection"
+                                            >
+                                                Коллекция
+                                            </button>
+                                        </h2>
+                                        <div id="accordion-collection" class="accordion-collapse collapse show"
+                                             aria-labelledby="accordion-collection">
+                                            <div class="accordion-body">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="collection-1">
+                                                    <label class="form-check-label" for="collection-1">
+                                                        Три Кота
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="collection-2">
+                                                    <label class="form-check-label" for="collection-2">
+                                                        Синий трактор
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="collection-3">
+                                                    <label class="form-check-label" for="collection-3">
+                                                        Оранжевая корова
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="collection-4">
+                                                    <label class="form-check-label" for="collection-4">
+                                                        Грузовичок Лёва
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="collection-5">
+                                                    <label class="form-check-label" for="collection-5">
+                                                        Щенячий патруль
+                                                    </label>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="size-6">
-                                            <label class="form-check-label" for="size-6">
-                                                18"/ 45 см
-                                            </label>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button
+                                                    class="accordion-button"
+                                                    type="button"
+                                                    data-bs-toggle="collapse"
+                                                    data-bs-target="#accordion-event"
+                                                    aria-expanded="true"
+                                                    aria-controls="accordion-event"
+                                            >
+                                                Коллекция
+                                            </button>
+                                        </h2>
+                                        <div id="accordion-event" class="accordion-collapse collapse show"
+                                             aria-labelledby="accordion-event">
+                                            <div class="accordion-body">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="event-1">
+                                                    <label class="form-check-label" for="event-1">
+                                                        23 февраля
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="event-2">
+                                                    <label class="form-check-label" for="event-2">
+                                                        8 марта
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="event-3">
+                                                    <label class="form-check-label" for="event-3">
+                                                        9 мая
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="event-4">
+                                                    <label class="form-check-label" for="event-4">
+                                                        Выпускной
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="event-5">
+                                                    <label class="form-check-label" for="event-5">
+                                                        Девичник
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="event-6">
+                                                    <label class="form-check-label" for="event-6">
+                                                        День России
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="event-7">
+                                                    <label class="form-check-label" for="event-7">
+                                                        День Святого Валентина
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="event-8">
+                                                    <label class="form-check-label" for="event-8">
+                                                        Новый Год
+                                                    </label>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="size-7">
-                                            <label class="form-check-label" for="size-7">
-                                                24"/ 60 см
-                                            </label>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button
+                                                    class="accordion-button"
+                                                    type="button"
+                                                    data-bs-toggle="collapse"
+                                                    data-bs-target="#accordion-country"
+                                                    aria-expanded="true"
+                                                    aria-controls="accordion-country"
+                                            >
+                                                Страна происхождения
+                                            </button>
+                                        </h2>
+                                        <div id="accordion-country" class="accordion-collapse collapse show"
+                                             aria-labelledby="accordion-country">
+                                            <div class="accordion-body">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="country-1">
+                                                    <label class="form-check-label" for="country-1">
+                                                        Испания
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="country-2">
+                                                    <label class="form-check-label" for="country-2">
+                                                        Италия
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="country-3">
+                                                    <label class="form-check-label" for="country-3">
+                                                        Китай
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="country-4">
+                                                    <label class="form-check-label" for="country-4">
+                                                        Россия
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="country-5">
+                                                    <label class="form-check-label" for="country-5">
+                                                        США
+                                                    </label>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="size-8">
-                                            <label class="form-check-label" for="size-8">
-                                                36"/ 91 см
-                                            </label>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button
+                                                    class="accordion-button"
+                                                    type="button"
+                                                    data-bs-toggle="collapse"
+                                                    data-bs-target="#accordion-new"
+                                                    aria-expanded="true"
+                                                    aria-controls="accordion-new"
+                                            >
+                                                Страна происхождения
+                                            </button>
+                                        </h2>
+                                        <div id="accordion-new" class="accordion-collapse collapse show"
+                                             aria-labelledby="accordion-new">
+                                            <div class="accordion-body">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="new-1">
+                                                    <label class="form-check-label" for="new-1">
+                                                        Да
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="new-2">
+                                                    <label class="form-check-label" for="new-2">
+                                                        Нет
+                                                    </label>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="size-9">
-                                            <label class="form-check-label" for="size-9">
-                                                18"/ 45 см
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="size-10">
-                                            <label class="form-check-label" for="size-10">
-                                                24"/ 60 см
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="size-11">
-                                            <label class="form-check-label" for="size-11">
-                                                36"/ 91 см
-                                            </label>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button
+                                                    class="accordion-button"
+                                                    type="button"
+                                                    data-bs-toggle="collapse"
+                                                    data-bs-target="#accordion-count"
+                                                    aria-expanded="true"
+                                                    aria-controls="accordion-count"
+                                            >
+                                                Страна происхождения
+                                            </button>
+                                        </h2>
+                                        <div id="accordion-count" class="accordion-collapse collapse show"
+                                             aria-labelledby="accordion-count">
+                                            <div class="accordion-body">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="count-1">
+                                                    <label class="form-check-label" for="count-1">
+                                                        1 шт
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="count-2">
+                                                    <label class="form-check-label" for="count-2">
+                                                        2 шт
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="count-3">
+                                                    <label class="form-check-label" for="count-3">
+                                                        5 шт
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="count-4">
+                                                    <label class="form-check-label" for="count-4">
+                                                        10 шт
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="count-5">
+                                                    <label class="form-check-label" for="count-5">
+                                                        12 шт
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="count-6">
+                                                    <label class="form-check-label" for="count-6">
+                                                        50 шт
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="count-7">
+                                                    <label class="form-check-label" for="count-7">
+                                                        60 шт
+                                                    </label>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                                        Accordion Item #2
-                                    </button>
-                                </h2>
-                                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
-                                    <div class="accordion-body">
-                                        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                                        Accordion Item #3
-                                    </button>
-                                </h2>
-                                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
-                                    <div class="accordion-body">
-                                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                                    </div>
-                                </div>
+                                <button class="c-btn c-btn--primary c-btn--full-width">Применить</button>
+                                <a href="?reset=1" class="reset-filter">Сбросить фильтр</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-9">
+                <div class="col-12 col-lg-9">
+                    <div class="filter-btn-wrap d-lg-none">
+                        <a class="c-btn c-btn--primary c-btn--full-width"
+                           href="#filterCanvas"
+                           role="button"
+                           data-bs-toggle="offcanvas"
+                           aria-controls="filterCanvas"
+                        >
+                            <span class="filter-btn__icon">Фильтр</span>
+                        </a>
+                    </div>
                     <div class="row">
-                        <div class="d-flex">
-                            Сортировать
-                            <ul class="sort-list">
-                                <li class="sort-item">
-                                    <a data-bs-toggle="dropdown" href="#"
-                                       role="button"
-                                       aria-expanded="false">Артикул по возрастанию</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">По убыванию</a></li>
-                                        <li><a class="dropdown-item" href="#">По возрастанию</a></li>
-                                    </ul>
-                                </li>
-                                <li class="sort-item">
-                                    <a data-bs-toggle="dropdown" href="#"
-                                       role="button"
-                                       aria-expanded="false">Показать по 20</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">40</a></li>
-                                        <li><a class="dropdown-item" href="#">60</a></li>
-                                        <li><a class="dropdown-item" href="#">100</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
+                        <div class="col">
+                            <div class="d-flex">
+                                Сортировать
+                                <ul class="sort-list">
+                                    <li class="sort-item">
+                                        <a data-bs-toggle="dropdown" href="#"
+                                           role="button"
+                                           aria-expanded="false">Артикул по возрастанию</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">По убыванию</a></li>
+                                            <li><a class="dropdown-item" href="#">По возрастанию</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="sort-item d-none d-md-inline">
+                                        <a data-bs-toggle="dropdown" href="#"
+                                           role="button"
+                                           aria-expanded="false">Показать по 20</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">40</a></li>
+                                            <li><a class="dropdown-item" href="#">60</a></li>
+                                            <li><a class="dropdown-item" href="#">100</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-4">
+                        <div class="col-md-4">
                             <div
                                     class="goods-card js-goods-card"
                                     data-name='Шар возд. Gemar Пастель 18" Красный / Red/05'
@@ -742,7 +1175,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-4">
+                        <div class="col-md-4">
                             <div
                                     class="goods-card js-goods-card"
                                     data-name='Шар возд. Gemar Пастель 18" Красный / Red/05'
@@ -789,7 +1222,54 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-4">
+                        <div class="col-md-4">
+                            <div
+                                    class="goods-card js-goods-card"
+                                    data-name='Шар возд. Gemar Пастель 18" Красный / Red/05'
+                                    data-price="435"
+                                    data-number="1102-0385"
+                                    data-count="0"
+                                    data-id="14"
+                            >
+                                <div class="goods-card-top">
+                                    <div class="goods-card-labels">
+                                        <div class="card-label card-label--hit">
+                                            хит
+                                        </div>
+                                    </div>
+                                    <div class="goods-card-favorite"></div>
+                                </div>
+                                <img src="./img/goods-2.png" class="goods-card__img" alt="text-image">
+                                <div class="goods-card__price">
+                                    от 435 ₽
+                                </div>
+                                <div class="goods-card__number">
+                                    1102-0385
+                                </div>
+                                <div class="goods-card__name">
+                                    Шар возд. Gemar Пастель 18" Красный / Red/05
+                                </div>
+                                <div class="goods-card__count">
+                                    <span>25</span> шт/ уп
+                                </div>
+                                <div class="goods-card__in-stock">
+                                    Наличие: <a href="#">в 2 магазинах</a>
+                                </div>
+                                <div class="goods-card-buy">
+                                    <div class="goods-card-buy__label js-product-label js-product-label">
+                                        <input type="number" class="goods-card-buy__count js-product-count"
+                                               value="1">
+                                        <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--dec js-card-btn-dec">-</span>
+                                        <span class="unselect goods-card-buy__count-btn goods-card-buy__count-btn--inc js-card-btn-inc">+</span>
+                                    </div>
+                                    <button class="goods-card-buy__btn js-add-cart"><span class="icon-cart"></span>В
+                                                                                                                   корзину
+                                    </button>
+                                    <a href="/cart/" class="to-cart">Перейти в корзину</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
                             <div
                                     class="goods-card js-goods-card"
                                     data-name='Шар возд. Gemar Пастель 18" Красный / Red/05'
@@ -839,10 +1319,10 @@
                     </div>
                     <div class="catalog-bottom">
                         <div class="row">
-                            <div class="col-4">
+                            <div class="col-md-4">
                                 <a href="#" class="c-btn c-btn--secondary">Показать ещё</a>
                             </div>
-                            <div class="col-8">
+                            <div class="col-md-8">
                                 <nav aria-label="Page navigation example">
                                     <ul class="pagination">
                                         <li class="page-item disabled">
@@ -852,13 +1332,12 @@
                                                 </span>
                                             </a>
                                         </li>
-                                        <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item active" aria-current="page"><a class="page-link"
+                                                                                            href="#">1</a></li>
                                         <li class="page-item"><a class="page-link" href="#">2</a></li>
                                         <li class="page-item"><a class="page-link" href="#">3</a></li>
                                         <li class="page-item"><a class="page-link" href="#">4</a></li>
                                         <li class="page-item"><a class="page-link" href="#">5</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">6</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">7</a></li>
                                         <li class="page-item">
                                             <a class="page-link" href="#" aria-label="Next">
                                                 <span aria-hidden="true">

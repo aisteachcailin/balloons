@@ -6,9 +6,15 @@
 @use "src/scss/variables" as *;
 
 .filter-category {
+  padding-top: 24px;
   margin-bottom: 0;
   list-style: none;
   padding-left: 0;
+
+  @include media(lg) {
+    padding-top: 0;
+  }
+
   &-item {
     position: relative;
     padding-left: 26px;
@@ -42,6 +48,7 @@
     }
   }
 }
+
 .filter-subcategory {
   list-style: none;
   padding-left: 0;
@@ -51,5 +58,63 @@
     &:not(:last-child) {
       margin-bottom: 10px;
     }
+  }
+}
+
+.catalog-filter {
+  padding-bottom: 8px;
+
+  @include media(lg) {
+    padding-bottom: 0;
+  }
+
+  .form-check-label {
+    position: relative;
+
+    &:has(.color-circle) {
+      padding-left: 16px;
+    }
+  }
+}
+
+.color-circle {
+  display: block;
+  position: absolute;
+  left: 0;
+  margin-left: -8px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid var(--color-primary)
+}
+
+.reset-filter {
+  display: block;
+  margin-top: 12px;
+  width: 100%;
+  text-align: center;
+  color: #747474;
+}
+
+
+.filter-canvas {
+  overflow-y: auto;
+  .offcanvas-body {
+    flex-direction: column;
+  }
+}
+.filter-btn-wrap {
+  width: 100%;
+  max-width: 240px;
+  margin-bottom: 24px;
+}
+.filter-btn__icon {
+  &:before {
+    content: '';
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    background: url($imgPath + "/svg/filter.svg") 0 0 no-repeat;
+    margin-left: -28px;
   }
 }

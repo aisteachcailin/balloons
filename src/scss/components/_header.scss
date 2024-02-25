@@ -178,12 +178,10 @@
     margin-top: 5px;
     height: 2px;
     width: 100%;
-    background-color: var(--color-primary);
+    //background-color: var(--color-primary);
+    background-color: #fff;
     border-radius: 20px;
     transition-duration: .2s;
-    @include media(lg) {
-      background-color: #fff;
-    }
 
     &:before,
     &:after {
@@ -192,13 +190,10 @@
       position: absolute;
       height: 2px;
       width: 100%;
-      background-color: var(--color-primary);
+      //background-color: var(--color-primary);
+      background-color: #fff;
       border-radius: 20px;
       transition-duration: .2s;
-
-      @include media(lg) {
-        background-color: #fff;
-      }
     }
 
     &:before {

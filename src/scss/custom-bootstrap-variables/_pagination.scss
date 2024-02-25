@@ -15,7 +15,13 @@
   --bs-pagination-hover-bg: var(--color-primary);
   --bs-pagination-hover-color: #fff;
   column-gap: 18px;
-  justify-content: flex-end;
+  justify-content: center;
+  margin-top: 16px;
+
+  @include media(md) {
+    margin-top: 0;
+    justify-content: flex-end;
+  }
 }
 
 .page-item {
