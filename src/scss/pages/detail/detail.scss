@@ -149,3 +149,17 @@
     }
   }
 }
+.icon-shared {
+  position: relative;
+  cursor: pointer;
+
+  &:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 32px;
+    height: 32px;
+    transition-duration: 0.2s;
+    background: url($imgPath + "/svg/upload.svg") 0 0 no-repeat;
+  }
+}
