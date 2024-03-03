@@ -32,6 +32,7 @@
     color: $mainColorText;
     background-color: var(--color-secondary);
   }
+
   &__title {
     @include media(md) {
       padding-right: 20px;
@@ -50,16 +51,14 @@
 }
 
 
-  .c-category .row > div {
-    &:nth-child(4) .category-item,
-    &:nth-child(6) .category-item,
-    &:nth-child(11) .category-item,
-    &:nth-child(12) .category-item {
-      background-position-x: 130%;
-      @include media(md) {
-        background-position-x: 115%;
-      }
+.c-category .row > div {
+  &:nth-child(4) .category-item,
+  &:nth-child(6) .category-item,
+  &:nth-child(11) .category-item,
+  &:nth-child(12) .category-item {
+    background-position-x: 130%;
+    @include media(md) {
+      background-position-x: 115%;
     }
   }
-
-
+}

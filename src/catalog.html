@@ -534,6 +534,7 @@
                     <div
                             class="offcanvas-lg offcanvas-start filter-canvas"
                             tabindex="-1"
+                            data-bs-backdrop="false"
                             id="filterCanvas"
                             aria-labelledby="filterCanvasLabel"
                     >
@@ -1087,43 +1088,41 @@
                     </div>
                 </div>
                 <div class="col-12 col-lg-9">
-                    <div class="filter-btn-wrap d-lg-none">
-                        <a class="c-btn c-btn--primary c-btn--full-width"
-                           href="#filterCanvas"
-                           role="button"
-                           data-bs-toggle="offcanvas"
-                           aria-controls="filterCanvas"
-                        >
-                            <span class="filter-btn__icon">Фильтр</span>
-                        </a>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="d-flex">
-                                Сортировать
-                                <ul class="sort-list">
-                                    <li class="sort-item">
-                                        <a data-bs-toggle="dropdown" href="#"
-                                           role="button"
-                                           aria-expanded="false">Артикул по возрастанию</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">По убыванию</a></li>
-                                            <li><a class="dropdown-item" href="#">По возрастанию</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="sort-item d-none d-md-inline">
-                                        <a data-bs-toggle="dropdown" href="#"
-                                           role="button"
-                                           aria-expanded="false">Показать по 20</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">40</a></li>
-                                            <li><a class="dropdown-item" href="#">60</a></li>
-                                            <li><a class="dropdown-item" href="#">100</a></li>
-                                        </ul>
-                                    </li>
+                    <div class="d-block gap-md-5 d-md-flex align-items-center mb-md-5 mb-lg-0">
+                        <div class="filter-btn-wrap d-lg-none">
+                            <a class="c-btn c-btn--primary c-btn--full-width"
+                               href="#filterCanvas"
+                               role="button"
+                               data-bs-toggle="offcanvas"
+                               aria-controls="filterCanvas"
+                            >
+                                <span class="filter-btn__icon">Фильтр</span>
+                            </a>
+                        </div>
+                        <ul class="sort-list">
+                            <li class="sort-item">
+                                <a data-bs-toggle="dropdown" href="#"
+                                   role="button"
+                                   aria-expanded="false">Артикул по возрастанию</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Сортировка по умолчанию</a></li>
+                                    <li><a class="dropdown-item" href="#">Цена по возрастанию</a></li>
+                                    <li><a class="dropdown-item" href="#">Цена по убыванию</a></li>
+                                    <li><a class="dropdown-item" href="#">Сначала новинки</a></li>
+                                    <li><a class="dropdown-item" href="#">Сначала осн. ассортимент</a></li>
                                 </ul>
-                            </div>
-                        </div>
+                            </li>
+                            <li class="sort-item d-none d-md-inline">
+                                <a data-bs-toggle="dropdown" href="#"
+                                   role="button"
+                                   aria-expanded="false">Показать по 20</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">40</a></li>
+                                    <li><a class="dropdown-item" href="#">60</a></li>
+                                    <li><a class="dropdown-item" href="#">100</a></li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
                     <div class="row">
                         <div class="col-md-4">
@@ -1137,6 +1136,9 @@
                             >
                                 <div class="goods-card-top">
                                     <div class="goods-card-labels">
+                                        <div class="card-label card-label--new">
+                                            new
+                                        </div>
                                         <div class="card-label card-label--hit">
                                             хит
                                         </div>
@@ -1145,7 +1147,7 @@
                                 </div>
                                 <img src="/img/goods-2.png" class="goods-card__img" alt="text-image">
                                 <div class="goods-card__price">
-                                    от 435 ₽
+                                    435 ₽
                                 </div>
                                 <div class="goods-card__number">
                                     1102-0385
@@ -1184,6 +1186,9 @@
                             >
                                 <div class="goods-card-top">
                                     <div class="goods-card-labels">
+                                        <div class="card-label card-label--new">
+                                            new
+                                        </div>
                                         <div class="card-label card-label--hit">
                                             хит
                                         </div>
@@ -1192,7 +1197,7 @@
                                 </div>
                                 <img src="/img/goods-2.png" class="goods-card__img" alt="text-image">
                                 <div class="goods-card__price">
-                                    от 435 ₽
+                                    435 ₽
                                 </div>
                                 <div class="goods-card__number">
                                     1102-0385
@@ -1231,6 +1236,9 @@
                             >
                                 <div class="goods-card-top">
                                     <div class="goods-card-labels">
+                                        <div class="card-label card-label--new">
+                                            new
+                                        </div>
                                         <div class="card-label card-label--hit">
                                             хит
                                         </div>
@@ -1239,7 +1247,7 @@
                                 </div>
                                 <img src="/img/goods-2.png" class="goods-card__img" alt="text-image">
                                 <div class="goods-card__price">
-                                    от 435 ₽
+                                    435 ₽
                                 </div>
                                 <div class="goods-card__number">
                                     1102-0385
@@ -1278,6 +1286,9 @@
                             >
                                 <div class="goods-card-top">
                                     <div class="goods-card-labels">
+                                        <div class="card-label card-label--new">
+                                            new
+                                        </div>
                                         <div class="card-label card-label--hit">
                                             хит
                                         </div>
@@ -1286,7 +1297,7 @@
                                 </div>
                                 <img src="/img/goods-2.png" class="goods-card__img" alt="text-image">
                                 <div class="goods-card__price">
-                                    от 435 ₽
+                                    435 ₽
                                 </div>
                                 <div class="goods-card__number">
                                     1102-0385
@@ -1372,6 +1383,9 @@
                             >
                                 <div class="goods-card-top">
                                     <div class="goods-card-labels">
+                                        <div class="card-label card-label--new">
+                                            new
+                                        </div>
                                         <div class="card-label card-label--hit">
                                             хит
                                         </div>
@@ -1382,7 +1396,7 @@
                                     <img src="/img/goods-2.png" class="goods-card__img" alt="text-image">
                                 </a>
                                 <div class="goods-card__price">
-                                    от 435 ₽
+                                    435 ₽
                                 </div>
                                 <div class="goods-card__number">
                                     1102-0385
@@ -1421,6 +1435,9 @@
                             >
                                 <div class="goods-card-top">
                                     <div class="goods-card-labels">
+                                        <div class="card-label card-label--new">
+                                            new
+                                        </div>
                                         <div class="card-label card-label--hit">
                                             хит
                                         </div>
@@ -1431,7 +1448,7 @@
                                     <img src="/img/goods-2.png" class="goods-card__img" alt="text-image">
                                 </a>
                                 <div class="goods-card__price">
-                                    от 435 ₽
+                                    435 ₽
                                 </div>
                                 <div class="goods-card__number">
                                     1102-0385
@@ -1470,6 +1487,9 @@
                             >
                                 <div class="goods-card-top">
                                     <div class="goods-card-labels">
+                                        <div class="card-label card-label--new">
+                                            new
+                                        </div>
                                         <div class="card-label card-label--hit">
                                             хит
                                         </div>
@@ -1480,7 +1500,7 @@
                                     <img src="/img/goods-2.png" class="goods-card__img" alt="text-image">
                                 </a>
                                 <div class="goods-card__price">
-                                    от 435 ₽
+                                    435 ₽
                                 </div>
                                 <div class="goods-card__number">
                                     1102-0385
@@ -1519,6 +1539,9 @@
                             >
                                 <div class="goods-card-top">
                                     <div class="goods-card-labels">
+                                        <div class="card-label card-label--new">
+                                            new
+                                        </div>
                                         <div class="card-label card-label--hit">
                                             хит
                                         </div>
@@ -1529,7 +1552,7 @@
                                     <img src="/img/goods-2.png" class="goods-card__img" alt="text-image">
                                 </a>
                                 <div class="goods-card__price">
-                                    от 435 ₽
+                                    435 ₽
                                 </div>
                                 <div class="goods-card__number">
                                     1102-0385
@@ -1568,6 +1591,9 @@
                             >
                                 <div class="goods-card-top">
                                     <div class="goods-card-labels">
+                                        <div class="card-label card-label--new">
+                                            new
+                                        </div>
                                         <div class="card-label card-label--hit">
                                             хит
                                         </div>
@@ -1578,7 +1604,7 @@
                                     <img src="/img/goods-2.png" class="goods-card__img" alt="text-image">
                                 </a>
                                 <div class="goods-card__price">
-                                    от 435 ₽
+                                    435 ₽
                                 </div>
                                 <div class="goods-card__number">
                                     1102-0385
@@ -1733,7 +1759,7 @@
                 </div>
             </div>
             <div class="footer-work-email">
-                <div class="footer-work-email__work-time">8:00-20:00</div>
+                <div class="footer-work-email__work-time">9:00-20:00</div>
                 <a href="mailto:info@nn-shar.ru" class="footer-work-email__email">info@nn-shar.ru</a>
             </div>
             <div class="footer-social d-flex align-items-end">

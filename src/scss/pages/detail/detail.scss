@@ -163,3 +163,10 @@
     background: url($imgPath + "/svg/upload.svg") 0 0 no-repeat;
   }
 }
+
+.section-detail-top {
+  .goods-card-buy__count,
+  .goods-card-buy__btn {
+    height: 53px;
+  }
+}

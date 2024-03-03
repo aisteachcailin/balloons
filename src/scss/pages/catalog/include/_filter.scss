@@ -99,15 +99,22 @@
 
 .filter-canvas {
   overflow-y: auto;
+
   .offcanvas-body {
     flex-direction: column;
   }
 }
+
 .filter-btn-wrap {
   width: 100%;
-  max-width: 240px;
   margin-bottom: 24px;
+
+  @include media(md) {
+    margin-bottom: 0;
+    max-width: 240px;
+  }
 }
+
 .filter-btn__icon {
   &:before {
     content: '';
