@@ -19,6 +19,35 @@ function initScripts() {
     showHintSearch()
     openCatalog()
     mobileShowCategory()
+    toTop()
+}
+
+/**
+ * Скролл наверх страницы
+ */
+function toTop() {
+    const btnToTop = document.querySelector('.js-to-up')
+
+    toggleShowBtnToUp(btnToTop)
+
+    btnToTop.addEventListener('click', () => {
+        scrollTo({ top: 0, behavior: 'smooth' });
+    })
+}
+
+/**
+ * Показать/скрыть кнопку наверх страницы
+ *
+ * @param btn { Element } Элемент кнопки
+ */
+function toggleShowBtnToUp(btn) {
+    document.addEventListener('scroll', (e) => {
+        const heightWindow = window.innerHeight
+        const scrollPosition = window.scrollY
+        const conditionShowBtn = scrollPosition > heightWindow
+
+        btn.classList.toggle('show', conditionShowBtn)
+    })
 }
 
 /**
