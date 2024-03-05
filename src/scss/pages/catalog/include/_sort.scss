@@ -9,6 +9,7 @@
   display: flex;
   list-style: none;
   padding-left: 0;
+  opacity: 0;
   column-gap: 32px;
   margin-bottom: 14px;
 
@@ -19,35 +20,65 @@
     margin-bottom: 32px;
   }
 }
-
+.loaded .sort-list {
+  opacity: 1;
+}
 .sort-item {
   position: relative;
-  padding-right: 18px;
 
   .dropdown-menu {
     --bs-dropdown-min-width: 250px;
+    --bs-dropdown-item-padding-x: 15px;
+    --bs-dropdown-item-padding-y: 5px;
+    --bs-dropdown-link-active-bg: #D8E2FE;
+    --bs-dropdown-link-active-color: $mainColorText;
+    overflow: hidden;
     border-radius: 30px;
-    padding: 15px;
     border-top: 1px solid var(--bs-dropdown-border-color);
     width: auto;
   }
-  a {
+  .dropdown-item {
+    &.active {
+      position: relative;
+      &:before {
+        content: '';
+        position: absolute;
+        right: 10px;
+        background: url($imgPath + "/svg/check-active.svg") 0 0 no-repeat;
+        margin-top: 4px;
+        width: 13px;
+        height: 9px;
+      }
+    }
+    &:hover {
+      background-color: #D8E2FE;
+    }
+  }
+  & > a {
     padding-bottom: 4px;
     color: $mainColorText;
+    padding-right: 18px;
     text-decoration: none;
 
+    &:after {
+      content: '';
+      background: url($imgPath + "/svg/chevrone.svg") no-repeat 0 0;
+      position: absolute;
+      width: 10px;
+      height: 6px;
+      right: 0;
+      top: calc(50% - 1px);
+      transition-duration: .2s;
+    }
+    &.show {
+      &:after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  a {
     &:hover {
       color: $mainColorText;
     }
-  }
-  &:after {
-    content: '';
-    background: url($imgPath + "/svg/chevrone.svg") no-repeat 0 0;
-    position: absolute;
-    width: 10px;
-    height: 6px;
-    right: 0;
-    top: calc(50% - 1px);
-    transition-duration: .2s;
   }
 }

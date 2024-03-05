@@ -42,13 +42,20 @@
                         </li>
                     </ul>
                 </nav>
-                <a href="tel:+78314371305" class="header-callback">
-                    <svg class="header-callback__icon-phone" role="img">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                             xlink:href="./img/svg/map.svg#svg-phone"></use>
-                    </svg>
-                    +7 831 437-13-05
-                </a>
+                <div class="d-flex flex-column">
+                    <div class="header-callback-wrap">
+                        <a href="tel:+78314371307" class="header-callback">
+                            +7 831 437-13-07
+                        </a>
+                        <span>ул. Бекетова, 3а, к. 9</span>
+                    </div>
+                    <div>
+                        <a href="tel:+78312151534" class="header-callback">
+                            +7 831 215-15-34
+                        </a>
+                        <span>ул. Чкалова, 39</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -62,13 +69,20 @@
                     <span class="catalog-lines"><span class="catalog-lines__line"></span></span>
                     <span class="c-btn--catalog-text">Каталог товаров</span>
                 </button>
-                <a href="tel:+78314371305" class="header-callback header-callback--mobile">
-                    <svg class="header-callback__icon-phone" role="img">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                             xlink:href="./img/svg/map.svg#svg-phone"></use>
-                    </svg>
-                    +7 831 437-13-05
-                </a>
+                <div class="d-lg-none d-none d-md-flex flex-column">
+                    <div class="header-callback-wrap">
+                        <a href="tel:+78314371307" class="header-callback">
+                            +7 831 437-13-07
+                        </a>
+                        <span>ул. Бекетова, 3а, к. 9</span>
+                    </div>
+                    <div>
+                        <a href="tel:+78312151534" class="header-callback">
+                            +7 831 215-15-34
+                        </a>
+                        <span>ул. Чкалова, 39</span>
+                    </div>
+                </div>
                 <form action="/" class="header-search" data-hint="false">
                     <label for="search" class="header-search__label">
                         <input type="text" id="search" data-search placeholder="Искать товары"
@@ -1105,9 +1119,9 @@
                             <li class="sort-item">
                                 <a data-bs-toggle="dropdown" href="#"
                                    role="button"
-                                   aria-expanded="false">Артикул по возрастанию</a>
+                                   aria-expanded="false">Сортировка по умолчанию</a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Сортировка по умолчанию</a></li>
+                                    <li><a class="dropdown-item active" href="#">Сортировка по умолчанию</a></li>
                                     <li><a class="dropdown-item" href="#">Цена по возрастанию</a></li>
                                     <li><a class="dropdown-item" href="#">Цена по убыванию</a></li>
                                     <li><a class="dropdown-item" href="#">Сначала новинки</a></li>
@@ -1119,6 +1133,7 @@
                                    role="button"
                                    aria-expanded="false">Показать по 20</a>
                                 <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item active" href="#">20</a></li>
                                     <li><a class="dropdown-item" href="#">40</a></li>
                                     <li><a class="dropdown-item" href="#">60</a></li>
                                     <li><a class="dropdown-item" href="#">100</a></li>
@@ -1794,5 +1809,6 @@
 <script src="../src/js/add-cart.js"></script>
 <script src="../src/js/common.js"></script>
 <script src="../src/js/catalog/tooltip.js"></script>
+<script src="../src/js/catalog/dropdown-sort.js"></script>
 </body>
 </html>

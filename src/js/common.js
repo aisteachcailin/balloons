@@ -109,7 +109,14 @@ function openCatalog() {
     const closeMobile = document.querySelector('.catalog-menu-head__close')
     const bodyClass = document.body.classList
     const catalogShow = 'show-catalog'
-    btnCatalog.forEach(el => el.addEventListener('click', () => bodyClass.toggle(catalogShow)))
+
+    btnCatalog.forEach(el => {
+        el.addEventListener('click', (e) => {
+            e.preventDefault()
+            bodyClass.toggle(catalogShow)
+        })
+    })
+
     closeMobile.addEventListener('click', () => bodyClass.remove(catalogShow))
 }
 
