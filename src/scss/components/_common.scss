@@ -1,6 +1,8 @@
+@use "../variables" as *;
 :root {
   --color-primary: #678AEF;
   --color-secondary: #D8E2FE;
+  --color-form-element: #9773F0;
   --border-radiius: 30px;
   --bs-link-hover-color: #678AEF;
   --offset-compensator: 0px;
@@ -27,6 +29,53 @@ body {
   @media (max-width: 992px) {
     padding-top: 0;
   }
+}
+main {
+  flex: auto;
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  margin-right: 14px;
+  margin-bottom: 0;
+
+  @include media(md) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  @include media(lg) {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  @include media(lg) {
+    font-size: 26px;
+    line-height: 30px;
+  }
+  &--margin {
+    margin-bottom: 16px;
+
+    @include media(sm) {
+      margin-bottom: 32px;
+    }
+  }
+  &--with-margin {
+    margin-bottom: 16px;
+
+    @include media(lg) {
+      margin-bottom: 30px;
+    }
+  }
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
 }
 .no-overflow {
   overflow-y: hidden;

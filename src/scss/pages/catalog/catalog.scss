@@ -18,20 +18,9 @@
   @include media(lg) {
     margin-bottom: 56px;
   }
-
-  .section-title--with-margin {
-    margin-bottom: 16px;
-
-    @include media(lg) {
-      margin-bottom: 30px;
-    }
-  }
 }
 
 .catalog-filter {
-  .collapse:not(.show) {
-    display: none;
-  }
   .form-check {
     &:not(:last-child) {
       margin-bottom: 12px;

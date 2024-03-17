@@ -1,0 +1,55 @@
+/**
+* Created by AndreyBan
+* in PhpStorm
+* 17.03.2024
+**/
+@use "../../variables" as *;
+
+$borderColor: #678AEF;
+.lk-page {
+  margin-bottom: 24px;
+}
+.lk-item {
+  --lk-padding: 18px;
+  border-radius: 30px;
+  border: 2px solid $borderColor;
+  padding: 30px var(--lk-padding) 32px;
+  height: 293px;
+  margin-bottom: 32px;
+  position: relative;
+
+
+  &__title {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    padding-bottom: 32px;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+
+      height: 2px;
+      background-color: $borderColor;
+      width: calc(100% + var(--lk-padding) * 2);
+      bottom: 0;
+      left: 0;
+      margin-left: calc(var(--lk-padding) * -1);
+    }
+  }
+  .c-btn {
+    position: absolute;
+    bottom: 32px;
+  }
+  &__info {
+    list-style: none;
+    margin-top: 28px;
+    padding: 0;
+    &-item {
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
+    }
+  }
+}

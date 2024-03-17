@@ -1,0 +1,29 @@
+/**
+* Created by AndreyBan
+* in PhpStorm
+* 16.03.2024
+**/
+
+.form-check {
+
+  &-input {
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--color-form-element);
+    background-size: 16px;
+    margin-top: 0;
+    margin-right: 8px;
+    cursor: pointer;
+
+    &:checked {
+      &[type=radio] {
+        background-color: #fff;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23678AEF'/%3e%3c/svg%3e");
+      }
+    }
+  }
+}
+.form-check-label {
+  cursor: pointer;
+}
+

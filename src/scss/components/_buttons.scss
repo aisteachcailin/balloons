@@ -1,6 +1,6 @@
 @use "../variables"  as *;
 
-.c-btn {
+@mixin mainButton () {
   border-radius: var(--border-radiius);
   display: inline-flex;
   justify-content: center;
@@ -9,28 +9,37 @@
   border: 1px solid transparent;
   height: 45px;
   text-decoration: none;
+}
+
+.c-btn {
+  @include mainButton;
+
   &--primary {
     color: #fff;
     background-color: var(--color-primary);
     padding: 0 20px;
+    transition-duration: .2s;
+
     &:hover {
       color: #fff;
-      transition-duration: .2s;
       border: 1px solid $mainColorText;
     }
   }
+
   &--secondary {
     color: var(--color-primary);
     background-color: #fff;
     padding: 0 20px;
     transition-duration: .2s;
     box-shadow: 0 0 0 1px var(--color-primary);
+
     &:hover {
       transition-duration: .2s;
       color: var(--color-primary);
       box-shadow: 0 0 0 2px var(--color-primary);
     }
   }
+
   &--catalog {
     order: -1;
     border: 1px solid transparent;
@@ -44,6 +53,7 @@
     @include media(xl) {
       padding: 0 28px;
     }
+
     &-text {
       display: none;
       @include media(lg) {
@@ -51,9 +61,19 @@
       }
     }
   }
+
   &--full-width {
     width: 100%;
   }
+
+  &--mobile-full-width {
+    width: 100%;
+
+    @include media(md) {
+      width: auto;
+    }
+  }
+
   &--search {
     padding: 0 20px;
     position: absolute;

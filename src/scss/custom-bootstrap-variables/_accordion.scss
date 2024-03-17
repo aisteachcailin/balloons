@@ -5,6 +5,9 @@
 **/
 @use "src/scss/variables" as *;
 
+.collapse:not(.show) {
+  display: none;
+}
 .accordion {
   --bs-accordion-active-bg: transparent;
   --bs-accordion-border-radius: 0;

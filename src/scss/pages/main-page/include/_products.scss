@@ -1,33 +1,6 @@
 @use "src/scss/variables" as *;
 @import "src/scss/components/in/labels";
 
-.section-title {
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 20px;
-  margin-right: 14px;
-  margin-bottom: 0;
-
-  @include media(md) {
-    font-size: 20px;
-    line-height: 24px;
-  }
-  @include media(lg) {
-    font-size: 24px;
-    line-height: 28px;
-  }
-  @include media(lg) {
-    font-size: 26px;
-    line-height: 30px;
-  }
-  &--margin {
-    margin-bottom: 16px;
-
-    @include media(sm) {
-      margin-bottom: 32px;
-    }
-  }
-}
 .to-cart {
   display: none;
   font-size: 14px;

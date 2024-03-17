@@ -1,0 +1,16 @@
+/**
+* Created by AndreyBan
+* in PhpStorm
+* 16.03.2024
+**/
+.form-control {
+  height: 45px;
+  border-color: var(--color-form-element);
+  padding-left: 15px;
+  font-size: 14px;
+
+  &:focus {
+    border-color: var(--color-form-element);
+    box-shadow: 0 0 0 1px var(--color-form-element);
+  }
+}

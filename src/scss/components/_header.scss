@@ -432,3 +432,54 @@
   height: 18px;
   fill: #fff;
 }
+
+.header-icons {
+  .dropdown-menu {
+    --bs-dropdown-min-width: 160px;
+    --bs-dropdown-item-padding-x: 15px;
+    --bs-dropdown-item-padding-y: 5px;
+    --bs-dropdown-link-active-bg: #D8E2FE;
+    --bs-dropdown-link-active-color: $mainColorText;
+    overflow: hidden;
+    border-radius: 30px;
+    border-top: 1px solid var(--bs-dropdown-border-color);
+    width: auto;
+  }
+
+  .dropdown-item {
+    &.active {
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        right: 10px;
+        background: url($imgPath + "/svg/check-active.svg") 0 0 no-repeat;
+        margin-top: 4px;
+        width: 13px;
+        height: 9px;
+      }
+    }
+
+    &:hover {
+      background-color: #D8E2FE;
+    }
+  }
+}
+.header-icons__item {
+  & > a[data-bs-toggle="dropdown"]:after {
+    content: "";
+    background: url($imgPath + "/svg/chevrone-right-bold.svg") 50% 50% no-repeat;
+    background-size: 6px;
+    position: absolute;
+    width: 6px;
+    height: 14px;
+    right: -14px;
+    bottom: 2px;
+    transition-duration: 0.2s;
+    transform: rotate(90deg);
+  }
+  & > a.show[data-bs-toggle="dropdown"]:after {
+    transform: rotate(270deg);
+  }
+}

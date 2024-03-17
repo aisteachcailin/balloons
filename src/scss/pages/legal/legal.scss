@@ -1,0 +1,40 @@
+/**
+* Created by AndreyBan
+* in PhpStorm
+* 17.03.2024
+**/
+@use '../../variables' as *;
+
+.legal-title {
+  font-size: 20px;
+  font-weight: 700;
+
+  @include media(md) {
+    font-size: 26px;
+  }
+
+  &--margin {
+    margin-bottom: 42px;
+  }
+}
+.legal-info {
+  margin-top: 28px;
+
+  @include media(md) {
+    margin-top: 42px;
+  }
+  &__title {
+    font-weight: 700;
+    font-size: 16px;
+
+    @include media(md) {
+      font-size: 20px;
+    }
+  }
+}
+.legal-item {
+  margin-bottom: 18px;
+}
+.legal-page {
+  margin-bottom: 56px;
+}
