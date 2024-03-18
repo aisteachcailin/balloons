@@ -21,7 +21,7 @@ export default {
                 common: './src/js/common.js',
                 'add-cart': './src/js/add-cart.js',
                 form: './src/js/form.js',
-                goodsSliders: './src/js/goods-sliders.js',
+                'goods-sliders': './src/js/goods-sliders.js',
                 main: './src/js/main.js',
                 'detail/detail': './src/js/detail/detail.js',
                 'catalog/tooltip': './src/js/catalog/tooltip.js',
