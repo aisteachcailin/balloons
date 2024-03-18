@@ -6,7 +6,7 @@ export default {
         outDir: '../dist',
         rollupOptions: {
             input: {
-                main: './src/index.html',
+                index: './src/index.html',
                 detail: './src/detail.html',
                 catalog: './src/catalog.html',
                 registration: './src/registration.html',
@@ -17,10 +17,19 @@ export default {
                 lk: './src/lk.html',
                 agreement: './src/agreement.html',
                 policy: './src/policy.html',
-                guarantee: './src/guarantee.html'
+                guarantee: './src/guarantee.html',
+                common: './src/js/common.js',
+                'add-cart': './src/js/add-cart.js',
+                form: './src/js/form.js',
+                goodsSliders: './src/js/goods-sliders.js',
+                main: './src/js/main.js',
+                'detail/detail': './src/js/detail/detail.js',
+                'catalog/tooltip': './src/js/catalog/tooltip.js',
+                'catalog/dropdown-sort': './src/js/catalog/dropdown-sort.js',
             },
             output: {
-                assetFileNames: "assets/[name][extname]"
+                assetFileNames: "assets/[name][extname]",
+                entryFileNames: "js/[name].js"
             }
         },
     },
