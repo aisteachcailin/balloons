@@ -17,7 +17,7 @@ $errorColor: #E12668;
     color: $errorColor;
     font-size: 12px;
     display: none;
-    margin-top: 2px;
+    bottom: 0;
     margin-left: 15px;
   }
 
@@ -25,6 +25,20 @@ $errorColor: #E12668;
     .error-text {
       display: block;
     }
+  }
+  label {
+    position: absolute;
+    transition-duration: .2s;
+    top: 13px;
+    left: 15px;
+  }
+}
+.form-input {
+  //display: flex;
+  //align-items: center;
+
+  input:focus + label {
+    top: -20px;
   }
 }
 .form-textarea {
@@ -78,6 +92,21 @@ $errorColor: #E12668;
       @include media(md) {
         text-align: left;
       }
+    }
+  }
+}
+.was-validated .form-check-input[type=radio]:valid:checked {
+  background-color: transparent;
+}
+.registration-section {
+  &[data-form-type="type-1"] {
+    .yl-only {
+      display: none;
+    }
+  }
+  &[data-form-type="type-2"] {
+    .fl-only {
+      display: none;
     }
   }
 }

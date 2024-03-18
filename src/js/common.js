@@ -221,7 +221,7 @@ function setStickyHeader() {
  * @returns {*|*[]}
  */
 function getNextPrevElements(el, next, arr = [],) {
-    let checkEl = next ? el.nextElementSibling : el.previousElementSibling;
+    let checkEl = next ? el?.nextElementSibling : el?.previousElementSibling;
 
     if (checkEl != null) {
         arr.push(checkEl);
