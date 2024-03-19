@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",()=>{r()});function r(){const e=document.querySelector(".js-type-form");e.querySelectorAll("input[type=radio]").forEach(t=>{t.addEventListener("change",()=>{const o=e.querySelector("input[type=radio]:checked").value;e.setAttribute("data-form-type",o)})})}

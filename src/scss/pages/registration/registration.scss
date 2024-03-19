@@ -31,14 +31,16 @@ $errorColor: #E12668;
     transition-duration: .2s;
     top: 13px;
     left: 15px;
+    background-color: #fff;
   }
 }
 .form-input {
   //display: flex;
   //align-items: center;
 
-  input:focus + label {
-    top: -20px;
+  input:focus + label, &.fill label  {
+    top: -8px;
+    font-size: 12px;
   }
 }
 .form-textarea {
@@ -95,8 +97,28 @@ $errorColor: #E12668;
     }
   }
 }
+
+.was-validated .form-check-input:valid, .form-check-input.is-valid {
+  &:checked {
+    border-color: var(--color-form-element);
+    background-color: var(--color-form-element);
+  }
+  &:focus {
+    box-shadow: none;
+  }
+}
+.was-validated .form-control:valid:focus, .form-control.is-valid:focus{
+  border-color: var(--color-form-element);
+  box-shadow: 0 0 0 1px  var(--color-form-element);
+}
+.was-validated .form-control:valid, .form-control.is-valid {
+  border-color: var(--color-form-element);
+}
 .was-validated .form-check-input[type=radio]:valid:checked {
   background-color: transparent;
+}
+.was-validated .form-control:invalid:focus, .form-control.is-invalid:focus {
+  box-shadow: 0 0 0 1px rgba(220, 53, 69, 1);
 }
 .registration-section {
   &[data-form-type="type-1"] {
