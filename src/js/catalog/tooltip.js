@@ -47,6 +47,7 @@
         tooltips.forEach(el => el.remove())
     }
 
+
     function getNoun(number, one, two, five) {
         let n = Math.abs(number);
 
