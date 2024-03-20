@@ -548,24 +548,24 @@
         <div class="container">
             <h1 class="section-title section-title--with-margin">Данные об организации</h1>
             <p class="edit-subtitle">Компания</p>
-            <form action="" class="form-registration needs-validation" novalidate>
-                <p class="form-subtitle form-subtitle--small">Правовая форма</p>
+            <form action="" class="form-registration js-form" novalidate>
+                <p class="form-subtitle">Правовая форма</p>
                 <div class="row-check">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="form-type" id="form-type-1"
+                        <input class="form-check-input" type="radio" name="legal-form" id="form-type-1" value="type-1"
                                checked>
                         <label class="form-check-label" for="form-type-1">
                             ИП
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="form-type" id="form-type-2">
+                        <input class="form-check-input" type="radio" name="legal-form" id="form-type-2" value="type-2">
                         <label class="form-check-label" for="form-type-2">
                             Коммерческая организация
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="form-type" id="form-type-3">
+                        <input class="form-check-input" type="radio" name="legal-form" id="form-type-3" value="type-3">
                         <label class="form-check-label" for="form-type-3">
                             Бюджетная организация
                         </label>
@@ -573,124 +573,78 @@
                 </div>
                 <div class="registration-inputs">
                     <div class="form-input">
-                        <label for="inn" class="sr-only">ИНН</label>
-                        <input id="inn" type="text" class="form-control" placeholder="ИНН" required
-                               aria-required="true">
-                        <div class="invalid-feedback">
-                            Текст ошибки
-                        </div>
+                        <input id="inn" name="INN" type="text" class="form-control" minlength="12"
+                               required
+                               inputmode="numeric" aria-required="true">
+                        <label for="inn">ИНН*</label>
                     </div>
                     <div class="form-input">
-                        <label for="kpp" class="sr-only">КПП</label>
-                        <input id="kpp" type="text" class="form-control" placeholder="КПП" required
-                               aria-required="true">
-                        <div class="invalid-feedback">
-                            Текст ошибки
-                        </div>
+                        <input id="kpp" name="KPP" type="text" class="form-control" minlength="9" required
+                               inputmode="numeric" aria-required="true">
+                        <label for="kpp">КПП*</label>
                     </div>
                     <div class="form-input">
-                        <label for="OGRN" class="sr-only">ОГРН</label>
-                        <input id="OGRN" type="text" class="form-control" placeholder="ОГРН" required
+                        <input id="OGRN" name="OGRN" type="text" class="form-control" minlength="13" required
                                aria-required="true">
-                        <div class="invalid-feedback">
-                            Текст ошибки
-                        </div>
+                        <label for="OGRN">ОГРН*</label>
                     </div>
                     <div class="form-input">
-                        <label for="nameOrganization" class="sr-only">Юридическое название
-                                                                      организации</label>
-                        <input id="nameOrganization" type="text" class="form-control"
-                               placeholder="Юридическое название организации" required
-                               aria-required="true">
-                        <div class="invalid-feedback">
-                            Текст ошибки
-                        </div>
+                        <input id="nameOrganization" name="nameOrganization" type="text" required
+                               class="form-control" aria-required="true">
+                        <label for="nameOrganization">Юридическое название
+                                                      организации*</label>
                     </div>
 
                     <p class="form-subtitle">Юридический адрес</p>
                     <div class="form-input">
-                        <label for="index" class="sr-only">Индекс</label>
-                        <input id="index" type="text" class="form-control" placeholder="Индекс" required
+                        <input id="index" name="index" type="text" class="form-control"
                                aria-required="true">
-                        <div class="invalid-feedback">
-                            Текст ошибки
-                        </div>
+                        <label for="index">Индекс</label>
                     </div>
                     <div class="form-input">
-                        <label for="city" class="sr-only">Город</label>
-                        <input id="city" type="text" class="form-control" placeholder="Город" required
+                        <input id="city" name="city" type="text" class="form-control"
                                aria-required="true">
-                        <div class="invalid-feedback">
-                            Текст ошибки
-                        </div>
+                        <label for="city">Город</label>
                     </div>
                     <div class="form-input">
-                        <label for="street" class="sr-only">Улица</label>
-                        <input id="street" type="text" class="form-control" placeholder="Улица" required
+                        <input id="street" name="street" type="text" class="form-control"
                                aria-required="true">
-                        <div class="invalid-feedback">
-                            Текст ошибки
-                        </div>
+                        <label for="street">Улица</label>
                     </div>
                     <div class="form-input">
-                        <label for="numberHouse" class="sr-only">Дом</label>
-                        <input id="numberHouse" type="text" class="form-control" placeholder="Дом" required
+                        <input id="numberHouse" name="numberHouse" type="text" class="form-control"
                                aria-required="true">
-                        <div class="invalid-feedback">
-                            Текст ошибки
-                        </div>
+                        <label for="numberHouse">Дом</label>
                     </div>
                     <div class="form-input">
-                        <label for="structure" class="sr-only">Строение</label>
-                        <input id="structure" type="text" class="form-control" placeholder="Строение"
-                               required
+                        <input id="structure" name="structure" type="text" class="form-control"
                                aria-required="true">
-                        <div class="invalid-feedback">
-                            Текст ошибки
-                        </div>
+                        <label for="structure">Строение</label>
                     </div>
                     <div class="form-input">
-                        <label for="housing" class="sr-only">Корпус</label>
-                        <input id="housing" type="text" class="form-control" placeholder="Корпус" required
+                        <input id="housing" name="housing" type="text" class="form-control"
                                aria-required="true">
-                        <div class="invalid-feedback">
-                            Текст ошибки
-                        </div>
+                        <label for="housing">Корпус</label>
                     </div>
                     <div class="form-input">
-                        <label for="numberOffice" class="sr-only">Квартира/Офис</label>
-                        <input id="numberOffice" type="text" class="form-control"
-                               placeholder="Квартира/Офис" required
+                        <input id="numberOffice" name="numberOffice" type="text" class="form-control"
                                aria-required="true">
-                        <div class="invalid-feedback">
-                            Текст ошибки
-                        </div>
+                        <label for="numberOffice">Квартира/Офис</label>
                     </div>
                     <div class="form-input">
-                        <label for="note" class="sr-only">Примечание</label>
-                        <input id="note" type="text" class="form-control" placeholder="Примечание" required
+                        <input id="note" name="note" type="text" class="form-control"
                                aria-required="true">
-                        <div class="invalid-feedback">
-                            Текст ошибки
-                        </div>
+                        <label for="note">Примечание</label>
                     </div>
                     <p class="form-subtitle">Банковские реквизиты</p>
                     <div class="form-input">
-                        <label for="BIK" class="sr-only">БИК</label>
-                        <input id="BIK" type="text" class="form-control" placeholder="БИК" required
+                        <input id="BIK" name="BIK" type="text" class="form-control"
                                aria-required="true">
-                        <div class="invalid-feedback">
-                            Текст ошибки
-                        </div>
+                        <label for="BIK">БИК</label>
                     </div>
                     <div class="form-input">
-                        <label for="RS" class="sr-only">Расчетный счет</label>
-                        <input id="RS" type="text" class="form-control" placeholder="Расчетный счет"
-                               required
-                               aria-required="true">
-                        <div class="invalid-feedback">
-                            Текст ошибки
-                        </div>
+                        <input id="RS" name="RS" type="text" class="form-control" aria-required="true">
+                        <label for="RS">Расчетный счет</label>
                     </div>
                 </div>
 
@@ -842,7 +796,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
         integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
         crossorigin="anonymous"></script>
-<script src="./js/form.js"></script>
+<script defer src="https://unpkg.com/imask"></script>
+<script defer src="./js/validate.js"></script>
 <script src="./js/add-cart.js"></script>
 <script src="./js/common.js"></script>
 </body>

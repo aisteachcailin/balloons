@@ -545,23 +545,17 @@
 
         <div class="row">
             <div class="col-lg-5 col-md-7 col-12">
-                <form action="" class="form-registration needs-validation" novalidate>
+                <form action="" class="form-registration js-form" novalidate>
                     <div class="registration-inputs">
                         <div class="form-input">
-                            <label for="inn" class="sr-only">E-mail*</label>
-                            <input id="inn" type="email" class="form-control" placeholder="E-mail*" required
+                            <input id="email" type="email" name="email" class="form-control" required
                                    aria-required="true">
-                            <div class="invalid-feedback">
-                                Текст ошибки
-                            </div>
+                            <label for="email">E-mail*</label>
                         </div>
                         <div class="form-input">
-                            <label for="password" class="sr-only">Пароль*</label>
-                            <input id="password" type="email" class="form-control" placeholder="Пароль*" required
-                                   aria-required="true">
-                            <div class="invalid-feedback">
-                                Текст ошибки
-                            </div>
+                            <input id="password" type="password" name="password" class="form-control" required
+                                 minlength="6"  aria-required="true">
+                            <label for="password">Пароль*</label>
                         </div>
                     </div>
                     <button type="submit" class="c-btn c-btn--primary c-btn--mobile-full-width">Вход</button>
@@ -731,7 +725,7 @@
         integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
         crossorigin="anonymous"></script>
 <script src="./js/add-cart.js"></script>
-<script src="./js/form.js"></script>
+<script src="./js/validate.js"></script>
 <script src="./js/common.js"></script>
 </body>
 </html>

@@ -549,23 +549,17 @@
 
             <div class="row">
                 <div class="col-lg-5 col-md-7 col-12">
-                    <form action="" class="form-registration form-registration--margin needs-validation" novalidate>
+                    <form action="" class="form-registration form-registration--margin js-form" novalidate>
                         <div class="registration-inputs">
                             <div class="form-input">
-                                <label for="FIO" class="sr-only">ФИО*</label>
-                                <input id="FIO" type="email" class="form-control" placeholder="ФИО*" required
+                                <input id="FIO" type="text" name="name" class="form-control" required
                                        aria-required="true">
-                                <div class="invalid-feedback">
-                                    Текст ошибки
-                                </div>
+                                <label for="FIO">ФИО*</label>
                             </div>
                             <div class="form-input">
-                                <label for="phone" class="sr-only">Телефон*</label>
-                                <input id="phone" type="email" class="form-control" placeholder="Телефон*" required
+                                <input id="phone" type="text" name="phone" class="form-control" required
                                        aria-required="true">
-                                <div class="invalid-feedback">
-                                    Текст ошибки
-                                </div>
+                                <label for="phone">Телефон*</label>
                             </div>
                         </div>
                         <div class="registration-bottom-privacy">
@@ -579,25 +573,20 @@
                 </div>
                 <h1 class="section-title section-title--with-margin">Смена пароля</h1>
                 <div class="col-lg-5 col-md-7 col-12">
-                    <form action="" class="form-registration needs-validation" novalidate>
+                    <form action="" class="form-registration js-form" novalidate>
                         <div class="registration-inputs">
                             <div class="form-input">
-                                <label for="password" class="sr-only">Новый пароль*</label>
-                                <input id="password" type="email" class="form-control" placeholder="Новый пароль*"
-                                       required
+                                <input id="password" type="password" name="password" class="form-control"
+                                       placeholder="Новый пароль*"
+                                       required minlength="6"
                                        aria-required="true">
-                                <div class="invalid-feedback">
-                                    Текст ошибки
-                                </div>
+                                <label for="password">Новый пароль*</label>
                             </div>
                             <div class="form-input">
-                                <label for="password-accept" class="sr-only">Подтверждение пароля*</label>
-                                <input id="password-accept" type="email" class="form-control"
-                                       placeholder="Подтверждение пароля*" required
+                                <input id="password-accept" type="password" name="password-accept" class="form-control"
+                                       placeholder="Подтверждение пароля*" required minlength="6"
                                        aria-required="true">
-                                <div class="invalid-feedback">
-                                    Текст ошибки
-                                </div>
+                                <label for="password-accept">Подтверждение пароля*</label>
                             </div>
                         </div>
                         <button type="submit" class="c-btn c-btn--primary c-btn--mobile-full-width">Сохранить</button>
@@ -752,7 +741,9 @@
         integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
         crossorigin="anonymous"></script>
 <script src="./js/add-cart.js"></script>
-<script src="./js/form.js"></script>
+<script defer src="https://unpkg.com/imask"></script>
+<script defer src="./js/validate.js"></script>
+
 <script src="./js/common.js"></script>
 </body>
 </html>

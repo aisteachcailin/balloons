@@ -6,13 +6,25 @@
 @use "../../variables" as *;
 
 $errorColor: #E12668;
+//.form-check {
+//  position: relative;
+//  padding-bottom: 16px;
+//  .invalid-feedback {
+//    position: absolute;
+//    color: $errorColor;
+//    font-size: 12px;
+//    display: none;
+//    bottom: 0;
+//    margin-left: 32px;
+//  }
+//}
 .form-input, .form-textarea {
   position: relative;
   padding-bottom: 20px;
   margin-bottom: 6px;
   max-width: 506px;
 
-  .error-text, .invalid-feedback {
+  .invalid-feedback {
     position: absolute;
     color: $errorColor;
     font-size: 12px;
@@ -21,11 +33,6 @@ $errorColor: #E12668;
     margin-left: 15px;
   }
 
-  &.has-error {
-    .error-text {
-      display: block;
-    }
-  }
   label {
     position: absolute;
     transition-duration: .2s;
@@ -127,6 +134,12 @@ $errorColor: #E12668;
 }
 .was-validated .form-control:invalid:focus, .form-control.is-invalid:focus {
   box-shadow: 0 0 0 1px rgba(220, 53, 69, 1);
+}
+.was-validated .form-check-input:invalid:focus, .form-check-input.is-invalid:focus {
+  box-shadow: none;
+}
+.was-validated .form-check-input:invalid, .form-check-input.is-invalid {
+  box-shadow: 0 0 4px 2px rgba(220, 53, 69, .25);
 }
 .registration-section {
   &[data-form-type="type-1"] {
