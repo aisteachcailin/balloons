@@ -18,6 +18,21 @@ $errorColor: #E12668;
 //    margin-left: 32px;
 //  }
 //}
+.password-display-icon {
+  position: absolute;
+  right: 28px;
+  top: 13px;
+  width: 20px;
+  height: 20px;
+  background: url($imgPath + "/svg/not-visible.svg") 50% 50% no-repeat;
+  background-size: 20px;
+  cursor: pointer;
+
+  &.show-pass {
+    background: url($imgPath + "/svg/eye-visible.svg") 50% 50% no-repeat;
+    background-size: 20px;
+  }
+}
 .form-input, .form-textarea {
   position: relative;
   padding-bottom: 20px;
@@ -51,10 +66,19 @@ $errorColor: #E12668;
   }
 }
 .form-textarea {
+  label {
+    top: 28px;
+    left: 28px;
+  }
+  textarea:focus + label, &.fill label  {
+    top: -8px;
+    font-size: 12px;
+  }
   textarea {
     height: 186px;
     resize: none;
     padding: 28px;
+
 
     @include media(md) {
       height: 235px;

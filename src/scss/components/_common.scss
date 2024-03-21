@@ -33,7 +33,9 @@ body {
 main {
   flex: auto;
 }
-
+[disabled=disabled] {
+  opacity: .5;
+}
 .section-title {
   font-weight: 700;
   font-size: 16px;

@@ -16,13 +16,16 @@
         OGRN: 'OGRN',
         subscribe: 'subscribe',
         nameOrganization: 'nameOrganization',
-        privacy: 'privacy'
+        privacy: 'privacy',
+        legalForm: 'legal-form',
+        address: 'address'
     }
 
     const errorMessages = {
         ERROR_REQUIRED: 'Обязательное поле',
         ERROR_EMAIL: 'Введите корректный email',
         ERROR_PHONE: 'Заполните телефон полностью',
+        ERROR_PASSWORD_ACCEPT: 'Пароли не совпадают',
         ERROR_MIN_LENGTH: (minLength) => {
             return `Поле должно содержать не менее ${ minLength } символов`
         },
@@ -65,7 +68,11 @@
         },
         [fields.passwordAccept]: {
             valueMissing: errorMessages.ERROR_REQUIRED,
+            customError: errorMessages.ERROR_PASSWORD_ACCEPT,
             tooShort: errorMessages.ERROR_MIN_LENGTH(6)
+        },
+        [fields.address]: {
+            valueMissing: errorMessages.ERROR_REQUIRED,
         },
         // [fields.subscribe]: {
         //     valueMissing: errorMessages.ERROR_REQUIRED
@@ -82,14 +89,43 @@
 
         checkFillInput()
         initMasks()
+        displayPassword()
+        initValidationInputs()
+    })
 
+    /**
+     * Инициализация валидации при изменении значения полей
+     */
+    function initValidationInputs () {
         const inputs = document.querySelectorAll('.form-input input')
+        const textarea = document.querySelectorAll('.form-textarea textarea')
 
         inputs.forEach(el => {
             el.addEventListener('input', () => validateInput(el))
         })
-    })
+        textarea.forEach(el => {
+            el.addEventListener('input', () => validateInput(el))
+        })
+    }
 
+    /**
+     * Показать/скрыть пароль
+     */
+    function displayPassword() {
+        const displayPassBtn = document.querySelector('.js-password-display')
+        const passwordField = displayPassBtn?.closest('.form-input')?.querySelector('input')
+
+            displayPassBtn?.addEventListener('click', () => {
+                displayPassBtn.classList.toggle('show-pass')
+
+                const type = displayPassBtn.classList.contains('show-pass') ? 'text' : 'password'
+
+                passwordField.setAttribute('type', type)
+        })
+    }
+    /**
+     * Инициализация масок
+     */
     function initMasks() {
         const phone = document.querySelector(`input[name=${ fields.phone }]`);
         const kpp = document.querySelector(`input[name=${ fields.KPP }]`);
@@ -113,11 +149,14 @@
         setMaskINN()
     }
 
+    /**
+     * Установить маску для поля ИНН
+     */
     function setMaskINN() {
         const inn = document.querySelector(`input[name=${ fields.INN }]`);
 
         if (inn) {
-            const legalFrom = document.querySelectorAll(`[name=legal-form]`)
+            const legalFrom = document.querySelectorAll(`[name=${fields.legalForm}]`)
 
             const lengthINN = {
                 count: 12,
@@ -148,13 +187,17 @@
      */
     function checkFillInput() {
         const inputs = document.querySelectorAll('.form-input input')
+        const textarea = document.querySelectorAll('.form-textarea textarea')
 
-        inputs.forEach(el => {
-            el.addEventListener('change', () => {
-                el.closest('.form-input')
-                    .classList
-                    .toggle('fill', el.value.length)
-            })
+        inputs.forEach(el => handleField(el, '.form-input'))
+        textarea.forEach(el => handleField(el, '.form-textarea'))
+    }
+
+    function handleField (el, parentClass) {
+        el.addEventListener('change', () => {
+            el.closest(parentClass)
+                .classList
+                .toggle('fill', el.value.length)
         })
     }
 
@@ -166,15 +209,28 @@
         el.addEventListener('submit', e => {
             e.preventDefault()
 
-            // const mainFields = el.querySelector('[name=main-fields]')
             checkValidationInput(el)
             if (el.checkValidity()) {
+                //TODO: Добавить обработку при отправке запроса
                 console.log('send')
+                el.querySelector('[type=submit]').setAttribute('disabled', 'disabled')
             } else {
                 el.classList.add('was-validated')
+                scrollToFirstError(el)
             }
         }, false)
 
+    }
+
+    /**
+     * Скролл к первому полю с ошибкой
+     * @param el
+     */
+    function scrollToFirstError (el) {
+        const firstError = el.querySelector('input:invalid')
+        const posTop = firstError?.getBoundingClientRect().top
+
+        scrollBy({top: posTop - 100, behavior: 'smooth'})
     }
 
     function checkValidationInput(context) {
@@ -192,7 +248,7 @@
 
             Object.keys(ValidityState.prototype).forEach((key) => {
                 if (input.validity[key]) {
-                    const parent = input.closest('.form-input')
+                    const parent = input.closest(input.tagName === 'TEXTAREA' ? '.form-textarea' : '.form-input')
                     // const parent = input.closest(input.type === 'checkbox' ? '.form-check' : '.form-input')
 
                     if (!parent.querySelector('.invalid-feedback')) {
@@ -217,6 +273,11 @@
             const isCorrectEmail = !input.validity.valueMissing && !input.value.includes('.')
 
             input.setCustomValidity(isCorrectEmail ? 'Incorrect email' : '');
+        } else if (nameField === fields.passwordAccept) {
+            const password = document.querySelector(`input[name=${fields.password}]`)
+            const isCorrectPassword = !input.validity.valueMissing && (input.value !== password.value)
+
+            input.setCustomValidity(isCorrectPassword ? 'Incorrect email' : '');
         }
     }
 })()
