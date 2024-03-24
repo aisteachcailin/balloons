@@ -569,20 +569,28 @@
                     </div>
 
                     <fieldset class="registration-inputs" name="main-fields">
-                        <div class="form-input">
+                        <div class="form-input fl-only">
                             <input id="name" type="text" class="form-control" name="name" required aria-required="true">
                             <label for="name">ФИО*</label>
+                        </div>
+                        <div class="form-input  yl-only">
+                            <input id="contact-person" type="text" class="form-control" name="contact-person" aria-required="true">
+                            <label for="contact-person">Контактное лицо*</label>
                         </div>
                         <div class="form-input">
                             <input id="email" name="email" type="email" class="form-control" required
                                 aria-required="true">
-                            <label for="email">E-mai*</label>
-
+                            <label for="email">E-mail*</label>
                         </div>
                         <div class="form-input">
                             <input id="phone" name="phone" type="text" class="form-control" required
                                 aria-required="true">
                             <label for="phone">Телефон*</label>
+                        </div>
+                        <div class="form-input yl-only">
+                            <input id="inn" name="INN" type="text" class="form-control" minlength="10" maxlength="12"
+                                   inputmode="numeric" aria-required="true">
+                            <label for="inn">ИНН*</label>
                         </div>
                         <div class="form-input">
                             <input id="password" name="password" type="password" class="form-control" minlength="6" required
@@ -625,11 +633,6 @@
                                     </div>
                                 </div>
                                 <div class="registration-inputs">
-                                    <div class="form-input">
-                                        <input id="inn" name="INN" type="text" class="form-control" minlength="12"
-                                            inputmode="numeric" aria-required="true">
-                                        <label for="inn">ИНН</label>
-                                    </div>
                                     <div class="form-input">
                                         <input id="kpp" name="KPP" type="text" class="form-control" minlength="9"
                                                inputmode="numeric" aria-required="true">
@@ -710,7 +713,7 @@
 
                     <div class="registration-bottom-privacy">
                         <div class="form-check">
-                            <input id="subscribe" name="subscribe" class="form-check-input" type="checkbox" required>
+                            <input id="subscribe" name="subscribe" class="form-check-input" type="checkbox">
                             <label for="subscribe">Я хочу получать email рассылки о выгодных предложениях</label>
                         </div>
                         <div class="form-check">

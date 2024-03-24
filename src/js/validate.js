@@ -18,7 +18,8 @@
         nameOrganization: 'nameOrganization',
         privacy: 'privacy',
         legalForm: 'legal-form',
-        address: 'address'
+        address: 'address',
+        contactPerson: 'contact-person'
     }
 
     const errorMessages = {
@@ -28,6 +29,9 @@
         ERROR_PASSWORD_ACCEPT: 'Пароли не совпадают',
         ERROR_MIN_LENGTH: (minLength) => {
             return `Поле должно содержать не менее ${ minLength } символов`
+        },
+        ERROR_MAX_LENGTH: (maxLength) => {
+            return `Поле должно содержать не более ${ maxLength } символов`
         },
         ERROR_MIN_LENGTH_DATA: (minLength, fieldName) => {
             return `${ fieldName } должно состоять из ${ minLength } символов`
@@ -53,7 +57,8 @@
         },
         [fields.INN]: {
             valueMissing: errorMessages.ERROR_REQUIRED,
-            tooShort: errorMessages.ERROR_MIN_LENGTH_DATA(12, 'ИНН')
+            tooShort: errorMessages.ERROR_MIN_LENGTH(10),
+            tooLong: errorMessages.ERROR_MAX_LENGTH(12)
         },
         [fields.KPP]: {
             valueMissing: errorMessages.ERROR_REQUIRED,
@@ -74,6 +79,9 @@
         [fields.address]: {
             valueMissing: errorMessages.ERROR_REQUIRED,
         },
+        [fields.contactPerson]: {
+            valueMissing: errorMessages.ERROR_REQUIRED,
+        }
         // [fields.subscribe]: {
         //     valueMissing: errorMessages.ERROR_REQUIRED
         // },
@@ -145,42 +153,40 @@
         if (ogrn) {
             IMask(ogrn, { mask: /^[15]\d{0,12}$/ })
         }
-
-        setMaskINN()
     }
 
-    /**
-     * Установить маску для поля ИНН
-     */
-    function setMaskINN() {
-        const inn = document.querySelector(`input[name=${ fields.INN }]`);
-
-        if (inn) {
-            const legalFrom = document.querySelectorAll(`[name=${fields.legalForm}]`)
-
-            const lengthINN = {
-                count: 12,
-                mask: '000000000000'
-            }
-
-            const maskINN = IMask(inn, { mask: lengthINN.mask })
-
-            inn.setAttribute('minlength', lengthINN.count)
-
-            legalFrom.forEach(el => {
-                el.addEventListener('change', () => {
-                    const isIndividual = el.value === 'type-1'
-
-                    lengthINN.mask = isIndividual ? '000000000000' : '0000000000'
-                    lengthINN.count = isIndividual ? 12 : 10
-                    inn.setAttribute('minlength', lengthINN.count)
-                    maskINN.mask = lengthINN.mask
-                    errors[fields.INN].tooShort = errorMessages.ERROR_MIN_LENGTH_DATA(lengthINN.count, 'ИНН')
-                    maskINN.value = ''
-                })
-            })
-        }
-    }
+    // /**
+    //  * Установить маску для поля ИНН
+    //  */
+    // function setMaskINN() {
+    //     const inn = document.querySelector(`input[name=${ fields.INN }]`);
+    //
+    //     if (inn) {
+    //         const legalFrom = document.querySelectorAll(`[name=${fields.legalForm}]`)
+    //
+    //         const lengthINN = {
+    //             count: 12,
+    //             mask: '000000000000'
+    //         }
+    //
+    //         const maskINN = IMask(inn, { mask: lengthINN.mask })
+    //
+    //         inn.setAttribute('minlength', lengthINN.count)
+    //
+    //         legalFrom.forEach(el => {
+    //             el.addEventListener('change', () => {
+    //                 const isIndividual = el.value === 'type-1'
+    //
+    //                 lengthINN.mask = isIndividual ? '000000000000' : '0000000000'
+    //                 lengthINN.count = isIndividual ? 12 : 10
+    //                 inn.setAttribute('minlength', lengthINN.count)
+    //                 maskINN.mask = lengthINN.mask
+    //                 errors[fields.INN].tooShort = errorMessages.ERROR_MIN_LENGTH_DATA(lengthINN.count, 'ИНН')
+    //                 maskINN.value = ''
+    //             })
+    //         })
+    //     }
+    // }
 
     /**
      * Проверяем заполненность поля для фиксации label над полем
@@ -212,6 +218,10 @@
             checkValidationInput(el)
             if (el.checkValidity()) {
                 //TODO: Добавить обработку при отправке запроса
+
+                if (el.classList.contains('js-recovery')) {
+                    showMessage(true, 'Инструкции по восстановлению пароля отправлены на Ваш e-mail')
+                }
                 console.log('send')
                 el.querySelector('[type=submit]').setAttribute('disabled', 'disabled')
             } else {
@@ -279,5 +289,46 @@
 
             input.setCustomValidity(isCorrectPassword ? 'Incorrect email' : '');
         }
+    }
+
+    /**
+     * Сообщение по результату отправки формы
+     * @param success { Boolean }
+     * @param customText { String }
+     */
+    function showMessage(success , customText= '') {
+        const errorMessage = 'Произошла ошибка передачи данных.<br> Пожалуйста поробуйте еще раз!'
+        const successMessage = customText || 'Данные успешно отправлены'
+        const message = success ? successMessage :  errorMessage
+
+        new Fancybox(
+            [
+                {
+                    src: `<p>${message}</p><button class="popup-close"></button>`,
+                    type: "html",
+                },
+            ],
+            {
+                mainClass: 'send-message',
+                closeButton: false,
+                dragToClose: false,
+                on: {
+                    done: (fancybox) => {
+                        closePopup(fancybox)
+                    }
+                }
+            }
+        );
+    }
+
+    function closePopup(popup) {
+        const closeBtn = document.querySelector('.popup-close')
+
+        closeBtn.addEventListener('click', () => {
+            popup.close()
+            const submitButtons = document.querySelectorAll('[type=submit]')
+
+            submitButtons.forEach(el => el.removeAttribute('disabled'))
+        })
     }
 })()
