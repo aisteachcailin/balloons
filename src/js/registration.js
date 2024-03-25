@@ -33,7 +33,12 @@
                 }
 
                 fieldsRequired(fieldsRequiredObj.add, fieldsRequiredObj.remove)
-                el.closest('.js-form').classList.remove('was-validated')
+
+                const form = el.closest('.js-form')
+
+                form.querySelectorAll('.was-validated').forEach(item => {
+                    item.classList.remove('was-validated')
+                })
             })
         })
     }

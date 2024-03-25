@@ -225,7 +225,7 @@
                 console.log('send')
                 el.querySelector('[type=submit]').setAttribute('disabled', 'disabled')
             } else {
-                el.classList.add('was-validated')
+                // el.classList.add('was-validated')
                 scrollToFirstError(el)
             }
         }, false)
@@ -244,7 +244,12 @@
     }
 
     function checkValidationInput(context) {
+        const excluded = [fields['OGRN'], fields['KPP']]
         for (const i of context.elements) {
+            if (i.getAttribute('required') !== null
+                || (excluded.includes(i.name) && !!i.value)) {
+                i.parentElement?.classList.add('was-validated')
+            }
             validateInput(i)
         }
     }
