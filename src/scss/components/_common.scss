@@ -5,6 +5,7 @@
   --border-radiius: 30px;
   --bs-link-hover-color: #678AEF;
   --offset-compensator: 0px;
+  --fancybox-opacity: .3;
   @media (min-width: 1170px) {
     --offset-compensator: 17px;
   }
@@ -29,6 +30,7 @@ body {
     padding-top: 0;
   }
 }
+
 main {
   flex: auto;
 }
