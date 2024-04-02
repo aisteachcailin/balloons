@@ -28,6 +28,7 @@ export default {
                 'detail/detail': './src/js/detail/detail.js',
                 'catalog/tooltip': './src/js/catalog/tooltip.js',
                 'catalog/dropdown-sort': './src/js/catalog/dropdown-sort.js',
+                about: './src/about.html',
             },
             output: {
                 assetFileNames: "assets/[name][extname]",
