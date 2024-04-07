@@ -1,34 +1,108 @@
 @use "../../variables" as *;
 
 .about {
+    margin-bottom: 32px;
+    margin-top: 25px;
+    
+    @include media(md) {
+        margin-bottom: 48px;
+    }
+    @include media(xxl) {
+        margin-top: 32px;
+        margin-bottom: 54px;
+    }
+
+    ul {
+        padding-left: 11px;
+
+        @include media(xxl) {
+            padding-left: 7px;
+        }
+
+        li {
+            padding-left: 10px;
+            &::marker {
+                content: "\2022";
+                color: #333;
+            }
+        }
+    }
+
     &__banner {
         width: 100%;
-        margin-bottom: 31px;
+        margin-bottom: 7px;
+        margin-top: 16px;
+
+        @include media(md) {
+            margin-bottom: 22px;
+        }
+        @include media(xxl) {
+            margin-bottom: 31px;
+        }
     }
 
     &__info {
         position: relative;
         margin-top: 21px;
+
         &-first {
-            position: absolute;
-            top: 50px;
-            width: 45%;
-            padding-left: 80px;
+            @include media(xxl) {
+                position: absolute;
+                top: 66px;
+                width: 45%;
+                padding-left: 80px;
+              }
+        }
+        &:first-child {
+            @include media(xs) {
+                display: flex;
+                flex-direction: column-reverse;
+              }
         }
     }
 
     &__title {
-        font-size: 26px;
-        line-height: 30px;
         font-weight: 700;
+        font-size: 16px;
+        line-height: 20px;
+
+        @include media(md) {
+            font-size: 24px;
+            line-height: 28px;
+        }
+        @include media(xxl) {
+            font-size: 26px;
+            line-height: 30px;
+        }
     }
 
     &__text {
         font-size: 14px;
         line-height: 18px;
         font-weight: 400;
+        margin-top: 12px;
+
+        @include media(xxl) {
+            margin-top: 23px;
+        }
+
         &-first {
             margin-top: 16px;
+        }
+    }
+
+    &__baloons {
+        position: relative;
+        bottom: 103px;
+        display: none;
+        float: right;
+
+        @include media(md) {
+            display: block;
+            width: 230px;
+        }
+        @include media(xxl) {
+            width: 403px;
         }
     }
 }
