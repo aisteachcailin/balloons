@@ -1,6 +1,6 @@
 @use "../../variables" as *;
 
-.contacts {
+.info {
     .container {
         margin-top: 23px;
         margin-bottom: 30px;
@@ -56,7 +56,50 @@
         }
     }
 
-    &-info {
+    &__phone, &__address {
+        font-size: 14px;
+        line-height: 20px;
+
+        @include media(md) {
+            font-size: 16px;
+        }
+    }
+    &__phone, &__phone:hover {
+        color: #333;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    &__address {
+        margin-top: 8px;
+        font-weight: 400;
+    }
+
+    &__hours, &__time, &__days {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 18px;
+    }
+
+    &__hours {
+        color: #747474;
+        margin-top: 27px;
+
+        @include media(md) {
+            margin-top: 19px;
+        }
+    }
+
+    &__time {
+        margin-top: 11px;
+    }
+
+    &__days {
+        margin-top: 8px;
+        margin-bottom: 0;
+    }
+
+    section {
         margin-top: 22px;
         display: flex;
         justify-content: space-between;
@@ -83,46 +126,14 @@
                 }
             }
         }
+    }
 
-        &__phone, &__address {
-            font-size: 14px;
-            font-weight: 700;
-            line-height: 20px;
+    iframe {
+        margin-bottom: -5px;
+        height: 418px;
 
-            @include media(xxl) {
-                font-size: 16px;
-            }
-        }
-        &__phone, &__phone:hover {
-            color: #333;
-            text-decoration: none;
-        }
-
-        &__address {
-            margin-top: 8px;
-        }
-
-        &__hours, &__time, &__days {
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 18px;
-        }
-
-        &__hours {
-            color: #747474;
-            margin-top: 27px;
-
-            @include media(md) {
-                margin-top: 19px;
-            }
-        }
-
-        &__time {
-            margin-top: 11px;
-        }
-
-        &__days {
-            margin-top: 8px;
+        @include media(md) {
+            height: 700px;
         }
     }
 }

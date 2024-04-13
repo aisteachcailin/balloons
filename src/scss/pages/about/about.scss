@@ -1,10 +1,11 @@
 @use "../../variables" as *;
 
 .about {
+    margin-top: 24px;
     margin-bottom: 32px;
-    margin-top: 25px;
     
     @include media(md) {
+        margin-top: 25px;
         margin-bottom: 48px;
     }
     @include media(xxl) {
@@ -30,7 +31,7 @@
 
     &__banner {
         width: 100%;
-        margin-bottom: 7px;
+        margin-bottom: 0;
         margin-top: 16px;
 
         @include media(md) {
@@ -43,12 +44,16 @@
 
     &__info {
         position: relative;
-        margin-top: 21px;
+        margin-top: 28px;
+
+        @include media(md) {
+            margin-top: 21px;
+        }
 
         &-first {
             @include media(xxl) {
                 position: absolute;
-                top: 66px;
+                top: 61px;
                 width: 45%;
                 padding-left: 80px;
               }
@@ -87,7 +92,7 @@
         }
 
         &-first {
-            margin-top: 16px;
+            margin-top: 12px;
         }
     }
 

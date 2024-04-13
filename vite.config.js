@@ -29,8 +29,10 @@ export default {
                 'catalog/tooltip': './src/js/catalog/tooltip.js',
                 'catalog/dropdown-sort': './src/js/catalog/dropdown-sort.js',
                 about: './src/about.html',
-                contacts: './src/contacts.html',
+                generalInfo: './src/contacts.html', 'delivery-pickup': './src/delivery-pickup.html',
                 consumption: './src/consumption.html',
+                delivery: './src/delivery-russia.html', 'delivery-city': './src/delivery-city.html',
+                payment: './src/payment.html',
             },
             output: {
                 assetFileNames: "assets/[name][extname]",
