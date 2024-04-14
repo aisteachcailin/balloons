@@ -1,1 +1,84 @@
 @use "../../variables" as *;
+
+.payment {
+    margin: 25px 0 29px;
+
+    @include media(md) {
+        margin: 42px 0 48px;
+    }
+
+    @include media(xxl) {
+        margin: 26px 0 46px;
+    }
+
+    &__title {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 22px;
+
+        @include media(md) {
+            font-size: 24px;
+            line-height: 30px;
+        }
+
+        @include media(xxl) {
+            font-size: 26px;
+        }
+    }
+
+    &-ways {
+        margin: 0 0 12px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 18px;
+
+        @include media(md) {
+            margin: 8px 0 29px;
+        }
+
+        @include media(xxl) {
+            margin: 15px 0 53px;
+        }
+
+        &__item {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 18px;
+            border-radius: 30px;
+            padding: 15px 25px 16px 0;
+            height: 57px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &::before {
+                padding-left: 30px;
+            }
+        }
+
+        .cash, .qr {
+            border: 2px solid #678AEF;
+        }
+
+        .cash::before {
+            content: url(../img/svg/cash.svg);
+            
+        }
+        .non-cash {
+            background: #D8E2FE;
+            &::before {
+                content: url(../img/svg/non-cash.svg);
+            }
+        }
+        .qr::before {
+            content: url(../img/svg/qr.svg);
+        }
+        
+    }
+
+    &__info {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+    }
+}

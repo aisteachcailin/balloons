@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="Ru-ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./scss/bootstrap.scss">
+    <link rel="stylesheet" href="./scss/style.scss">
+    <link rel="stylesheet" href="./scss/pages/news/news.scss">
+    <link rel="stylesheet" href="./scss/pages/states/states.scss">
+
+
+    <title>Новости</title>
+</head>
+<body class="wrapper">
+
+<header class="c-header">
+    <div class="header-top">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <nav>
+                    <ul class="menu nav">
+                        <li class="menu-item menu-item--with-arrow nav-item js-dropdown">
+                            <a class="nav-link" data-bs-offset="-18,0" data-bs-toggle="dropdown" href="#"
+                               role="button"
+                               aria-expanded="false">Покупателям</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Семинары и фестивали</a></li>
+                                <li><a class="dropdown-item" href="#">Возврат товара</a></li>
+                                <li><a class="dropdown-item" href="#">Политика конфиденциальности</a></li>
+                                <li><a class="dropdown-item" href="#">Пользовательское соглашение</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item"><a href="/" class="nav-link">Доставка и оплата</a></li>
+                        <li class="menu-item"><a href="/" class="nav-link">Скидки</a></li>
+                        <li class="menu-item"><a href="/" class="nav-link">О компании</a></li>
+                        <li class="menu-item"><a href="/" class="nav-link">Контакты</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="d-flex flex-column">
+                    <div class="header-callback-wrap">
+                        <a href="tel:+78314371307" class="header-callback">
+                            +7 831 437-13-07
+                        </a>
+                        <span>ул. Бекетова, 3а, к. 9</span>
+                    </div>
+                    <div>
+                        <a href="tel:+78312151534" class="header-callback">
+                            +7 831 215-15-34
+                        </a>
+                        <span>ул. Чкалова, 39</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="container">
+            <div class="header-row">
+                <a class="header-logo" href="/">
+                    <img src="/img/svg/logo.svg" alt="" class="header-logo__img">
+                </a>
+                <button class="c-btn c-btn--primary c-btn--catalog js-open-catalog">
+                    <span class="catalog-lines"><span class="catalog-lines__line"></span></span>
+                    <span class="c-btn--catalog-text">Каталог товаров</span>
+                </button>
+                <div class="d-lg-none d-none d-md-flex flex-column">
+                    <div class="header-callback-wrap">
+                        <a href="tel:+78314371307" class="header-callback">
+                            +7 831 437-13-07
+                        </a>
+                        <span>ул. Бекетова, 3а, к. 9</span>
+                    </div>
+                    <div>
+                        <a href="tel:+78312151534" class="header-callback">
+                            +7 831 215-15-34
+                        </a>
+                        <span>ул. Чкалова, 39</span>
+                    </div>
+                </div>
+                <form action="/" class="header-search" data-hint="false">
+                    <label for="search" class="header-search__label">
+                        <input type="text" id="search" data-search placeholder="Искать товары"
+                               class="header-search__input">
+                    </label>
+                    <ul class="header-search-hint smooth-animation">
+                        <li class="header-search-hint__item">
+                            <a href="#" class="header-search-hint__link">Шарики сердце</a>
+                        </li>
+                        <li class="header-search-hint__item">
+                            <a href="#" class="header-search-hint__link">Шарики 8 марта</a>
+                        </li>
+                    </ul>
+                    <button type="submit" class="c-btn c-btn--primary c-btn--search">
+                        <svg class="search-icon" role="img">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 xlink:href="/img/svg/map.svg#svg-search"></use>
+                        </svg>
+                    </button>
+                </form>
+                <ul class="header-icons">
+                    <li class="header-icons__item">
+                        <a href="/" class="header-icons__link">
+                            <svg class="header-icons__icon header-icons__icon--human" role="img">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="/img/svg/map.svg#svg-human"></use>
+                            </svg>
+                            <span>Войти</span>
+                        </a>
+                    </li>
+                    <li class="header-icons__item">
+                        <a href="/" class="header-icons__link">
+                            <svg class="header-icons__icon header-icons__icon--heart" role="img">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="/img/svg/map.svg#svg-heart"></use>
+                            </svg>
+                            <span>Избранное</span>
+                        </a>
+                    </li>
+                    <li class="header-icons__item header-icons__item--cart">
+                        <div class="header-icons__count-cart js-count-cart">2</div>
+                        <a href="/" class="header-icons__link">
+                            <svg class="header-icons__icon header-icons__icon--cart" role="img">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="/img/svg/map.svg#svg-cart"></use>
+                            </svg>
+                            <span class="js-cart-text">Корзина</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="mobile-search js-open-catalog">
+                    <svg class="header-icons__icon header-icons__icon--search-mobile" role="img">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                             xlink:href="/img/svg/map.svg#svg-search"></use>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--        Catalog         -->
+    <section class="catalog-menu smooth-animation">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-4">
+                    <ul class="catalog-menu-list js-catalog-list">
+                        <li class="catalog-menu-list__item active" data-category="1">
+                            <a href="#" class="catalog-menu-list__link">Воздушные шары из латекса</a>
+                        </li>
+                        <li class="catalog-menu-list__item" data-category="2">
+                            <a href="#" class="catalog-menu-list__link">Воздушные шары из латекса с рисунком</a>
+                        </li>
+                        <li class="catalog-menu-list__item" data-category="3">
+                            <a href="#" class="catalog-menu-list__link">Воздушные шары из фольги</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xl-9 col-8">
+                    <div class="catalog-category">
+                        <div class="catalog-category-content show" data-content-category="1">
+                            <div class="catalog-category__item">
+                                <a href="#" class="catalog-category__title">Заголовок</a>
+                                <ul class="catalog-category-list">
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="catalog-category__item">
+                                <a href="#" class="catalog-category__title">Заголовок</a>
+                                <ul class="catalog-category-list">
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="catalog-category__item">
+                                <a href="#" class="catalog-category__title">Заголовок</a>
+                                <ul class="catalog-category-list">
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="catalog-category__item">
+                                <a href="#" class="catalog-category__title">Заголовок</a>
+                                <ul class="catalog-category-list">
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="catalog-category-content" data-content-category="2">
+                            <div class="catalog-category__item">
+                                <a href="#" class="catalog-category__title">Заголовок категории 2</a>
+                                <ul class="catalog-category-list">
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="catalog-category__item">
+                                <a href="#" class="catalog-category__title">Заголовок</a>
+                                <ul class="catalog-category-list">
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="catalog-category-content" data-content-category="3">
+                            <div class="catalog-category__item">
+                                <a href="#" class="catalog-category__title">Заголовок категории 3</a>
+                                <ul class="catalog-category-list">
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="catalog-category__item">
+                                <a href="#" class="catalog-category__title">Заголовок</a>
+                                <ul class="catalog-category-list">
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                    <li class="catalog-category-list__item">
+                                        <a href="#" class="catalog-category-list__link">Элемент списка 1</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--        Catalog mobile        -->
+    <section class="catalog-menu catalog-menu--mobile smooth-animation">
+        <div class="catalog-menu-head">
+            <div class="container">
+                <div class="catalog-menu-head__title">Меню</div>
+                <div class="catalog-menu-head__close"></div>
+                <form action="/" class="header-search header-search--mobile" data-hint="false">
+                    <label for="search-2" class="header-search__label">
+                        <input type="text" id="search-2" data-search placeholder="Искать товары"
+                               class="header-search__input">
+                    </label>
+                    <ul class="header-search-hint smooth-animation js-hint-result">
+
+                        <!--***  Пример подсказок поиска ***-->
+
+                        <li class="header-search-hint__item">
+                            <a href="#" class="header-search-hint__link">Шарики сердце</a>
+                        </li>
+                        <li class="header-search-hint__item">
+                            <a href="#" class="header-search-hint__link">Шарики 8 марта</a>
+                        </li>
+                    </ul>
+                    <button type="submit" class="c-btn c-btn--primary c-btn--search">
+                        <svg class="search-icon" role="img">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 xlink:href="/img/svg/map.svg#svg-search"></use>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="catalog-menu-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <ul class="catalog-mobile-list js-catalog-list-mobile">
+                            <li class="catalog-menu-list__item catalog-mobile-list-parent">
+                                <a href="#" class="catalog-menu-list__link">Покупателям</a>
+                                <div class="catalog-mobile-child">
+                                    <ul class="catalog-mobile-list">
+                                        <li class="catalog-menu-list__item">
+                                            <a class="catalog-menu-list__link" href="#">Семинары и фестивали</a>
+                                        </li>
+                                        <li class="catalog-menu-list__item">
+                                            <a class="catalog-menu-list__link" href="#">Возврат товара</a>
+                                        </li>
+                                        <li class="catalog-menu-list__item">
+                                            <a class="catalog-menu-list__link" href="#">Политика
+                                                                                        конфиденциальности</a>
+                                        </li>
+                                        <li class="catalog-menu-list__item">
+                                            <a class="catalog-menu-list__link" href="#">Пользовательское
+                                                                                        соглашение</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="catalog-menu-list__item">
+                                <a href="#" class="catalog-menu-list__link">Доставка и оплата</a>
+                            </li>
+                            <li class="catalog-menu-list__item">
+                                <a href="#" class="catalog-menu-list__link">Скидки</a>
+                            </li>
+                            <li class="catalog-menu-list__item">
+                                <a href="#" class="catalog-menu-list__link">О компании</a>
+                            </li>
+                            <li class="catalog-menu-list__item">
+                                <a href="#" class="catalog-menu-list__link">Контакты</a>
+                            </li>
+                        </ul>
+                        <ul class="catalog-mobile-list js-catalog-list-mobile">
+                            <li class="catalog-menu-list__item catalog-mobile-list-parent">
+                                <a href="#" class="catalog-menu-list__link">Воздушные шары из латекса</a>
+                                <div class="catalog-mobile-child">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <ul class="catalog-mobile-list">
+                                                <li class="catalog-menu-list__item catalog-mobile-list-parent">
+                                                    <a href="#" class="catalog-menu-list__link">Заголовок 1</a>
+                                                    <div class="catalog-mobile-child">
+                                                        <ul class="catalog-mobile-list">
+                                                            <li class="catalog-menu-list__item">
+                                                                <a href="#" class="catalog-menu-list__link">Элемент
+                                                                                                            1</a>
+                                                            </li>
+                                                            <li class="catalog-menu-list__item">
+                                                                <a href="#" class="catalog-menu-list__link">Элемент
+                                                                                                            2</a>
+                                                            </li>
+                                                            <li class="catalog-menu-list__item">
+                                                                <a href="#" class="catalog-menu-list__link">Элемент
+                                                                                                            3</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="catalog-menu-list__item catalog-mobile-list-parent">
+                                                    <a href="#" class="catalog-menu-list__link">Заголовок 2</a>
+                                                </li>
+                                                <li class="catalog-menu-list__item catalog-mobile-list-parent">
+                                                    <a href="#" class="catalog-menu-list__link">Заголовок 3</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="catalog-menu-list__item catalog-mobile-list-parent">
+                                <a href="#" class="catalog-menu-list__link">Воздушные шары из латекса с рисунком</a>
+                            </li>
+                            <li class="catalog-menu-list__item catalog-mobile-list-parent">
+                                <a href="#" class="catalog-menu-list__link">Воздушные шары из фольги</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</header>
+
+<main>
+    <nav>
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="/" class="breadcrumb__link">Главная</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="#" class="breadcrumb__link">Латексные шары</a>
+                </li>
+                <li class="breadcrumb-item">
+                    Латексные шары без рисунка
+                </li>
+            </ol>
+        </div>
+    </nav>
+    <div class="news">
+        <div class="container">
+            <h1 class="news__title states__title">Новости</h1>
+            <div class="news-info">
+                <div class="news-info__item">
+                    <p class="news-info__date">26.12.2022</p>
+                    <a class="news-info__name" href="news-detail.html" target="_blank">Режим работы в Новогодние праздники</a>
+                </div>
+                <div class="news-info__item">
+                    <p class="news-info__date">21.12.2022</p>
+                    <a class="news-info__name" href="news-detail.html" target="_blank">Режим работы 22.12.2022</a>
+                </div>
+                <div class="news-info__item">
+                    <p class="news-info__date">24.06.2022</p>
+                    <a class="news-info__name" href="news-detail.html" target="_blank">Доставка OZON</a>
+                </div>
+                <div class="news-info__item">
+                    <p class="news-info__date">07.03.2022</p>
+                    <a class="news-info__name" href="news-detail.html" target="_blank">График работы 8 Марта</a>
+                </div>
+                <div class="news-info__item">
+                    <p class="news-info__date">26.10.2021</p>
+                    <a class="news-info__name" href="news-detail.html" target="_blank">Осуществляем доставку по городу и области</a>
+                </div>
+                <div class="news-info__item">
+                    <p class="news-info__date">03.05.2021</p>
+                    <a class="news-info__name" href="news-detail.html" target="_blank">Магазин на Чкалова 37 переехал на Чкалова 39</a>
+                </div>
+                <div class="news-info__item">
+                    <p class="news-info__date">02.07.2020</p>
+                    <a class="news-info__name" href="news-detail.html" target="_blank">Внимание мошенники!</a>
+                </div>
+                <div class="news-info__item">
+                    <p class="news-info__date">03.04.2020</p>
+                    <a class="news-info__name" href="news-detail.html" target="_blank">График работы пункта выдачи заказов c 6 апреля</a>
+                </div>
+                <div class="news-info__item">
+                    <p class="news-info__date">05.03.2020</p>
+                    <a class="news-info__name" href="news-detail.html" target="_blank">8 Марта - выходной</a>
+                </div>
+                <div class="news-info__item">
+                    <p class="news-info__date">19.12.2019</p>
+                    <a class="news-info__name" href="news-detail.html" target="_blank">Изменения в графике работы 22 декабря</a>
+                </div>
+                <div class="news-info__item">
+                    <p class="news-info__date">02.10.2019</p>
+                    <a class="news-info__name" href="news-detail.html" target="_blank">Переезд магазина на Бекетова в соседний корпус</a>
+                </div>
+                <div class="news-info__item">
+                    <p class="news-info__date">27.07.2019</p>
+                    <a class="news-info__name" href="news-detail.html" target="_blank">Магазин Бекетова</a>
+                </div>
+                <div class="news-info__item">
+                    <p class="news-info__date">25.05.2019</p>
+                    <a class="news-info__name" href="news-detail.html" target="_blank">Открытие магазина УПАКОВКИ на Бекетова 3а, корпус 9</a>
+                </div>
+                <div class="news-info__item">
+                    <p class="news-info__date">26.04.2019</p>
+                    <a class="news-info__name" href="news-detail.html" target="_blank">График работы в праздничные дни</a>
+                </div>
+                <div class="news-info__item">
+                    <p class="news-info__date">22.04.2019</p>
+                    <a class="news-info__name" href="news-detail.html" target="_blank">Мыльные розы и другие новинки флористической упаковки</a>
+                </div>
+                <div class="news-info__item">
+                    <p class="news-info__date">20.02.2019</p>
+                    <a class="news-info__name" href="news-detail.html" target="_blank">График работы в праздничные дни 23 февраля и 8 марта</a>
+                </div>
+                <div class="news-info__item">
+                    <p class="news-info__date">16.02.2019</p>
+                    <a class="news-info__name" href="news-detail.html" target="_blank">Цена на гелий</a>
+                </div>
+                <div class="news-info__item">
+                    <p class="news-info__date">18.01.2019</p>
+                    <a class="news-info__name" href="news-detail.html" target="_blank">Изменения в графике работы 19 января</a>
+                </div>
+                <div class="news-info__item">
+                    <p class="news-info__date">22.19.2018</p>
+                    <a class="news-info__name" href="news-detail.html" target="_blank">График работы в новогодние праздники</a>
+                </div>
+                <div class="news-info__item">
+                    <p class="news-info__date">22.11.2018</p>
+                    <a class="news-info__name" href="news-detail.html" target="_blank">ЧЕРНАЯ ПЯТНИЦА с Компанией Премьер!!!</a>
+                </div>
+            </div>
+            <div class="catalog-bottom">
+                <div class="row">
+                    <div class="col-md-4">
+                        <a href="#" class="c-btn c-btn--secondary more">Показать ещё</a>
+                    </div>
+                    <div class="col-md-8">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <span aria-hidden="true">
+                                            <span class="pagination__chevron pagination__chevron--previous"></span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="page-item active" aria-current="page">
+                                    <a class="page-link" href="#">1</a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                <li class="page-item"><a class="page-link" href="#">6</a></li>
+                                <li class="page-item"><a class="page-link" href="#">7</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <span aria-hidden="true">
+                                            <span class="pagination__chevron pagination__chevron--next"></span>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Content end -->
+
+</main>
+<section class="to-up js-to-up"></section>
+
+<footer class="c-footer">
+    <!--**** Меню внизу для мобильных устройств ****-->
+
+    <section class="menu-bottom-mobile">
+        <div class="container">
+            <ul class="header-icons">
+                <li class="header-icons__item">
+                    <a href="/" class="header-icons__link">
+                        <svg class="header-icons__icon header-icons__icon--home" role="img">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 xlink:href="/img/svg/map.svg#svg-home"></use>
+                        </svg>
+                        <span>Главная</span>
+                    </a>
+                </li>
+                <li class="header-icons__item">
+                    <a href="#" class="header-icons__link js-open-catalog">
+                        <svg width="22" height="17" viewBox="0 0 22 17" fill="none"
+                             xmlns="http://www.w3.org/2000/svg"
+                             class="header-icons__icon header-icons__icon--catalog"
+                             role="img">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M0 1C0 0.447715 0.447716 0 1 0H17C17.5523 0 18 0.447715 18 1C18 1.55228 17.5523 2 17 2H1C0.447715 2 0 1.55228 0 1ZM0 7C0 6.44772 0.447716 6 1 6H17C17.5523 6 18 6.44772 18 7C18 7.55228 17.5523 8 17 8H1C0.447715 8 0 7.55228 0 7ZM18 13C18 12.4477 17.5523 12 17 12H1C0.447715 12 0 12.4477 0 13C0 13.5523 0.447716 14 1 14H17C17.5523 14 18 13.5523 18 13Z"
+                                  fill="#423B57" class="blue-fill"></path>
+                            <mask id="path-2-outside-1" maskUnits="userSpaceOnUse" x="8" y="3" width="14"
+                                  height="14" fill="black">
+                                <rect fill="white" x="8" y="3" width="14" height="14"></rect>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M17.9611 13.7746C17.0159 14.5409 15.8116 15 14.5 15C11.4624 15 9 12.5376 9 9.5C9 6.46243 11.4624 4 14.5 4C17.5376 4 20 6.46243 20 9.5C20 10.6849 19.6253 11.7823 18.9879 12.6801L20.5132 14.2053C20.806 14.4982 20.806 14.9731 20.5132 15.266C20.2203 15.5589 19.7454 15.5589 19.4525 15.266L17.9611 13.7746ZM18 9.5C18 11.433 16.433 13 14.5 13C12.567 13 11 11.433 11 9.5C11 7.567 12.567 6 14.5 6C16.433 6 18 7.567 18 9.5Z"></path>
+                            </mask>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M17.9611 13.7746C17.0159 14.5409 15.8116 15 14.5 15C11.4624 15 9 12.5376 9 9.5C9 6.46243 11.4624 4 14.5 4C17.5376 4 20 6.46243 20 9.5C20 10.6849 19.6253 11.7823 18.9879 12.6801L20.5132 14.2053C20.806 14.4982 20.806 14.9731 20.5132 15.266C20.2203 15.5589 19.7454 15.5589 19.4525 15.266L17.9611 13.7746ZM18 9.5C18 11.433 16.433 13 14.5 13C12.567 13 11 11.433 11 9.5C11 7.567 12.567 6 14.5 6C16.433 6 18 7.567 18 9.5Z"
+                                  fill="#423B57" class="blue-fill"></path>
+                            <path d="M17.9611 13.7746L18.6682 13.0675L18.0312 12.4305L17.3314 12.9978L17.9611 13.7746ZM18.9879 12.6801L18.1725 12.1013L17.6836 12.79L18.2808 13.3872L18.9879 12.6801ZM20.5132 15.266L19.806 14.5589L19.806 14.5589L20.5132 15.266ZM14.5 16C16.0491 16 17.4741 15.4568 18.5909 14.5514L17.3314 12.9978C16.5578 13.625 15.5741 14 14.5 14V16ZM8 9.5C8 13.0899 10.9101 16 14.5 16V14C12.0147 14 10 11.9853 10 9.5H8ZM14.5 3C10.9101 3 8 5.91015 8 9.5H10C10 7.01472 12.0147 5 14.5 5V3ZM21 9.5C21 5.91015 18.0899 3 14.5 3V5C16.9853 5 19 7.01472 19 9.5H21ZM19.8034 13.259C20.5569 12.1976 21 10.899 21 9.5H19C19 10.4707 18.6938 11.367 18.1725 12.1013L19.8034 13.259ZM18.2808 13.3872L19.806 14.9124L21.2203 13.4982L19.6951 11.973L18.2808 13.3872ZM19.806 14.9124C19.7084 14.8148 19.7084 14.6565 19.806 14.5589L21.2203 15.9731C21.9037 15.2897 21.9037 14.1816 21.2203 13.4982L19.806 14.9124ZM19.806 14.5589C19.9037 14.4613 20.062 14.4613 20.1596 14.5589L18.7454 15.9731C19.4288 16.6565 20.5368 16.6565 21.2203 15.9731L19.806 14.5589ZM20.1596 14.5589L18.6682 13.0675L17.254 14.4817L18.7454 15.9731L20.1596 14.5589ZM14.5 14C16.9853 14 19 11.9853 19 9.5H17C17 10.8807 15.8807 12 14.5 12V14ZM10 9.5C10 11.9853 12.0147 14 14.5 14V12C13.1193 12 12 10.8807 12 9.5H10ZM14.5 5C12.0147 5 10 7.01472 10 9.5H12C12 8.11929 13.1193 7 14.5 7V5ZM19 9.5C19 7.01472 16.9853 5 14.5 5V7C15.8807 7 17 8.11929 17 9.5H19Z"
+                                  fill="white" mask="url(#path-2-outside-1)"></path>
+                            <circle cx="14.5" cy="9.5" r="3.5" fill="white"></circle>
+                        </svg>
+                        <span>Каталог</span>
+                    </a>
+                </li>
+                <li class="header-icons__item header-icons__item--cart">
+                    <div class="header-icons__count-cart js-count-cart">2</div>
+                    <a href="/" class="header-icons__link">
+                        <svg class="header-icons__icon header-icons__icon--cart" role="img">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 xlink:href="/img/svg/map.svg#svg-cart"></use>
+                        </svg>
+                        <span class="js-cart-text">Корзина</span>
+                    </a>
+                </li>
+                <li class="header-icons__item">
+                    <a href="/" class="header-icons__link">
+                        <svg class="header-icons__icon header-icons__icon--heart" role="img">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 xlink:href="/img/svg/map.svg#svg-heart"></use>
+                        </svg>
+                        <span>Избранное</span>
+                    </a>
+                </li>
+                <li class="header-icons__item">
+                    <a href="/" class="header-icons__link">
+                        <svg class="header-icons__icon header-icons__icon--human" role="img">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 xlink:href="/img/svg/map.svg#svg-human"></use>
+                        </svg>
+                        <span>Войти</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="info-title">Всегда на связи</div>
+            <ul class="footer-nav">
+                <li>
+                    <a href="#" class="footer-nav__link">Покупателям</a>
+                </li>
+                <li>
+                    <a href="#" class="footer-nav__link">Каталог товаров</a>
+                </li>
+                <li>
+                    <a href="#" class="footer-nav__link">Доставка и оплата</a>
+                </li>
+                <li>
+                    <a href="#" class="footer-nav__link">Скидки</a>
+                </li>
+                <li>
+                    <a href="#" class="footer-nav__link">О компании</a>
+                </li>
+                <li>
+                    <a href="#" class="footer-nav__link">Контакты</a>
+                </li>
+            </ul>
+            <div class="info-data d-block d-md-flex">
+                <div class="info-item">
+                    <div class="info-item__phone">
+                        <a href="tel:+78312151534">+7 831 215-15-34</a>, <a href="tel:+78314120052">+7 831
+                                                                                                    412-00-52</a>
+                    </div>
+                    <div class="info-item__address">
+                        ул. Бекетова, 3а, к.9
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-item__phone">
+                        <a href="tel:+78312151534">+7 831 215-15-34</a>, <a href="tel:+79308159544">+7 930
+                                                                                                    815-95-44</a>
+                    </div>
+                    <div class="info-item__address">
+                        ул. Чкалова, 39, 2 этаж
+                    </div>
+                </div>
+            </div>
+            <div class="footer-work-email">
+                <div class="footer-work-email__work-time">8:00-20:00</div>
+                <a href="mailto:info@nn-shar.ru" class="footer-work-email__email">info@nn-shar.ru</a>
+            </div>
+            <div class="footer-social d-flex align-items-end">
+                <span class="footer-social__text">Присоединяйтесь</span>
+                <a href="#" class="footer-social__icon footer-social__icon--ok"></a>
+                <a href="#" class="footer-social__icon footer-social__icon--vk"></a>
+                <a href="#" class="footer-social__icon footer-social__icon--tg"></a>
+            </div>
+        </div>
+        <p class="footer-text">
+            Данный интернет-сайт носит исключительно информационный характер и ни при каких условиях не является
+            публичной офертой, определяемой положениями пункта 1 статьи 437 Гражданского кодекса Российской
+            Федерации.
+            Для получения подробной информации о наличии и стоимости указанных товаров и (или) услуг, пожалуйста,
+            обращайтесь на info@nn-shar.ru
+        </p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+<script src="./js/common.js"></script>
+</body>
+</html>

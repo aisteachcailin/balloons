@@ -33,6 +33,9 @@ export default {
                 consumption: './src/consumption.html',
                 delivery: './src/delivery-russia.html', 'delivery-city': './src/delivery-city.html',
                 payment: './src/payment.html',
+                manufacturers: './src/manufacturers.html', 'manufacturers-detail': './src/manufacturers-detail.html',
+                news: './src/news.html', 'news/detail': './src/news-detail.html',
+                states: './src/states.html', 'states/detail': './src/states-detail.html',
             },
             output: {
                 assetFileNames: "assets/[name][extname]",

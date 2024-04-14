@@ -7,7 +7,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./scss/bootstrap.scss">
     <link rel="stylesheet" href="./scss/style.scss">
     <link rel="stylesheet" href="./scss/pages/payment/payment.scss">
@@ -545,19 +544,23 @@
     <div class="payment">
         <div class="container">
             <h1 class="payment__title">Способы оплаты</h1>
-            <div class="row">
-                <div class="payment-ways">
-                    <div class="payment-ways__item">
-                        Наличными
+                <div class="payment-ways row">
+                    <div class="col-xl-3 col-lg-4 col-md-6 pt-4">
+                        <div class="payment-ways__item cash">
+                            Наличными
+                        </div>
                     </div>
-                    <div class="payment-ways__item">
-                        Безналичными
+                    <div class="col-xl-3 col-lg-4 col-md-6 pt-4">
+                        <div class="payment-ways__item non-cash">
+                            Безналичными
+                        </div>
                     </div>
-                    <div class="payment-ways__item">
-                        QR-кодом
+                    <div class="col-xl-3 col-lg-4 col-md-6 pt-4">
+                        <div class="payment-ways__item qr">
+                            QR-кодом
+                        </div>
                     </div>
                 </div>
-            </div>
             <div class="payment__info">
                 Если Вы планируете забирать заказ самостоятельно, то оплатить выставленный счет можно наличными или картой непосредственно в магазине на <strong>ул. Бекетова, 3а, к. 9</strong>либо на <strong>ул. Чкалова, 39 2 этаж</strong>. В этом случае при заказе обязательно нужно указать в каком магазине Вам удобнее это сделать.
                 Если Вы хотите, чтобы Ваш заказ был доставлен курьером, то возможна оплата наличными курьеру. Оплата также может быть произведена по безналичному расчету, посредством перечисления денежных средств на наш расчетный счет либо с использованием банковской карты. К оплате принимаются карты <strong>МИР, VISA, MasterCard</strong>.
@@ -710,8 +713,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
         integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
         crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-<script src="./js/add-cart.js"></script>
 <script src="./js/common.js"></script>
 </body>
 </html>
