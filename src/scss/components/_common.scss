@@ -2,7 +2,6 @@
 :root {
   --color-primary: #678AEF;
   --color-secondary: #D8E2FE;
-  --color-form-element: #9773F0;
   --border-radiius: 30px;
   --bs-link-hover-color: #678AEF;
   --offset-compensator: 0px;
@@ -18,6 +17,10 @@ html, body {
     font-size: 8px;
   }
 }
+.fancybox__backdrop {
+  --fancybox-bg: rgba(24, 24, 27, 0.4) !important;
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
@@ -30,10 +33,13 @@ body {
     padding-top: 0;
   }
 }
+
 main {
   flex: auto;
 }
-
+[disabled=disabled] {
+  opacity: .5;
+}
 .section-title {
   font-weight: 700;
   font-size: 16px;

@@ -527,132 +527,62 @@
     </section>
 </header>
 
-<main>
+
+<div class="container">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="/" class="breadcrumb__link">Главная</a>
+            </li>
+            <li class="breadcrumb-item">
+                Вход на сайт
+            </li>
+        </ol>
+    </nav>
+</div>
+
+<section class="registration-section">
     <div class="container">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                    <a href="/" class="breadcrumb__link">Главная</a>
-                </li>
-                <li class="breadcrumb-item">
-                    <a href="#" class="breadcrumb__link">Личный кабинет</a>
-                </li>
-                <li class="breadcrumb-item">
-                    Данные об организации
-                </li>
-            </ol>
-        </nav>
-    </div>
+        <h1 class="section-title section-title--with-margin">Вход в личный кабинет</h1>
 
-    <section class="registration-section edit-page">
-        <div class="container">
-            <h1 class="section-title section-title--with-margin">Данные об организации</h1>
-            <p class="edit-subtitle">Компания</p>
-            <form action="" class="form-registration js-form" novalidate>
-                <p class="form-subtitle form-subtitle--small">Правовая форма</p>
-                <div class="row-check">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="legal-form" id="form-type-1" value="type-1"
-                               checked>
-                        <label class="form-check-label" for="form-type-1">
-                            ИП
-                        </label>
+        <div class="row">
+            <div class="col-lg-5 col-md-7 col-12">
+                <form action="" class="form-registration js-form" novalidate>
+                    <div class="registration-inputs">
+                        <div class="form-input">
+                            <input id="email" type="email" name="email" class="form-control" required
+                                   aria-required="true">
+                            <label for="email">E-mail*</label>
+                        </div>
+                        <div class="form-input">
+                            <input id="password" type="password" name="password" class="form-control" required
+                                 minlength="6"  aria-required="true">
+                            <label for="password">Пароль*</label>
+                        </div>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="legal-form" id="form-type-2" value="type-2">
-                        <label class="form-check-label" for="form-type-2">
-                            Коммерческая организация
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="legal-form" id="form-type-3" value="type-3">
-                        <label class="form-check-label" for="form-type-3">
-                            Бюджетная организация
-                        </label>
-                    </div>
+                    <button type="submit" class="c-btn c-btn--primary c-btn--mobile-full-width">Вход</button>
+                </form>
+
+                <p class="registration-another-login-text fl-only">или войдите с помощью</p>
+                <div class="registration-another-login fl-only">
+                    <a href="#" class="c-btn c-btn--yandex">
+                        Яндекс ID
+                    </a>
+                    <a href="#" class="c-btn c-btn--vk">
+                        VK ID
+                    </a>
                 </div>
-                <div class="registration-inputs">
-                    <div class="form-input">
-                        <input id="inn" name="INN" type="text" class="form-control" minlength="10" maxlength="12"
-                               required
-                               inputmode="numeric" aria-required="true">
-                        <label for="inn">ИНН*</label>
-                    </div>
-                    <div class="form-input">
-                        <input id="kpp" name="KPP" type="text" class="form-control" minlength="9" required
-                               inputmode="numeric" aria-required="true">
-                        <label for="kpp">КПП*</label>
-                    </div>
-                    <div class="form-input">
-                        <input id="OGRN" name="OGRN" type="text" class="form-control" minlength="13" required
-                               aria-required="true">
-                        <label for="OGRN">ОГРН*</label>
-                    </div>
-                    <div class="form-input">
-                        <input id="nameOrganization" name="nameOrganization" type="text" required
-                               class="form-control" aria-required="true">
-                        <label for="nameOrganization">Юридическое название
-                                                      организации*</label>
-                    </div>
+                <div class="login-bottom">
+                    <a href="registration.html">Регистрация</a>
 
-                    <p class="form-subtitle">Юридический адрес</p>
-                    <div class="form-input">
-                        <input id="index" name="index" type="text" class="form-control"
-                               aria-required="true">
-                        <label for="index">Индекс</label>
-                    </div>
-                    <div class="form-input">
-                        <input id="city" name="city" type="text" class="form-control"
-                               aria-required="true">
-                        <label for="city">Город</label>
-                    </div>
-                    <div class="form-input">
-                        <input id="street" name="street" type="text" class="form-control"
-                               aria-required="true">
-                        <label for="street">Улица</label>
-                    </div>
-                    <div class="form-input">
-                        <input id="numberHouse" name="numberHouse" type="text" class="form-control"
-                               aria-required="true">
-                        <label for="numberHouse">Дом</label>
-                    </div>
-                    <div class="form-input">
-                        <input id="structure" name="structure" type="text" class="form-control"
-                               aria-required="true">
-                        <label for="structure">Строение</label>
-                    </div>
-                    <div class="form-input">
-                        <input id="housing" name="housing" type="text" class="form-control"
-                               aria-required="true">
-                        <label for="housing">Корпус</label>
-                    </div>
-                    <div class="form-input">
-                        <input id="numberOffice" name="numberOffice" type="text" class="form-control"
-                               aria-required="true">
-                        <label for="numberOffice">Квартира/Офис</label>
-                    </div>
-                    <div class="form-input">
-                        <input id="note" name="note" type="text" class="form-control"
-                               aria-required="true">
-                        <label for="note">Примечание</label>
-                    </div>
-                    <p class="form-subtitle">Банковские реквизиты</p>
-                    <div class="form-input">
-                        <input id="BIK" name="BIK" type="text" class="form-control"
-                               aria-required="true">
-                        <label for="BIK">БИК</label>
-                    </div>
-                    <div class="form-input">
-                        <input id="RS" name="RS" type="text" class="form-control" aria-required="true">
-                        <label for="RS">Расчетный счет</label>
-                    </div>
+                    <p class="privacy-text">Продолжая, вы соглашаетесь с&nbsp;<a href="#">Пользовательским соглашением</a>
+                                            и&nbsp;<a href="#">Политикой обработки персональных данных</a></p>
                 </div>
-
-                <button type="submit" class="c-btn c-btn--primary c-btn--mobile-full-width">Сохранить</button>
-            </form>
+            </div>
         </div>
-    </section>
-</main>
+    </div>
+</section>
+
 <section class="to-up js-to-up"></section>
 
 <footer class="c-footer">
@@ -796,9 +726,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
         integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
         crossorigin="anonymous"></script>
-<script defer src="https://unpkg.com/imask"></script>
-<script defer src="./js/validate.js"></script>
 <script src="./js/add-cart.js"></script>
+<script src="./js/validate.js"></script>
 <script src="./js/common.js"></script>
 </body>
 </html>

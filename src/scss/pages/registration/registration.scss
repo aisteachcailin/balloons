@@ -6,13 +6,40 @@
 @use "../../variables" as *;
 
 $errorColor: #E12668;
+//.form-check {
+//  position: relative;
+//  padding-bottom: 16px;
+//  .invalid-feedback {
+//    position: absolute;
+//    color: $errorColor;
+//    font-size: 12px;
+//    display: none;
+//    bottom: 0;
+//    margin-left: 32px;
+//  }
+//}
+.password-display-icon {
+  position: absolute;
+  right: 28px;
+  top: 13px;
+  width: 20px;
+  height: 20px;
+  background: url($imgPath + "/svg/not-visible.svg") 50% 50% no-repeat;
+  background-size: 20px;
+  cursor: pointer;
+
+  &.show-pass {
+    background: url($imgPath + "/svg/eye-visible.svg") 50% 50% no-repeat;
+    background-size: 20px;
+  }
+}
 .form-input, .form-textarea {
   position: relative;
   padding-bottom: 20px;
   margin-bottom: 6px;
   max-width: 506px;
 
-  .error-text, .invalid-feedback {
+  .invalid-feedback {
     position: absolute;
     color: $errorColor;
     font-size: 12px;
@@ -21,11 +48,6 @@ $errorColor: #E12668;
     margin-left: 15px;
   }
 
-  &.has-error {
-    .error-text {
-      display: block;
-    }
-  }
   label {
     position: absolute;
     transition-duration: .2s;
@@ -44,10 +66,19 @@ $errorColor: #E12668;
   }
 }
 .form-textarea {
+  label {
+    top: 28px;
+    left: 28px;
+  }
+  textarea:focus + label, &.fill label  {
+    top: -8px;
+    font-size: 12px;
+  }
   textarea {
     height: 186px;
     resize: none;
     padding: 28px;
+
 
     @include media(md) {
       height: 235px;
@@ -100,33 +131,39 @@ $errorColor: #E12668;
 
 .was-validated .form-check-input:valid, .form-check-input.is-valid {
   &:checked {
-    border-color: var(--color-form-element);
-    background-color: var(--color-form-element);
+    border-color: var(--color-primary);
+    background-color: var(--color-primary);
   }
   &:focus {
     box-shadow: none;
   }
 }
 .was-validated .form-control:valid:focus, .form-control.is-valid:focus{
-  border-color: var(--color-form-element);
-  box-shadow: 0 0 0 1px  var(--color-form-element);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 1px  var(--color-primary);
 }
 .was-validated .form-check-input:valid, .form-check-input.is-valid {
-  border-color: var(--color-form-element);
+  border-color: var(--color-primary);
 }
 .was-validated .form-check-input:valid ~ .form-check-label,
 .form-check-input.is-valid ~ .form-check-label {
   color: $mainColorText;
 }
 .was-validated .form-control:valid, .form-control.is-valid {
-  border-color: var(--color-form-element);
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%239773F0' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+  border-color: var(--color-primary);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23678AEF' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
 }
 .was-validated .form-check-input[type=radio]:valid:checked {
   background-color: transparent;
 }
 .was-validated .form-control:invalid:focus, .form-control.is-invalid:focus {
   box-shadow: 0 0 0 1px rgba(220, 53, 69, 1);
+}
+.was-validated .form-check-input:invalid:focus, .form-check-input.is-invalid:focus {
+  box-shadow: none;
+}
+.was-validated .form-check-input:invalid, .form-check-input.is-invalid {
+  box-shadow: 0 0 4px 2px rgba(220, 53, 69, .25);
 }
 .registration-section {
   &[data-form-type="type-1"] {
@@ -198,7 +235,44 @@ $errorColor: #E12668;
     grid-template: auto / 28px auto;
   }
 }
-
+.send-message .fancybox__content {
+  padding: 50px;
+  border-radius: 30px;
+  P {
+    padding: 0;
+    margin: 0;
+  }
+}
+.popup-close {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 20px;
+  top: 20px;
+  height: 24px;
+  width: 24px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  &:focus-visible {
+    outline: none;
+  }
+  &:after, &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background-color: var(--color-primary);
+  }
+  &:after {
+    transform: rotate(45deg);
+  }
+  &:before {
+    transform: rotate(-45deg);
+  }
+}
 .form-collapse-bottom {
   display: inline-block;
   cursor: pointer;

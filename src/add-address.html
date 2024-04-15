@@ -548,14 +548,11 @@
 
         <div class="row">
             <div class="col-lg-5 col-md-7 col-12">
-                <form action="" class="form-registration needs-validation" novalidate>
+                <form action="" class="form-registration js-form" novalidate>
                     <div class="registration-inputs">
                         <div class="form-textarea">
-                            <label for="address" class="sr-only">Адрес доставки:</label>
-                            <textarea class="form-control" id="address" placeholder="Адрес доставки:" required></textarea>
-                            <div class="invalid-feedback">
-                                Текст ошибки
-                            </div>
+                            <textarea class="form-control" name="address" id="address" required></textarea>
+                            <label for="address" >Адрес доставки:</label>
                         </div>
                     </div>
 
@@ -710,7 +707,7 @@
         integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
         crossorigin="anonymous"></script>
 <script src="./js/add-cart.js"></script>
-<script src="./js/form.js"></script>
+<script src="./js/validate.js"></script>
 <script src="./js/common.js"></script>
 </body>
 </html>
