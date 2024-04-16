@@ -1,0 +1,113 @@
+@use "../../variables" as *;
+
+.about {
+    margin-top: 24px;
+    margin-bottom: 32px;
+    
+    @include media(md) {
+        margin-top: 25px;
+        margin-bottom: 48px;
+    }
+    @include media(xxl) {
+        margin-top: 32px;
+        margin-bottom: 54px;
+    }
+
+    ul {
+        padding-left: 11px;
+
+        @include media(xxl) {
+            padding-left: 7px;
+        }
+
+        li {
+            padding-left: 10px;
+            &::marker {
+                content: "\2022";
+                color: #333;
+            }
+        }
+    }
+
+    &__banner {
+        width: 100%;
+        margin-bottom: 0;
+        margin-top: 16px;
+
+        @include media(md) {
+            margin-bottom: 22px;
+        }
+        @include media(xxl) {
+            margin-bottom: 31px;
+        }
+    }
+
+    &__info {
+        position: relative;
+        margin-top: 28px;
+
+        @include media(md) {
+            margin-top: 21px;
+        }
+
+        &-first {
+            @include media(xxl) {
+                position: absolute;
+                top: 61px;
+                width: 45%;
+                padding-left: 80px;
+              }
+        }
+        &:first-child {
+            @include media(xs) {
+                display: flex;
+                flex-direction: column-reverse;
+              }
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 20px;
+
+        @include media(md) {
+            font-size: 24px;
+            line-height: 28px;
+        }
+        @include media(xxl) {
+            font-size: 26px;
+            line-height: 30px;
+        }
+    }
+
+    &__text {
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: 400;
+        margin-top: 12px;
+
+        @include media(xxl) {
+            margin-top: 23px;
+        }
+
+        &-first {
+            margin-top: 12px;
+        }
+    }
+
+    &__baloons {
+        position: relative;
+        bottom: 103px;
+        display: none;
+        float: right;
+
+        @include media(md) {
+            display: block;
+            width: 230px;
+        }
+        @include media(xxl) {
+            width: 403px;
+        }
+    }
+}

@@ -1,0 +1,97 @@
+@use "../../variables" as *;
+
+.states {
+    margin: 23px 0 32px;
+
+    @include media(md) {
+        margin: 40px 0 48px;    
+    }
+    @include media(lg) {
+        margin: 40px 0 35px;
+    }
+    @include media(xxl) {
+        margin: 10px 0 35px;
+    }
+
+    &__title {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 30px;
+
+        @include media(md) {
+            font-size: 24px;  
+        }
+        @include media(xxl) {
+            font-size: 26px;
+        }
+    }
+
+    &-list {
+        margin-bottom: 31px;
+
+        @include media(md) {
+            margin-bottom: 47px;  
+        }
+        @include media(xxl) {
+            margin-bottom: 55px;
+        }
+
+        div {
+            margin-top: 15px;
+
+            @include media(md) {
+                margin-top: 30px;
+            }
+        }
+
+        a {
+            display: block;
+            width: 100%;
+        }
+
+        &__link {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 18px;
+            text-decoration: none;
+            color: #333;
+            margin-top: 12px;
+    
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    
+        &__img {
+            width: 100%;
+            object-fit: cover;
+            border-radius: 30px;
+            height: 175px;
+
+            @include media(md) {
+                height: 132px;   
+            }
+            @include media(lg) {
+                height: 157px;
+            }
+            @include media(xxl) {
+                height: 170px;
+            }
+        }
+    }
+}
+.more {
+    width: 100%;
+
+    @include media(md) {
+        width: auto;   
+    }
+}
+
+.pagination {
+    display: none;
+
+    @include media(md) {
+        display: flex;    
+    }
+}

@@ -1,0 +1,22 @@
+@use "../../variables" as *;
+
+.type-delivery {
+    margin-top: 32px;
+
+    @include media(md) {
+        margin-top: 42px;
+    }
+    
+    &__title {
+        margin-top: 20px;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 18px;        
+
+        @include media(md) {
+            font-size: 20px;
+            line-height: 30px;
+        }
+    }
+}

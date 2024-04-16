@@ -1,1 +1,0 @@
-document.addEventListener("DOMContentLoaded",()=>{const a=document.querySelectorAll(".needs-validation");Array.from(a).forEach(e=>{e.addEventListener("submit",t=>{e.checkValidity()||(t.preventDefault(),t.stopPropagation()),e.classList.add("was-validated")},!1)})});
